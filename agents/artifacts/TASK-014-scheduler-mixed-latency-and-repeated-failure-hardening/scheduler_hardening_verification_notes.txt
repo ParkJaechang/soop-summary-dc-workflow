@@ -1,0 +1,10 @@
+TASK-014 scheduler mixed-latency and repeated-failure verification
+Tick count: 6
+Final collector_runs: 12
+Final collector_backoffs: 0
+Live fetch count: 2
+VOD fetch count: 10
+Immediate tick live/vod added fetches: 0 / 0
+First backoff skip tick live/vod added fetches: 0 / 0
+Late recovery tick live/vod added fetches: 1 / 1
+Expected pattern: slow live execution does not trigger immediate catch-up on the next tick, VOD fails twice across scheduled ticks, the first backoff-active tick skips VOD without extra upstream fetch, and later ticks recover cleanly.

@@ -1,0 +1,128 @@
+{
+  "summary": {
+    "recent_run_count": 4,
+    "failed_count": 2,
+    "skipped_count": 2,
+    "completed_count": 0,
+    "active_backoff_count": 2,
+    "last_failed_at": "2026-04-08T02:57:33+09:00",
+    "last_completed_at": null
+  },
+  "active_backoffs": [
+    {
+      "scope_key": "live:global",
+      "collector_type": "live",
+      "streamer_id": null,
+      "streamer_name": "global",
+      "soop_user_id": null,
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 1,
+      "retry_in_seconds": 1,
+      "retry_after": "2026-04-08T02:57:34+09:00"
+    },
+    {
+      "scope_key": "vod:streamer:1",
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "streamer_name": "Alpha Visibility",
+      "soop_user_id": "alpha_user",
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 1,
+      "retry_in_seconds": 1,
+      "retry_after": "2026-04-08T02:57:34+09:00"
+    }
+  ],
+  "recent_runs": [
+    {
+      "id": 4,
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "status": "skipped",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s",
+      "streamer_name": "Alpha Visibility",
+      "soop_user_id": "alpha_user",
+      "message_info": {
+        "kind": "backoff_active",
+        "retryable": true,
+        "headline": "backoff timeout (1s left)",
+        "reason": "timeout",
+        "failures": 1,
+        "retry_in_seconds": 1
+      }
+    },
+    {
+      "id": 3,
+      "collector_type": "live",
+      "streamer_id": null,
+      "status": "skipped",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s",
+      "streamer_name": "global",
+      "soop_user_id": null,
+      "message_info": {
+        "kind": "backoff_active",
+        "retryable": true,
+        "headline": "backoff timeout (1s left)",
+        "reason": "timeout",
+        "failures": 1,
+        "retry_in_seconds": 1
+      }
+    },
+    {
+      "id": 2,
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "status": "failed",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "timeout: ui visibility vod timeout | backoff_seconds=1 failures=1",
+      "streamer_name": "Alpha Visibility",
+      "soop_user_id": "alpha_user",
+      "message_info": {
+        "kind": "timeout",
+        "retryable": true,
+        "headline": "timeout: ui visibility vod timeout",
+        "backoff_seconds": 1,
+        "failures": 1,
+        "reason": "timeout"
+      }
+    },
+    {
+      "id": 1,
+      "collector_type": "live",
+      "streamer_id": null,
+      "status": "failed",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "timeout: ui visibility live timeout | backoff_seconds=1 failures=1",
+      "streamer_name": "global",
+      "soop_user_id": null,
+      "message_info": {
+        "kind": "timeout",
+        "retryable": true,
+        "headline": "timeout: ui visibility live timeout",
+        "backoff_seconds": 1,
+        "failures": 1,
+        "reason": "timeout"
+      }
+    }
+  ],
+  "recent_state": [
+    {
+      "streamer_id": 1,
+      "soop_user_id": "alpha_user",
+      "streamer_name": "Alpha Visibility",
+      "active": true,
+      "is_live": false,
+      "live_title": null,
+      "last_live_checked_at": "2026-04-08T02:57:33+09:00",
+      "latest_vod_title": null,
+      "latest_vod_at": null
+    }
+  ]
+}

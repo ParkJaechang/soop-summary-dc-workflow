@@ -1,0 +1,26 @@
+{
+  "streamers": [
+    {
+      "id": 1,
+      "soop_user_id": "streamer_live",
+      "nickname": "Live Streamer",
+      "channel_url": "https://www.sooplive.co.kr/station/streamer_live",
+      "replay_url": "",
+      "category_no": "",
+      "active": 1,
+      "created_at": "2026-04-08T01:48:30+09:00",
+      "updated_at": "2026-04-08T01:48:30+09:00"
+    },
+    {
+      "id": 2,
+      "soop_user_id": "streamer_offline",
+      "nickname": "Offline Streamer",
+      "channel_url": "https://www.sooplive.co.kr/station/streamer_offline",
+      "replay_url": "",
+      "category_no": "",
+      "active": 1,
+      "created_at": "2026-04-08T01:48:30+09:00",
+      "updated_at": "2026-04-08T01:48:30+09:00"
+    }
+  ]
+}

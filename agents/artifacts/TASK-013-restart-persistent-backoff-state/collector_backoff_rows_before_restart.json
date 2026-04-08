@@ -1,0 +1,23 @@
+{
+  "items": [
+    {
+      "scope_key": "live:global",
+      "collector_type": "live",
+      "streamer_id": null,
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 2,
+      "retry_after": "2026-04-08T03:09:19+09:00"
+    },
+    {
+      "scope_key": "vod:streamer:1",
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 2,
+      "retry_after": "2026-04-08T03:09:19+09:00"
+    }
+  ],
+  "count": 2
+}

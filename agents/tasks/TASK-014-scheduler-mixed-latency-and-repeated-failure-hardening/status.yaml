@@ -1,0 +1,61 @@
+task_id: TASK-014
+title: Scheduler mixed-latency and repeated-failure hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - scheduler-path evidence under mixed latency or repeated failures
+  - durable collector-run and bounded-pressure artifacts
+  - handoff notes for later ops or product-hardening slices
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/spec.md
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/status.yaml
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/handoff.md
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/review.md
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/revision_log.md
+  - agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/done.md
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/README.md
+  - app_live_vod.py
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/verify_scheduler_hardening.py
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_tick_trace.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_fetch_pressure_trace.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/collector_runs_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/collector_backoffs_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/recent_state_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_hardening_verification_notes.txt
+tests:
+  - exercised the scheduler loop body through `run_scheduler_tick()` with a temp SQLite DB, slow live fixtures, and repeated VOD timeout fixtures
+  - verified the immediate post-latency scheduler tick adds 0 live fetches and 0 VOD fetches, proving no catch-up burst after slow live execution
+  - verified a backoff-active scheduler tick adds 0 live fetches and 0 VOD fetches while still leaving durable skipped evidence in `collector_runs`
+  - verified later ticks recover and leave durable completed live/VOD rows plus no remaining persisted backoff rows
+artifacts:
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/README.md
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/verify_scheduler_hardening.py
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_tick_trace.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_fetch_pressure_trace.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/collector_runs_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/collector_backoffs_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/recent_state_after_scheduler_hardening.json
+  - agents/artifacts/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening/scheduler_hardening_verification_notes.txt
+notes:
+  - created immediately after TASK-013 closeout to continue live/VOD operational hardening
+  - needed role now is reviewer because implementation evidence is saved and the slice has crossed into a review handoff boundary
+  - summary_engineer, publisher_engineer, and ops are intentionally idle at this step because implementation is complete, publisher scope is untouched, and no deployment or runbook ownership is needed yet
+  - call reviewer now because scheduler evidence is saved and the slice reached ready_for_review
+  - call ops only if the work expands into packaging, deployment, environment-specific automation, or runbook ownership
+  - call publisher_engineer only if the scope later crosses from live/VOD collection into publisher contracts or draft-job flow
+  - same-role micro-loop may be used only for tiny follow-up work inside this slice, up to the shared limit of 2 consecutive micro-loops
+  - `run_scheduler_tick()` now owns the scheduler loop body so next-run timestamps are recalculated after collector completion instead of from stale pre-run time
+  - saved evidence proves slow live execution does not trigger an immediate catch-up rerun on the next scheduler tick
+  - saved evidence also proves repeated VOD failures remain bounded by skip or backoff behavior and do not cause uncontrolled upstream fetch pressure
+  - later ops or product hardening still depends on exercising the real background thread lifecycle and longer-running scheduler traces beyond the current local verifier
+  - coordinator reviewed the saved scheduler hardening evidence and determined the slice is ready to route to reviewer
+  - same-role micro-loop is no longer the active path because the slice has crossed into a review handoff boundary
+  - reviewer confirmed that the saved evidence is sufficient to prove scheduler-path bounded pressure, repeated VOD failure visibility, slow live execution behavior, and final durable recovery state
+  - coordinator closed TASK-014 after reviewer marked the slice ready for acceptance; the next needed role is again summary_engineer for background scheduler lifecycle hardening while publisher_engineer, ops, and reviewer return to normal idle state

@@ -1,0 +1,59 @@
+task_id: TASK-012
+title: Collector-run and failure visibility in UI and admin views
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - reviewed UI or admin-facing visibility for collector-run history and failure state
+  - evidence artifacts proving visible failure and backoff state matches persisted records
+  - handoff notes for later product-hardening work
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/spec.md
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/status.yaml
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/handoff.md
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/review.md
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/revision_log.md
+  - agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin/done.md
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/README.md
+  - app_live_vod.py
+  - webapp/live_vod.html
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_during_backoff.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_after_recovery.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/jobs_api_after_visibility.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_runs_db_snapshot.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/recent_state_after_visibility.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/ui_visibility_markup_checks.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_verification_notes.txt
+tests:
+  - exercised `/api/admin/collector-visibility`, `/api/jobs`, `/api/streamers`, and `/api/streamers/{id}/vods` with FastAPI TestClient against a temp SQLite DB
+  - verified admin visibility during active backoff shows live and VOD timeout failures plus backoff-active skip rows without requiring raw DB access
+  - verified recovery visibility after the backoff window shows completed live and VOD runs plus current persisted live/VOD state
+  - verified dashboard markup contains the new visibility panel wiring and admin endpoint usage
+artifacts:
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/README.md
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_during_backoff.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_after_recovery.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/jobs_api_after_visibility.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_runs_db_snapshot.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/recent_state_after_visibility.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/ui_visibility_markup_checks.json
+  - agents/artifacts/TASK-012-collector-run-and-failure-visibility-ui-admin/collector_visibility_verification_notes.txt
+notes:
+  - created immediately after TASK-011 closeout to keep the live/VOD stabilization track moving
+  - summary_engineer is the first execution owner because this slice stays inside app_live_vod.py and its current app-facing surface
+  - this slice should expose already-persisted collector-run and failure state without reopening collector semantics or unrelated UI polish
+  - same-role micro-loop may be used only for tiny UI/admin visibility follow-up work inside this slice, up to the shared limit of 2 consecutive micro-loops
+  - `/api/jobs` now returns enriched recent collector runs with streamer labels and parsed `message_info` so the current jobs panel can show human-readable failure and completion summaries
+  - `/api/admin/collector-visibility` now exposes recent run summary, active backoffs, parsed recent runs, and recent live/VOD state in one admin-facing snapshot
+  - `webapp/live_vod.html` now includes an operations visibility panel for active backoffs and recent live/VOD state without reopening collector semantics
+  - later product hardening still depends on restart-persistent backoff state and broader UI polish beyond the minimal debug or admin surface added here
+  - coordinator reviewed the saved visibility evidence and determined the slice is ready to route to reviewer
+  - same-role micro-loop is no longer the active path because the slice has crossed into a review handoff boundary
+  - reviewer confirmed that the saved evidence is sufficient to prove recent collector-run visibility, timeout and backoff visibility, and surfaced-to-persisted state matching for the current UI/admin slice
+  - coordinator closed TASK-012 after reviewer marked the slice ready for acceptance; restart-persistent backoff and broader UI polish remain later-slice work

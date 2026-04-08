@@ -1,0 +1,32 @@
+{
+  "supervisor_pattern": "windows_task_scheduler",
+  "task_registration": {
+    "task_name": "SOOP-LiveVOD-Task018",
+    "registration_path": "C:\\python\\agents\\artifacts\\TASK-018-supervisor-specific-launcher-packaging-and-stop-contract\\task_scheduler_registration.json",
+    "task_definition_path": "C:\\python\\agents\\artifacts\\TASK-018-supervisor-specific-launcher-packaging-and-stop-contract\\task_scheduler_definition.xml",
+    "task_state_before_stop": "Ready",
+    "last_task_result_before_stop": "0"
+  },
+  "packaged_start": {
+    "status": "started",
+    "launcher_status": "running",
+    "launcher_process_alive": true
+  },
+  "bounded_stop": {
+    "stop_status": "stopped",
+    "stop_duration_seconds": 1.325,
+    "scheduler_thread_alive_after_exit": false,
+    "scheduler_started_after_exit": false,
+    "stop_request_seen": true,
+    "exit_kind": "clean_return"
+  },
+  "durable_persistence": {
+    "collector_runs": 3,
+    "live_state_rows": 1,
+    "vod_rows": 2
+  },
+  "deployment_stop_contract": {
+    "stop_wrapper": "C:\\python\\stop_live_vod_scheduler_task.ps1",
+    "notes": "Do not use End-ScheduledTask for normal shutdown. Use the task stop wrapper so the host sees stop_requested.json and exits cleanly."
+  }
+}

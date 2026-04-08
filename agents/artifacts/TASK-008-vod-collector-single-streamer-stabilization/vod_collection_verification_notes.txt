@@ -1,0 +1,8 @@
+db_path=C:\python\agents\artifacts\TASK-008-vod-collector-single-streamer-stabilization\task008_vod_collector_test.db
+mode=single_streamer_html_test_double
+streamer_id=1
+verified_endpoint=POST /api/streamers/{id}/vods/refresh and GET /api/streamers/{id}/vods
+verified_persistence=vods, collector_runs
+verified_api_visibility=GET /api/streamers/{id}/vods returns collected rows
+parser_fix=parse_vod_items now isolates each anchor block to avoid cross-card metadata bleed
+remaining_scope=broader parser hardening, multi-streamer scaling, and scheduler execution remain later slices

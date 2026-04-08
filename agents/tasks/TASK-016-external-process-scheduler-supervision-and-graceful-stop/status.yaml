@@ -1,0 +1,67 @@
+task_id: TASK-016
+title: External-process scheduler supervision and graceful stop hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - external-process supervision evidence or runbook artifacts
+  - graceful stop and bounded-shutdown evidence
+  - handoff notes for later product-hardening slices
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/spec.md
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/status.yaml
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/handoff.md
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/review.md
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/revision_log.md
+  - agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop/done.md
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/README.md
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child.py
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/verify_external_scheduler_supervision.py
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_process_evidence.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_health_trace.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_fetch_trace.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child_runtime_summary.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/collector_runs_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/live_state_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/vod_rows_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_service_runbook.md
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_verification_notes.txt
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child_stdout.log
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child_stderr.log
+tests:
+  - python agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/verify_external_scheduler_supervision.py
+artifacts:
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/README.md
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child.py
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/verify_external_scheduler_supervision.py
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_process_evidence.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_health_trace.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_fetch_trace.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_child_runtime_summary.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/collector_runs_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/live_state_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/vod_rows_after_external_process.json
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_service_runbook.md
+  - agents/artifacts/TASK-016-external-process-scheduler-supervision-and-graceful-stop/external_scheduler_verification_notes.txt
+notes:
+  - created immediately after TASK-015 closeout to continue operational hardening
+  - needed role now is ops because the active slice has shifted from in-process code behavior to external-process supervision and graceful stop ownership
+  - summary_engineer, publisher_engineer, and reviewer are intentionally idle because no publisher change is needed, implementation evidence for in-process lifecycle already exists, and this slice has not yet reached review
+  - ops produced external-process supervision evidence and a service-style runbook without widening scope beyond scheduler ownership
+  - bounded shutdown was verified locally with a Windows `CTRL_BREAK_EVENT` stop request against a dedicated process group and a child-side shutdown summary showing `thread_alive=false` and `started=false`
+  - coordinator checkpoint confirmed the saved external-process evidence is sufficient for reviewer handoff
+  - needed role now is reviewer because the slice has crossed from ops-owned evidence gathering into formal review
+  - summary_engineer, publisher_engineer, and ops are intentionally idle because no publisher change is needed, no new app-level implementation work is needed, and the current gate is review rather than operations
+  - call summary_engineer only if the scope returns to app_live_vod.py implementation changes beyond ops ownership
+  - call publisher_engineer only if the scope later crosses into publisher contracts or draft-job flow
+  - later deployment hardening may still need a repo-owned launcher or a supervisor-specific graceful-stop contract if production supervision differs from the verified local pattern
+  - reviewer confirmed that the saved evidence is sufficient to prove bounded shutdown, clean external-process exit, and service-style runbook coverage for TASK-016
+  - coordinator closed TASK-016 after reviewer confirmed the slice was ready for acceptance
+  - needed role now is ops for the next slice because the remaining gap is repo-owned launcher ownership and deployment-facing stop contracts
+  - summary_engineer, publisher_engineer, and reviewer returned to normal idle state after closeout

@@ -1,0 +1,15 @@
+{
+  "context_version": "summary_job_context.v1",
+  "saved_at": "2026-04-08T01:04:08+09:00",
+  "downloaded_at": "2026-04-08T01:04:08+09:00",
+  "title": "Sample SOOP Broadcast",
+  "original_title": "Sample SOOP Broadcast Raw Title",
+  "source_url": "https://vod.sooplive.co.kr/player/71021072",
+  "canonical_source_url": "https://vod.sooplive.co.kr/player/71021072",
+  "source_id": "71021072",
+  "source_kind": "vod_player",
+  "extractor": "SOOP",
+  "uploader": "sample_streamer",
+  "duration_seconds": 2700,
+  "entry_count": 1
+}

@@ -1,0 +1,37 @@
+{
+  "status": "registered",
+  "manifest_path": "C:\\python\\data\\t018rt\\task_scheduler_registration.json",
+  "create_result": "SUCCESS: The scheduled task \"SOOP-LiveVOD-Task018\" has successfully been created.",
+  "task": {
+    "TaskName": "SOOP-LiveVOD-Task018",
+    "State": "Ready",
+    "LastTaskResult": "267011",
+    "Author": "DESKTOP-PJC\\PJC",
+    "RunAsUser": "PJC",
+    "ScheduleType": "One Time Only",
+    "TaskToRun": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\python\\live_vod_scheduler_task_action.ps1 -RuntimeDir C:\\python\\data\\t018rt -DbPath C:\\python\\data\\t018.db -Port 49728 -HealthTimeout 15",
+    "LogonMode": "Interactive only",
+    "ScheduledTaskState": "Enabled"
+  },
+  "registration": {
+    "task_name": "SOOP-LiveVOD-Task018",
+    "stop_contract": {
+      "command": "C:\\python\\stop_live_vod_scheduler_task.ps1",
+      "notes": "Use the task stop wrapper so the repo-owned launcher writes stop_requested.json and the host wrapper exits cleanly."
+    },
+    "action": {
+      "execute": "powershell.exe",
+      "command_line": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t018rt\" -DbPath \"C:\\python\\data\\t018.db\" -Port 49728 -HealthTimeout 15",
+      "arguments": "-NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t018rt\" -DbPath \"C:\\python\\data\\t018.db\" -Port 49728 -HealthTimeout 15",
+      "working_directory": "C:\\python"
+    },
+    "task_user": "DESKTOP-PJC\\PJC",
+    "runtime_dir": "C:\\python\\data\\t018rt",
+    "registered_at": "2026-04-08T08:10:55.2821216+09:00",
+    "db_path": "C:\\python\\data\\t018.db",
+    "health_timeout": 15,
+    "scheduler_type": "windows_task_scheduler",
+    "port": 49728,
+    "registration_mode": "schtasks_once_on_demand_current_user"
+  }
+}

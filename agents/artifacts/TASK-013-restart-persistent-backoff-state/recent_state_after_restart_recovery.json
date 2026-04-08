@@ -1,0 +1,62 @@
+{
+  "streamers": {
+    "items": [
+      {
+        "id": 1,
+        "soop_user_id": "alpha_user",
+        "nickname": "Alpha Restart",
+        "channel_url": "https://www.sooplive.co.kr/station/alpha_user",
+        "replay_url": "https://fixture.local/vod-alpha",
+        "category_no": "",
+        "active": 1,
+        "created_at": "2026-04-08T03:09:17+09:00",
+        "updated_at": "2026-04-08T03:09:17+09:00",
+        "live_state": {
+          "streamer_id": 1,
+          "is_live": 1,
+          "broad_no": "771199",
+          "live_title": "Restart Recovery Live",
+          "viewer_count": 12,
+          "started_at": null,
+          "last_checked_at": "2026-04-08T03:09:19+09:00",
+          "last_live_seen_at": "2026-04-08T03:09:19+09:00",
+          "raw_json": "{\"user_id\": \"alpha_user\", \"broad_no\": \"771199\", \"broad_title\": \"Restart Recovery Live\", \"total_view_cnt\": 12}"
+        },
+        "latest_vod": {
+          "id": 1,
+          "streamer_id": 1,
+          "vod_id": "511001",
+          "title": "Restart Recovery VOD",
+          "vod_url": "https://vod.sooplive.co.kr/player/511001",
+          "thumbnail_url": "https://img.local/alpha-restart.jpg",
+          "published_at": "2026-04-08 03:00",
+          "duration_seconds": null,
+          "duration_text": "00:21:00",
+          "collected_at": "2026-04-08T03:09:19+09:00",
+          "last_seen_at": "2026-04-08T03:09:19+09:00",
+          "raw_json": "{\"source_url\": \"https://fixture.local/vod-alpha\", \"vod_id\": \"511001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/511001\", \"title\": \"Restart Recovery VOD\", \"thumbnail_url\": \"https://img.local/alpha-restart.jpg\", \"published_at\": \"2026-04-08 03:00\", \"duration_text\": \"00:21:00\"}"
+        }
+      }
+    ],
+    "count": 1
+  },
+  "vods": {
+    "items": [
+      {
+        "id": 1,
+        "streamer_id": 1,
+        "vod_id": "511001",
+        "title": "Restart Recovery VOD",
+        "vod_url": "https://vod.sooplive.co.kr/player/511001",
+        "thumbnail_url": "https://img.local/alpha-restart.jpg",
+        "published_at": "2026-04-08 03:00",
+        "duration_seconds": null,
+        "duration_text": "00:21:00",
+        "collected_at": "2026-04-08T03:09:19+09:00",
+        "last_seen_at": "2026-04-08T03:09:19+09:00",
+        "raw_json": "{\"source_url\": \"https://fixture.local/vod-alpha\", \"vod_id\": \"511001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/511001\", \"title\": \"Restart Recovery VOD\", \"thumbnail_url\": \"https://img.local/alpha-restart.jpg\", \"published_at\": \"2026-04-08 03:00\", \"duration_text\": \"00:21:00\"}"
+      }
+    ],
+    "count": 1
+  }
+}

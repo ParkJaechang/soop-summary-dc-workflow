@@ -1,0 +1,55 @@
+﻿{
+    "status":  "started",
+    "run_result":  "SUCCESS: Attempted to run the scheduled task \"SOOP-LiveVOD-Task019\".",
+    "task":  {
+                 "TaskName":  "SOOP-LiveVOD-Task019",
+                 "State":  "Ready",
+                 "LastTaskResult":  "0",
+                 "Author":  "DESKTOP-PJC\\PJC",
+                 "RunAsUser":  "PJC",
+                 "ScheduleType":  "One Time Only",
+                 "TaskToRun":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                 "LogonMode":  "Interactive/Background",
+                 "ScheduledTaskState":  "Enabled"
+             },
+    "launcher_status":  {
+                            "status":  "running",
+                            "state":  {
+                                          "pid":  134412,
+                                          "runtime_dir":  "C:\\python\\data\\t019rt",
+                                          "host":  "127.0.0.1",
+                                          "port":  65208,
+                                          "health_url":  "http://127.0.0.1:65208/api/health",
+                                          "db_path":  "C:\\python\\data\\t019.db",
+                                          "started_at":  "2026-04-08T10:15:06+09:00",
+                                          "stop_file":  "C:\\python\\data\\t019rt\\stop_requested.json",
+                                          "host_runtime_summary":  "C:\\python\\data\\t019rt\\host_runtime_summary.json",
+                                          "stdout_log":  "C:\\python\\data\\t019rt\\launcher_stdout.log",
+                                          "stderr_log":  "C:\\python\\data\\t019rt\\launcher_stderr.log"
+                                      },
+                            "process_alive":  true,
+                            "host_runtime_summary":  null,
+                            "health":  {
+                                           "status":  "ok",
+                                           "db_path":  "C:\\python\\data\\t019.db",
+                                           "scheduler_started":  true,
+                                           "scheduler_thread_alive":  true,
+                                           "scheduler_stop_requested":  false,
+                                           "scheduler_thread_name":  "soop-live-vod-scheduler",
+                                           "scheduler_tick_count":  1,
+                                           "scheduler_tick_seconds":  1.0,
+                                           "scheduler_last_tick_started_at":  "2026-04-08T10:15:07+09:00",
+                                           "scheduler_last_tick_finished_at":  "2026-04-08T10:15:07+09:00",
+                                           "scheduler_last_stop_requested_at":  null,
+                                           "scheduler_stopped_at":  null,
+                                           "scheduler_last_loop_error":  null,
+                                           "scheduler_next_live":  1775610910.7590957,
+                                           "scheduler_next_vod":  1775610917.7591016,
+                                           "soop_client_id_configured":  false,
+                                           "live_mode":  "html-fallback",
+                                           "browser_fallback_ready":  true,
+                                           "live_refresh_seconds":  120,
+                                           "vod_refresh_seconds":  900
+                                       }
+                        }
+}

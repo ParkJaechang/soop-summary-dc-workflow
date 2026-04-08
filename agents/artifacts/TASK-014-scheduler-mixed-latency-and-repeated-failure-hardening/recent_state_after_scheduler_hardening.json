@@ -1,0 +1,281 @@
+{
+  "visibility": {
+    "summary": {
+      "recent_run_count": 12,
+      "failed_count": 2,
+      "skipped_count": 1,
+      "completed_count": 9,
+      "active_backoff_count": 0,
+      "last_failed_at": "2026-04-08T03:25:54+09:00",
+      "last_completed_at": "2026-04-08T03:25:58+09:00"
+    },
+    "active_backoffs": [],
+    "recent_runs": [
+      {
+        "id": 12,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:58+09:00",
+        "finished_at": "2026-04-08T03:25:58+09:00",
+        "message": "source=https://fixture.local/vod-alpha, inserted=0, updated=1, total=1",
+        "streamer_name": "Alpha Scheduler",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "completed_source",
+          "retryable": false,
+          "headline": "VOD sync 1 items",
+          "source_url": "https://fixture.local/vod-alpha",
+          "items": 1
+        }
+      },
+      {
+        "id": 11,
+        "collector_type": "vod",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:58+09:00",
+        "finished_at": "2026-04-08T03:25:58+09:00",
+        "message": "streamers=1, completed=1, failed=0, skipped=0",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_vod_sweep",
+          "retryable": false,
+          "headline": "vod sweep 1 ok / 0 failed / 0 skipped",
+          "streamers": 1,
+          "completed": 1,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      {
+        "id": 10,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:57+09:00",
+        "finished_at": "2026-04-08T03:25:57+09:00",
+        "message": "source=https://fixture.local/vod-alpha, inserted=1, updated=0, total=1",
+        "streamer_name": "Alpha Scheduler",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "completed_source",
+          "retryable": false,
+          "headline": "VOD sync 1 items",
+          "source_url": "https://fixture.local/vod-alpha",
+          "items": 1
+        }
+      },
+      {
+        "id": 9,
+        "collector_type": "vod",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:57+09:00",
+        "finished_at": "2026-04-08T03:25:57+09:00",
+        "message": "streamers=1, completed=1, failed=0, skipped=0",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_vod_sweep",
+          "retryable": false,
+          "headline": "vod sweep 1 ok / 0 failed / 0 skipped",
+          "streamers": 1,
+          "completed": 1,
+          "failed": 0,
+          "skipped": 0
+        }
+      },
+      {
+        "id": 8,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:55+09:00",
+        "finished_at": "2026-04-08T03:25:57+09:00",
+        "message": "tracked=1, live=1, pages=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_live",
+          "retryable": false,
+          "headline": "live refresh 1 live",
+          "live_count": 1,
+          "pages": 1
+        }
+      },
+      {
+        "id": 7,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "failed",
+        "started_at": "2026-04-08T03:25:54+09:00",
+        "finished_at": "2026-04-08T03:25:54+09:00",
+        "message": "timeout: scheduler vod timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "Alpha Scheduler",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: scheduler vod timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      },
+      {
+        "id": 6,
+        "collector_type": "vod",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:54+09:00",
+        "finished_at": "2026-04-08T03:25:54+09:00",
+        "message": "streamers=1, completed=0, failed=1, skipped=0",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_vod_sweep",
+          "retryable": false,
+          "headline": "vod sweep 0 ok / 1 failed / 0 skipped",
+          "streamers": 1,
+          "completed": 0,
+          "failed": 1,
+          "skipped": 0
+        }
+      },
+      {
+        "id": 5,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "skipped",
+        "started_at": "2026-04-08T03:25:53+09:00",
+        "finished_at": "2026-04-08T03:25:53+09:00",
+        "message": "backoff_active: reason=timeout, failures=1, retry_in=1s",
+        "streamer_name": "Alpha Scheduler",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "backoff_active",
+          "retryable": true,
+          "headline": "backoff timeout (1s left)",
+          "reason": "timeout",
+          "failures": 1,
+          "retry_in_seconds": 1
+        }
+      },
+      {
+        "id": 4,
+        "collector_type": "vod",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:53+09:00",
+        "finished_at": "2026-04-08T03:25:53+09:00",
+        "message": "streamers=1, completed=0, failed=0, skipped=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_vod_sweep",
+          "retryable": false,
+          "headline": "vod sweep 0 ok / 0 failed / 1 skipped",
+          "streamers": 1,
+          "completed": 0,
+          "failed": 0,
+          "skipped": 1
+        }
+      },
+      {
+        "id": 3,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "failed",
+        "started_at": "2026-04-08T03:25:52+09:00",
+        "finished_at": "2026-04-08T03:25:52+09:00",
+        "message": "timeout: scheduler vod timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "Alpha Scheduler",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: scheduler vod timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      },
+      {
+        "id": 2,
+        "collector_type": "vod",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:52+09:00",
+        "finished_at": "2026-04-08T03:25:52+09:00",
+        "message": "streamers=1, completed=0, failed=1, skipped=0",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_vod_sweep",
+          "retryable": false,
+          "headline": "vod sweep 0 ok / 1 failed / 0 skipped",
+          "streamers": 1,
+          "completed": 0,
+          "failed": 1,
+          "skipped": 0
+        }
+      },
+      {
+        "id": 1,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:25:51+09:00",
+        "finished_at": "2026-04-08T03:25:52+09:00",
+        "message": "tracked=1, live=1, pages=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_live",
+          "retryable": false,
+          "headline": "live refresh 1 live",
+          "live_count": 1,
+          "pages": 1
+        }
+      }
+    ],
+    "recent_state": [
+      {
+        "streamer_id": 1,
+        "soop_user_id": "alpha_user",
+        "streamer_name": "Alpha Scheduler",
+        "active": true,
+        "is_live": true,
+        "live_title": "Scheduler Live",
+        "last_live_checked_at": "2026-04-08T03:25:57+09:00",
+        "latest_vod_title": "Scheduler Recovery VOD",
+        "latest_vod_at": "2026-04-08 03:10"
+      }
+    ]
+  },
+  "live_state_rows": [
+    {
+      "streamer_id": 1,
+      "is_live": 1,
+      "broad_no": "881122",
+      "live_title": "Scheduler Live",
+      "viewer_count": 44,
+      "last_checked_at": "2026-04-08T03:25:57+09:00",
+      "last_live_seen_at": "2026-04-08T03:25:57+09:00"
+    }
+  ],
+  "vod_rows": [
+    {
+      "streamer_id": 1,
+      "vod_id": "611001",
+      "title": "Scheduler Recovery VOD",
+      "vod_url": "https://vod.sooplive.co.kr/player/611001",
+      "published_at": "2026-04-08 03:10",
+      "duration_text": "00:18:00",
+      "collected_at": "2026-04-08T03:25:57+09:00",
+      "last_seen_at": "2026-04-08T03:25:58+09:00"
+    }
+  ]
+}

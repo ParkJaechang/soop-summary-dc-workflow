@@ -1,0 +1,8 @@
+TASK-010 multi-streamer VOD sweep verification
+DB: C:\python\agents\artifacts\TASK-010-multi-streamer-vod-sweep-hardening\task010_multi_streamer.db
+Sweep status: completed
+Sweep message: streamers=3, completed=2, failed=1, skipped=0
+Per-streamer result count: 3
+Persisted VOD row count: 3
+Collector run count: 4
+Expected mixed result: alpha completed, beta completed, gamma failed, delta skipped by active filter.

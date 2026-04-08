@@ -1,0 +1,56 @@
+task_id: TASK-015
+title: Background scheduler thread lifecycle hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - background scheduler lifecycle evidence
+  - durable collector-run and bounded-execution artifacts
+  - handoff notes for later ops or product-hardening slices
+files_touched:
+  - app_live_vod.py
+  - agents/tasks/TASK-015-background-scheduler-thread-lifecycle-hardening/status.yaml
+  - agents/tasks/TASK-015-background-scheduler-thread-lifecycle-hardening/handoff.md
+  - agents/tasks/TASK-015-background-scheduler-thread-lifecycle-hardening/revision_log.md
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/README.md
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/verify_background_scheduler_lifecycle.py
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_health_trace.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_fetch_trace.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/collector_runs_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/live_state_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/vod_rows_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_lifecycle_evidence.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_verification_notes.txt
+artifacts:
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/README.md
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/verify_background_scheduler_lifecycle.py
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_health_trace.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_fetch_trace.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/collector_runs_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/live_state_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/vod_rows_after_background_thread.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_lifecycle_evidence.json
+  - agents/artifacts/TASK-015-background-scheduler-thread-lifecycle-hardening/background_scheduler_verification_notes.txt
+tests:
+  - ran `python -m py_compile C:\\python\\app_live_vod.py C:\\python\\agents\\artifacts\\TASK-015-background-scheduler-thread-lifecycle-hardening\\verify_background_scheduler_lifecycle.py`
+  - ran `python C:\\python\\agents\\artifacts\\TASK-015-background-scheduler-thread-lifecycle-hardening\\verify_background_scheduler_lifecycle.py`
+  - exercised the real FastAPI startup and shutdown path through `TestClient` twice against a temp SQLite DB
+  - verified startup creates a live scheduler thread, sustained ticking accumulates collector runs, and shutdown leaves zero additional post-stop fetch calls
+  - verified a second startup in the same Python process recreates the background thread and continues writing durable live, VOD, and `collector_runs` evidence
+notes:
+  - created immediately after TASK-014 closeout to continue live/VOD operational hardening
+  - this slice stayed inside `app_live_vod.py` background scheduler behavior and did not reopen summary payload, publisher, approval, queueing, dispatch, or broader product polish scope
+  - `app_live_vod.py` now starts the scheduler through a dedicated helper, stops it through an event-plus-join helper, and exposes thread lifecycle state through `/api/health`
+  - saved evidence proves startup, sustained ticking, clean stop, and same-process restart for the real background scheduler thread path
+  - bounded execution evidence comes from the fetch trace: both shutdown waits added zero extra upstream calls after stop was requested
+  - needed role now is reviewer because lifecycle evidence exists and the slice has reached the review handoff boundary
+  - summary_engineer, publisher_engineer, and ops are intentionally idle at this step because implementation is complete, publisher scope is untouched, and no deployment or runbook work is needed yet
+  - call reviewer now because coordinator checked the saved lifecycle evidence and routed the baton onward
+  - call ops only if the work expands into packaging, deployment, environment-specific automation, or runbook ownership
+  - call publisher_engineer only if the scope later crosses from live/VOD collection into publisher contracts or draft-job flow
+  - remaining later-slice dependencies are external-process supervision, deployment-facing signal handling, and longer-run leak or drift traces beyond the current in-process verifier
+  - reviewer confirmed that the saved evidence is sufficient to prove startup, sustained ticking, clean stop, restart safety, bounded fetch pressure, and durable collector-run evidence
+  - coordinator closed TASK-015 after reviewer marked the slice ready for acceptance; the next needed role is ops for external-process supervision while summary_engineer, publisher_engineer, and reviewer return to normal idle state

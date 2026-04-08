@@ -1,0 +1,14 @@
+{
+  "official_api_calls": [
+    "https://openapi.sooplive.co.kr/broad/list?client_id=task009-test-client&order_type=broad_start&page_no=1&callback=callback",
+    "https://openapi.sooplive.co.kr/broad/list?client_id=task009-test-client&order_type=broad_start&page_no=2&callback=callback"
+  ],
+  "vod_html_fetch_calls": [
+    "https://ch.sooplive.co.kr/guardrail_streamer/vods/review"
+  ],
+  "lock_scenarios": [
+    "live",
+    "single_streamer_vod",
+    "global_vod"
+  ]
+}

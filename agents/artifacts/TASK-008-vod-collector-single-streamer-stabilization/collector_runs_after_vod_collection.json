@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "collector_type": "vod",
+    "streamer_id": 1,
+    "status": "completed",
+    "started_at": "2026-04-08T02:01:15+09:00",
+    "finished_at": "2026-04-08T02:01:15+09:00",
+    "message": "source=https://ch.sooplive.co.kr/fixture_streamer/vods/review, inserted=2, updated=0, total=2"
+  }
+]

@@ -1,0 +1,300 @@
+{
+  "live_fail": {
+    "status_code": 500,
+    "json": {
+      "detail": "timeout: restart persistence live timeout | backoff_seconds=2 failures=1"
+    }
+  },
+  "vod_fail": {
+    "status_code": 500,
+    "json": {
+      "detail": "timeout: restart persistence vod timeout | backoff_seconds=2 failures=1"
+    }
+  },
+  "persisted_before_restart": [
+    {
+      "scope_key": "live:global",
+      "collector_type": "live",
+      "streamer_id": null,
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 2,
+      "retry_after": "2026-04-08T03:09:19+09:00"
+    },
+    {
+      "scope_key": "vod:streamer:1",
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "reason": "timeout",
+      "failures": 1,
+      "backoff_seconds": 2,
+      "retry_after": "2026-04-08T03:09:19+09:00"
+    }
+  ],
+  "pre_restart_live_calls": 1,
+  "pre_restart_vod_calls": 4,
+  "visibility_after_restart": {
+    "summary": {
+      "recent_run_count": 2,
+      "failed_count": 2,
+      "skipped_count": 0,
+      "completed_count": 0,
+      "active_backoff_count": 2,
+      "last_failed_at": "2026-04-08T03:09:17+09:00",
+      "last_completed_at": null
+    },
+    "active_backoffs": [
+      {
+        "scope_key": "live:global",
+        "collector_type": "live",
+        "streamer_id": null,
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "reason": "timeout",
+        "failures": 1,
+        "backoff_seconds": 2,
+        "retry_in_seconds": 1,
+        "retry_after": "2026-04-08T03:09:19+09:00"
+      },
+      {
+        "scope_key": "vod:streamer:1",
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "streamer_name": "Alpha Restart",
+        "soop_user_id": "alpha_user",
+        "reason": "timeout",
+        "failures": 1,
+        "backoff_seconds": 2,
+        "retry_in_seconds": 1,
+        "retry_after": "2026-04-08T03:09:19+09:00"
+      }
+    ],
+    "recent_runs": [
+      {
+        "id": 2,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "failed",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "timeout: restart persistence vod timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "Alpha Restart",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: restart persistence vod timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      },
+      {
+        "id": 1,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "failed",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "timeout: restart persistence live timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: restart persistence live timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      }
+    ],
+    "recent_state": [
+      {
+        "streamer_id": 1,
+        "soop_user_id": "alpha_user",
+        "streamer_name": "Alpha Restart",
+        "active": true,
+        "is_live": false,
+        "live_title": null,
+        "last_live_checked_at": "2026-04-08T03:09:17+09:00",
+        "latest_vod_title": null,
+        "latest_vod_at": null
+      }
+    ]
+  },
+  "live_skip_after_restart": {
+    "status_code": 200,
+    "json": {
+      "status": "skipped",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+    }
+  },
+  "vod_skip_after_restart": {
+    "status_code": 200,
+    "json": {
+      "status": "skipped",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+    }
+  },
+  "post_restart_live_calls": 1,
+  "post_restart_vod_calls": 4,
+  "live_success_after_wait": {
+    "status_code": 200,
+    "json": {
+      "status": "completed",
+      "mode": "api",
+      "message": "tracked=1, live=1, pages=1",
+      "live_count": 1
+    }
+  },
+  "vod_success_after_wait": {
+    "status_code": 200,
+    "json": {
+      "status": "completed",
+      "message": "source=https://fixture.local/vod-alpha, inserted=1, updated=0, total=1",
+      "source_url": "https://fixture.local/vod-alpha",
+      "items": 1
+    }
+  },
+  "visibility_after_recovery": {
+    "summary": {
+      "recent_run_count": 6,
+      "failed_count": 2,
+      "skipped_count": 2,
+      "completed_count": 2,
+      "active_backoff_count": 0,
+      "last_failed_at": "2026-04-08T03:09:17+09:00",
+      "last_completed_at": "2026-04-08T03:09:19+09:00"
+    },
+    "active_backoffs": [],
+    "recent_runs": [
+      {
+        "id": 6,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "completed",
+        "started_at": "2026-04-08T03:09:19+09:00",
+        "finished_at": "2026-04-08T03:09:19+09:00",
+        "message": "source=https://fixture.local/vod-alpha, inserted=1, updated=0, total=1",
+        "streamer_name": "Alpha Restart",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "completed_source",
+          "retryable": false,
+          "headline": "VOD sync 1 items",
+          "source_url": "https://fixture.local/vod-alpha",
+          "items": 1
+        }
+      },
+      {
+        "id": 5,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "completed",
+        "started_at": "2026-04-08T03:09:19+09:00",
+        "finished_at": "2026-04-08T03:09:19+09:00",
+        "message": "tracked=1, live=1, pages=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "completed_live",
+          "retryable": false,
+          "headline": "live refresh 1 live",
+          "live_count": 1,
+          "pages": 1
+        }
+      },
+      {
+        "id": 4,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "skipped",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "backoff_active: reason=timeout, failures=1, retry_in=1s",
+        "streamer_name": "Alpha Restart",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "backoff_active",
+          "retryable": true,
+          "headline": "backoff timeout (1s left)",
+          "reason": "timeout",
+          "failures": 1,
+          "retry_in_seconds": 1
+        }
+      },
+      {
+        "id": 3,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "skipped",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "backoff_active: reason=timeout, failures=1, retry_in=1s",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "backoff_active",
+          "retryable": true,
+          "headline": "backoff timeout (1s left)",
+          "reason": "timeout",
+          "failures": 1,
+          "retry_in_seconds": 1
+        }
+      },
+      {
+        "id": 2,
+        "collector_type": "vod",
+        "streamer_id": 1,
+        "status": "failed",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "timeout: restart persistence vod timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "Alpha Restart",
+        "soop_user_id": "alpha_user",
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: restart persistence vod timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      },
+      {
+        "id": 1,
+        "collector_type": "live",
+        "streamer_id": null,
+        "status": "failed",
+        "started_at": "2026-04-08T03:09:17+09:00",
+        "finished_at": "2026-04-08T03:09:17+09:00",
+        "message": "timeout: restart persistence live timeout | backoff_seconds=2 failures=1",
+        "streamer_name": "global",
+        "soop_user_id": null,
+        "message_info": {
+          "kind": "timeout",
+          "retryable": true,
+          "headline": "timeout: restart persistence live timeout",
+          "backoff_seconds": 2,
+          "failures": 1,
+          "reason": "timeout"
+        }
+      }
+    ],
+    "recent_state": [
+      {
+        "streamer_id": 1,
+        "soop_user_id": "alpha_user",
+        "streamer_name": "Alpha Restart",
+        "active": true,
+        "is_live": true,
+        "live_title": "Restart Recovery Live",
+        "last_live_checked_at": "2026-04-08T03:09:19+09:00",
+        "latest_vod_title": "Restart Recovery VOD",
+        "latest_vod_at": "2026-04-08 03:00"
+      }
+    ]
+  },
+  "persisted_after_recovery": []
+}

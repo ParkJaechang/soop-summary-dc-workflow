@@ -1,0 +1,80 @@
+{
+  "process": {
+    "pid": 116200,
+    "port": 53698,
+    "started_at_epoch": 1775587856.626827,
+    "stop_requested_at_epoch": 1775587858.689766,
+    "finished_at_epoch": 1775587859.0375178,
+    "stop_duration_seconds": 0.348,
+    "returncode": 0,
+    "exited_cleanly": true,
+    "forced_terminate": false
+  },
+  "health_before_stop": {
+    "status": "ok",
+    "db_path": "C:\\python\\agents\\artifacts\\TASK-016-external-process-scheduler-supervision-and-graceful-stop\\task016_external_scheduler_test.db",
+    "scheduler_started": true,
+    "scheduler_thread_alive": true,
+    "scheduler_stop_requested": false,
+    "scheduler_thread_name": "soop-live-vod-scheduler",
+    "scheduler_tick_count": 14,
+    "scheduler_tick_seconds": 0.05,
+    "scheduler_last_tick_started_at": "2026-04-08T03:50:58+09:00",
+    "scheduler_last_tick_finished_at": "2026-04-08T03:50:58+09:00",
+    "scheduler_last_stop_requested_at": null,
+    "scheduler_stopped_at": null,
+    "scheduler_last_loop_error": null,
+    "scheduler_next_live": 1775587858.7470064,
+    "scheduler_next_vod": 1775587858.9590218,
+    "soop_client_id_configured": false,
+    "live_mode": "html-fallback",
+    "browser_fallback_ready": false,
+    "live_refresh_seconds": 0.35,
+    "vod_refresh_seconds": 0.45
+  },
+  "jobs_before_stop_count": 5,
+  "child_runtime_summary": {
+    "started_at": "2026-04-08T03:50:57+09:00",
+    "finished_at": "2026-04-08T03:50:58+09:00",
+    "port": 53698,
+    "db_path": "C:\\python\\agents\\artifacts\\TASK-016-external-process-scheduler-supervision-and-graceful-stop\\task016_external_scheduler_test.db",
+    "exit_kind": "clean_return",
+    "runtime_error": null,
+    "fetch_counts": {
+      "station": 2,
+      "replay": 1
+    },
+    "shutdown_signals": [
+      {
+        "signal": 21,
+        "received_at": "2026-04-08T03:50:58+09:00"
+      }
+    ],
+    "scheduler_state_after_exit": {
+      "started": false,
+      "stop": true,
+      "thread_alive": false,
+      "thread_name": null,
+      "next_live": 1775587859.1562212,
+      "next_vod": 1775587858.9590218,
+      "started_at": "2026-04-08T03:50:57+09:00",
+      "last_tick_started_at": "2026-04-08T03:50:58+09:00",
+      "last_tick_finished_at": "2026-04-08T03:50:58+09:00",
+      "last_stop_requested_at": "2026-04-08T03:50:58+09:00",
+      "stopped_at": "2026-04-08T03:50:58+09:00",
+      "last_loop_error": null,
+      "tick_count": 17,
+      "tick_seconds": 0.05
+    }
+  },
+  "bounded_shutdown": {
+    "scheduler_thread_alive_after_exit": false,
+    "scheduler_started_after_exit": false,
+    "scheduler_stop_requested_after_exit": true,
+    "scheduler_stopped_at_after_exit": "2026-04-08T03:50:58+09:00",
+    "fetch_calls_recorded": 3,
+    "collector_runs_recorded": 6,
+    "live_state_rows_recorded": 1,
+    "vod_rows_recorded": 2
+  }
+}

@@ -1,0 +1,53 @@
+task_id: TASK-001
+title: Bootstrap file-based multi-chat collaboration workspace
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-07
+updated_at: 2026-04-07
+blocked_by: []
+deliverables:
+  - agents folder scaffold
+  - role prompt files
+  - shared context files
+  - task template files
+  - helper script
+files_touched:
+  - agents/README.md
+  - agents/roles/coordinator.md
+  - agents/roles/summary_engineer.md
+  - agents/roles/publisher_engineer.md
+  - agents/roles/reviewer.md
+  - agents/roles/ops.md
+  - agents/shared/project_brief.md
+  - agents/shared/architecture.md
+  - agents/shared/coding_rules.md
+  - agents/shared/glossary.md
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/ownership.md
+  - agents/tasks/_template/spec.md
+  - agents/tasks/_template/status.yaml
+  - agents/tasks/_template/handoff.md
+  - agents/tasks/_template/review.md
+  - agents/tasks/_template/revision_log.md
+  - agents/tasks/_template/done.md
+  - agents/tasks/TASK-001-collaboration-bootstrap/spec.md
+  - agents/tasks/TASK-001-collaboration-bootstrap/status.yaml
+  - agents/tasks/TASK-001-collaboration-bootstrap/handoff.md
+  - agents/tasks/TASK-001-collaboration-bootstrap/review.md
+  - agents/tasks/TASK-001-collaboration-bootstrap/revision_log.md
+  - agents/tasks/TASK-001-collaboration-bootstrap/done.md
+  - agents/artifacts/TASK-001-collaboration-bootstrap/README.md
+  - agents/scripts/new_task.ps1
+tests:
+  - new_task.ps1 PowerShell parse OK
+  - new_task.ps1 created TASK-999 smoke-test folder successfully
+artifacts:
+  - agents/artifacts/TASK-001-collaboration-bootstrap/README.md
+notes:
+  - initial workspace created by Codex
+  - basic script syntax validation completed on 2026-04-07
+  - end-to-end scaffold smoke test completed and temporary folder removed
+  - coordinator confirmed review handoff and aligned task routing on 2026-04-07
+  - task closed after bootstrap review and promotion of TASK-002

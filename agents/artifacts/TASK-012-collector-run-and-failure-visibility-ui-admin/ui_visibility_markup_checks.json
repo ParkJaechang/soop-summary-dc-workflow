@@ -1,0 +1,7 @@
+{
+  "contains_visibility_refresh_button": true,
+  "contains_backoff_list_id": true,
+  "contains_visibility_state_id": true,
+  "contains_admin_endpoint": true,
+  "contains_jobs_refresh_button": true
+}

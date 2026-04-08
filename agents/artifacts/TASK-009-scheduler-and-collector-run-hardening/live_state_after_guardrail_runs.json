@@ -1,0 +1,24 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": "5550001",
+    "live_title": "Scheduler Live Title",
+    "viewer_count": 77,
+    "started_at": "2026-04-08 02:20:00",
+    "last_checked_at": "2026-04-08T02:16:20+09:00",
+    "last_live_seen_at": "2026-04-08T02:16:20+09:00",
+    "raw_json": "{\"user_id\": \"scheduler_live\", \"broad_no\": \"5550001\", \"broad_title\": \"Scheduler Live Title\", \"broad_start\": \"2026-04-08 02:20:00\", \"total_view_cnt\": \"77\"}"
+  },
+  {
+    "streamer_id": 2,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T02:16:20+09:00",
+    "last_live_seen_at": null,
+    "raw_json": null
+  }
+]

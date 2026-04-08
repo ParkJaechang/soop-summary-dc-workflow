@@ -1,0 +1,46 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Local runtime and build outputs
+build/
+dist/
+data/
+models/
+*.spec.bak
+*.log
+*.tmp
+*.temp
+
+# Local data and machine-specific artifacts
+data/runtime/
+data/tmp/
+data/cache/
+*.db-shm
+*.db-wal
+
+# Local auth/session material
+cookies_*.pkl
+*.secrets.json
+*.env
+.env
+
+# Export convenience artifacts
+exports/soop-summary-dc-workflow-snapshot.json
+
+# Large local binaries that should be provisioned separately
+ffmpeg.exe
+ffprobe.exe
+aria2c.exe
+
+# Local source dumps and ad hoc debug captures
+LIVE_*.txt
+OFFLINE_*.txt
+VOD_PAGE_*.txt
+debug_source.html
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

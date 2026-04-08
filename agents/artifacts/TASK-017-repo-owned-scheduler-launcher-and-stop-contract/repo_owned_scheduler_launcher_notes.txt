@@ -1,0 +1,19 @@
+TASK-017 repo-owned scheduler launcher verification
+
+app port: 62391
+fixture port: 62392
+collector runs recorded: 8
+live state rows recorded: 1
+vod rows recorded: 2
+
+Launcher stop evidence:
+- stop status: stopped
+- stop duration seconds: 1.068
+- scheduler thread alive after exit: False
+- scheduler started after exit: False
+- stop request seen by host: True
+
+Contract notes:
+- repo-owned stop contract uses a stop-request file inside the runtime directory
+- the host wrapper converts that file request into a graceful uvicorn shutdown path
+- no ad hoc manual Task Manager kill is required for the verified local launcher path

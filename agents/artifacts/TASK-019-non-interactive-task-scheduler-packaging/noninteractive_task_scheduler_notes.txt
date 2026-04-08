@@ -1,0 +1,11 @@
+TASK-019 non-interactive Task Scheduler verification
+
+Result: blocked at S4U registration
+task name: SOOP-LiveVOD-Task019
+observed user: DESKTOP-PJC\PJC
+registration return code: 1
+registration stderr: 
+
+Next requirement:
+- run the same installer in a deployment context that has permission to register non-interactive or service-account Task Scheduler entries
+- then reuse the existing run/status/stop task wrappers to complete start, health, and graceful-stop proof

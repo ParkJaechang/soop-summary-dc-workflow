@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-04-08T09:04:35+09:00",
+  "resume_attempt": "privileged_context_check_only",
+  "result": "blocked",
+  "reason": "current session is still medium-integrity and not in builtin administrators",
+  "user": "DESKTOP-PJC\\PJC",
+  "integrity": "Medium Mandatory Level",
+  "is_in_builtin_administrators": false,
+  "required_dependency": "privileged or credentialed deployment context that can register non-interactive S4U Task Scheduler entries"
+}

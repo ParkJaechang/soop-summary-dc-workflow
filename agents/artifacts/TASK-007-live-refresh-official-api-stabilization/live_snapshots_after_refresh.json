@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 2,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "checked_at": "2026-04-08T01:48:30+09:00"
+  },
+  {
+    "id": 2,
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": "12345678",
+    "live_title": "Live Title From Official API",
+    "viewer_count": 321,
+    "checked_at": "2026-04-08T01:48:30+09:00"
+  },
+  {
+    "id": 3,
+    "streamer_id": 2,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "checked_at": "2026-04-08T01:48:30+09:00"
+  },
+  {
+    "id": 4,
+    "streamer_id": 1,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "checked_at": "2026-04-08T01:48:30+09:00"
+  }
+]

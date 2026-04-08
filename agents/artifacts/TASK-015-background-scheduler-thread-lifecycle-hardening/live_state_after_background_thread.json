@@ -1,0 +1,13 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": null,
+    "live_title": "Lifecycle Stream 방송국",
+    "viewer_count": 0,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T03:38:04+09:00",
+    "last_live_seen_at": "2026-04-08T03:38:04+09:00",
+    "raw_json": "{\"user_id\": \"lifecycle_streamer\", \"broad_no\": null, \"broad_title\": \"Lifecycle Stream 방송국\", \"broad_start\": null, \"total_view_cnt\": null, \"source_url\": \"https://fixture.test/station/lifecycle_streamer\", \"detected_by\": \"html-fallback\"}"
+  }
+]

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "soop_user_id": "alpha_user",
+    "nickname": "Alpha ???",
+    "replay_url": "https://fixture.local/alpha",
+    "active": 1
+  },
+  {
+    "id": 2,
+    "soop_user_id": "beta_user",
+    "nickname": "Beta ???",
+    "replay_url": "https://fixture.local/beta",
+    "active": 1
+  },
+  {
+    "id": 3,
+    "soop_user_id": "gamma_user",
+    "nickname": "Gamma ???",
+    "replay_url": "https://fixture.local/gamma",
+    "active": 1
+  },
+  {
+    "id": 4,
+    "soop_user_id": "delta_user",
+    "nickname": "Inactive Delta",
+    "replay_url": "https://fixture.local/delta",
+    "active": 0
+  }
+]

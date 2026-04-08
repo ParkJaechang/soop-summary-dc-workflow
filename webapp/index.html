@@ -1,0 +1,1098 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meeting STT WebApp</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-soft: #121821;
+      --panel: rgba(21, 27, 36, 0.92);
+      --panel-2: #18202b;
+      --line: #273244;
+      --text: #eff4fb;
+      --muted: #97a5ba;
+      --green: #199457;
+      --green-2: #27b66e;
+      --blue: #2d69b3;
+      --red: #ab3f45;
+      --yellow: #f0ca64;
+      --shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(39, 182, 110, 0.18), transparent 22%),
+        radial-gradient(circle at top right, rgba(45, 105, 179, 0.2), transparent 28%),
+        linear-gradient(180deg, #0b1015 0%, #10161f 100%);
+      min-height: 100vh;
+    }
+
+    .shell {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 28px 22px 42px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    .hero-card,
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-card {
+      padding: 26px 24px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 42px;
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .hero-side {
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      padding: 18px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .panel-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .panel-sub {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+    }
+
+    .input-action { display:grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+
+    .mini { width: auto; min-width: 96px; padding: 13px 16px; }
+
+    .field label {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    input,
+    select,
+    textarea,
+    button {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel-2);
+      padding: 13px 14px;
+      outline: none;
+      transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #3d89e8;
+      box-shadow: 0 0 0 4px rgba(61, 137, 232, 0.12);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 10px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .toggle {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+    }
+
+    .toggle input {
+      width: auto;
+      margin: 0;
+      transform: scale(1.1);
+    }
+
+    .toggle span {
+      font-size: 14px;
+    }
+
+    .action-row {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 10px;
+    }
+
+    .action-row.single {
+      grid-template-columns: 1fr;
+    }
+
+    button {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-green {
+      background: linear-gradient(180deg, var(--green-2), var(--green));
+    }
+
+    .btn-blue {
+      background: linear-gradient(180deg, #3b78c1, var(--blue));
+    }
+
+    .btn-ghost {
+      background: transparent;
+    }
+
+    .hint-box {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.02);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--line);
+      opacity: 0.85;
+      margin: 6px 0;
+    }
+
+    .transcript-box {
+      min-height: 320px;
+      white-space: pre-wrap;
+      line-height: 1.6;
+      overflow: auto;
+      word-break: break-word;
+    }
+
+    .transcript-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      word-break: break-all;
+    }
+
+    .job-toolbar {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+        .recent-block { display: grid; gap: 8px; }
+
+    .recent-row { display:flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip { width: auto; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); color: var(--muted); font-size: 12px; cursor: pointer; }
+
+    .job-actions { display:flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+
+    .job-actions button { width: auto; padding: 8px 12px; font-size: 12px; }
+
+        .recent-block { display: grid; gap: 8px; }
+
+    .recent-row { display:flex; flex-wrap: wrap; gap: 8px; }
+
+    .chip { width: auto; padding: 8px 12px; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid var(--line); color: var(--muted); font-size: 12px; cursor: pointer; }
+
+    .job-actions { display:flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+
+    .job-actions button { width: auto; padding: 8px 12px; font-size: 12px; }
+
+    .job-toolbar button {
+      width: auto;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+
+    .jobs {
+      display: grid;
+      gap: 12px;
+      max-height: 860px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 18px;
+      padding: 26px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.02);
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .job {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 15px;
+    }
+
+    .job-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .job-name {
+      font-weight: 700;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .job-id {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.03);
+      white-space: nowrap;
+    }
+
+    .pill.running { color: var(--yellow); }
+    .pill.completed { color: #8ce0ad; }
+    .pill.failed { color: #ff9ea3; }
+    .pill.queued { color: var(--muted); }
+
+    .progress-wrap {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: #0f151d;
+      border: 1px solid var(--line);
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #1ea95b, #2f6db6);
+      min-width: 2px;
+    }
+
+    .progress-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .detail {
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+
+    .folder {
+      font-size: 12px;
+      color: var(--muted);
+      word-break: break-all;
+      margin-bottom: 10px;
+    }
+
+    .logs {
+      white-space: pre-wrap;
+      background: #0f141c;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+      font-size: 12px;
+      font-family: Consolas, "Cascadia Code", monospace;
+      max-height: 250px;
+      overflow: auto;
+      line-height: 1.5;
+    }
+
+    .footer-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1180px) {
+      .hero,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .grid-2,
+      .grid-3,
+      .action-row,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Local Pipeline • Meeting Recorder</div>
+        <h1>회의 녹음 업로드형 로컬 STT</h1>
+        <p class="lead">
+          음성 파일을 파일 브라우저로 올리면 내 PC에서 Whisper로 전체 전사문을 만들고,
+          결과 텍스트를 바로 복사해서 GPT에 붙여 정리할 수 있게 구성했습니다.
+        </p>
+      </div>
+      <div class="hero-side hero-card">
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="stat-label">STT</div>
+            <div class="stat-value">Local</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Summary</div>
+            <div class="stat-value">Manual</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Mode</div>
+            <div class="stat-value">Web UI</div>
+          </div>
+        </div>
+        <div class="hint-box">
+          가장 빠른 흐름은 `회의 녹음 업로드`에서 파일을 올려 전체 전사문을 만든 뒤, 오른쪽 `Transcript Viewer`에서 바로 복사하는 방식입니다.
+        </div>
+      </div>
+    </section>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Pipeline Control</h2>
+            <div class="panel-sub">회의 음성 업로드 전사와 기존 SOOP 파이프라인을 함께 사용</div>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="field">
+            <label for="meetingAudioFile">회의 녹음 파일 업로드</label>
+            <input id="meetingAudioFile" type="file" accept="audio/*,.mp3,.wav,.m4a,.mp4,.aac,.flac,.ogg,.webm" />
+          </div>
+
+          <div class="action-row single">
+            <button class="btn-green" id="uploadMeetingAudio">Upload Audio and Transcribe</button>
+          </div>
+
+          <div class="hint-box">
+            업로드 파일은 작업 폴더의 `audio` 아래 저장되고, 완료되면 `transcripts/full_transcript.txt`가 생성됩니다.
+            요약 API는 호출하지 않고 원문 텍스트만 만듭니다.
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label for="apiKey">Gemini API Key</label>
+              <input id="apiKey" type="password" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label for="saveDir">Save Folder</label>
+              <div class="input-action">
+                <input id="saveDir" value="C:/Users/PJC/Downloads/test" />
+                <button type="button" class="btn-ghost mini" id="browseSaveDir">Browse</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="vodUrl">VOD URL</label>
+            <input id="vodUrl" placeholder="https://vod.sooplive.co.kr/player/..." />
+          </div>
+
+          <div class="field">
+            <label for="existingFolder">Existing Job Folder or transcripts Folder</label>
+            <div class="input-action">
+              <input id="existingFolder" placeholder="예: C:/Users/.../작업폴더 또는 .../transcripts" />
+              <button type="button" class="btn-ghost mini" id="browseExistingFolder">Browse</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="referenceNotes">Gemini Reference Notes</label>
+            <textarea id="referenceNotes" placeholder="스트리머 이름, 별명, 자주 나오는 인물, 게임명, 헷갈리기 쉬운 고유명사를 적어두면 Gemini 후처리에만 참고합니다."></textarea>
+          </div>
+
+          <div class="grid-3">
+            <div class="field">
+              <label for="language">Language</label>
+              <select id="language">
+                <option selected>ko</option>
+                <option>auto</option>
+                <option>en</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="chunkMinutes">Chunk Minutes</label>
+              <select id="chunkMinutes">
+                <option>10</option>
+                <option selected>15</option>
+                <option>20</option>
+                <option>30</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="whisperModel">Whisper Model</label>
+              <select id="whisperModel">
+                <option>base</option>
+                <option>small</option>
+                <option selected>medium</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="compute">Compute</label>
+              <select id="compute">
+                <option selected>int8</option>
+                <option>int8_float16</option>
+                <option>float16</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="batchSize">Batch Size</label>
+              <select id="batchSize">
+                <option>1</option>
+                <option>2</option>
+                <option>4</option>
+                <option selected>8</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="sttProfile">STT Profile</label>
+              <select id="sttProfile">
+                <option selected>balanced</option>
+                <option>accurate</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="toggle" for="autoSummary">
+            <input id="autoSummary" type="checkbox" />
+            <span>Auto run Gemini after Local STT</span>
+          </label>
+
+          <div class="action-row">
+            <button class="btn-green" id="startStt">Run Local STT</button>
+            <button class="btn-blue" id="startSummary">Run Gemini Summary</button>
+          </div>
+
+          <div class="hint-box">
+            `Run Gemini Summary`는 기존 transcript를 그대로 재사용합니다. 이미 `part_000_transcript.txt` 같은 파일이 있다면 로컬 STT를 다시 하지 않아도 됩니다.
+          </div>
+
+          <div class="recent-block">
+            <div class="panel-sub">Quick Save Folder</div>
+            <div class="recent-row" id="quickSaveDirs"></div>
+            <div class="panel-sub">Quick Existing Folder</div>
+            <div class="recent-row" id="quickExistingFolders"></div>
+            <div class="panel-sub">Recent Save Folders</div>
+            <div class="recent-row" id="recentSaveDirs"></div>
+            <div class="panel-sub">Recent Existing Job Folders</div>
+            <div class="recent-row" id="recentExistingFolders"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Job Monitor</h2>
+            <div class="panel-sub">진행률, 상태, 최근 로그를 실시간으로 확인</div>
+          </div>
+          <div class="job-toolbar">
+            <button class="btn-ghost" id="refreshJobs">Refresh</button>
+          </div>
+        </div>
+
+        <div class="jobs" id="jobs">
+          <div class="empty">
+            아직 작업이 없습니다.<br />
+            왼쪽에서 로컬 STT를 시작하거나 기존 폴더 기준 Gemini 요약을 실행해보세요.
+          </div>
+        </div>
+        <div class="footer-note">
+          Gemini 무료 할당량에 걸리면 429 에러가 날 수 있습니다. 그 경우엔 시간을 두고 다시 실행하거나 자동 요약을 끄고 필요한 경우만 수동으로 돌리는 편이 안정적입니다.
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="panel-head">
+          <div>
+            <h2 class="panel-title">Transcript Viewer</h2>
+            <div class="panel-sub">완료된 회의 전사문을 열고 복사</div>
+          </div>
+        </div>
+        <div class="transcript-meta" id="transcriptMeta">아직 불러온 전사문이 없습니다.</div>
+        <textarea id="transcriptText" class="transcript-box" placeholder="전사 완료 후 여기에서 전체 텍스트를 확인할 수 있습니다." readonly></textarea>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const STORAGE_KEY = "soop-webapp-v1-form";
+    const RECENT_KEY = "soop-webapp-v1-recent";
+
+    const els = {
+      apiKey: document.getElementById("apiKey"),
+      saveDir: document.getElementById("saveDir"),
+      vodUrl: document.getElementById("vodUrl"),
+      existingFolder: document.getElementById("existingFolder"),
+      referenceNotes: document.getElementById("referenceNotes"),
+      language: document.getElementById("language"),
+      chunkMinutes: document.getElementById("chunkMinutes"),
+      whisperModel: document.getElementById("whisperModel"),
+      compute: document.getElementById("compute"),
+      batchSize: document.getElementById("batchSize"),
+      sttProfile: document.getElementById("sttProfile"),
+      autoSummary: document.getElementById("autoSummary"),
+      jobs: document.getElementById("jobs"),
+      meetingAudioFile: document.getElementById("meetingAudioFile"),
+      uploadMeetingAudio: document.getElementById("uploadMeetingAudio"),
+      startStt: document.getElementById("startStt"),
+      startSummary: document.getElementById("startSummary"),
+      refreshJobs: document.getElementById("refreshJobs"),
+      clearFinishedJobs: document.getElementById("clearFinishedJobs"),
+      systemStatus: document.getElementById("systemStatus"),
+      quickSaveDirs: document.getElementById("quickSaveDirs"),
+      quickExistingFolders: document.getElementById("quickExistingFolders"),
+      recentSaveDirs: document.getElementById("recentSaveDirs"),
+      recentExistingFolders: document.getElementById("recentExistingFolders"),
+      browseSaveDir: document.getElementById("browseSaveDir"),
+      browseExistingFolder: document.getElementById("browseExistingFolder"),
+      transcriptMeta: document.getElementById("transcriptMeta"),
+      transcriptText: document.getElementById("transcriptText"),
+    };
+
+    function saveFormState() {
+      const state = {
+        apiKey: els.apiKey.value,
+        saveDir: els.saveDir.value,
+        vodUrl: els.vodUrl.value,
+        existingFolder: els.existingFolder.value,
+        referenceNotes: els.referenceNotes.value,
+        language: els.language.value,
+        chunkMinutes: els.chunkMinutes.value,
+        whisperModel: els.whisperModel.value,
+        compute: els.compute.value,
+        batchSize: els.batchSize.value,
+        sttProfile: els.sttProfile.value,
+        autoSummary: els.autoSummary.checked,
+      };
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function loadFormState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const state = JSON.parse(raw);
+        Object.entries(state).forEach(([key, value]) => {
+          if (!(key in els) || value === undefined || value === null) return;
+          if (key === "autoSummary") {
+            els[key].checked = Boolean(value);
+          } else {
+            els[key].value = value;
+          }
+        });
+      } catch (err) {
+        console.warn("Failed to restore form state", err);
+      }
+    }
+
+
+    async function pickFolder(targetKey) {
+      try {
+        const current = els[targetKey].value || "";
+        const params = current ? `?initial=${encodeURIComponent(current)}` : "";
+        const res = await fetch(`/api/dialog/select-folder${params}`);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
+        if (data.folder) {
+          els[targetKey].value = data.folder;
+          saveFormState();
+        }
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+    function loadRecentState() {
+      try {
+        return JSON.parse(localStorage.getItem(RECENT_KEY) || "{\"saveDirs\":[],\"existingFolders\":[]}");
+      } catch (err) {
+        return { saveDirs: [], existingFolders: [] };
+      }
+    }
+
+    function pushRecent(kind, value) {
+      const clean = String(value || "").trim();
+      if (!clean) return;
+      const state = loadRecentState();
+      const next = [clean, ...(state[kind] || []).filter(item => item !== clean)].slice(0, 6);
+      state[kind] = next;
+      localStorage.setItem(RECENT_KEY, JSON.stringify(state));
+      renderRecentState();
+    }
+
+    function renderRecentState() {
+      const state = loadRecentState();
+      const render = (items, target, key) => {
+        target.innerHTML = items.length
+          ? items.map(item => `<button type="button" class="chip" data-key="${key}" data-value="${escapeHtml(item)}">${escapeHtml(item)}</button>`).join("")
+          : `<span class="panel-sub">아직 기록이 없습니다.</span>`;
+      };
+      render(state.saveDirs || [], els.recentSaveDirs, "saveDir");
+      render(state.existingFolders || [], els.recentExistingFolders, "existingFolder");
+      document.querySelectorAll(".chip[data-key]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.key;
+          els[key].value = button.dataset.value || "";
+          saveFormState();
+        });
+      });
+    }
+
+    async function openFolder(folder) {
+      if (!folder) return;
+      try {
+        await post("/api/open-folder", { folder });
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function cancelJob(jobId) {
+      try {
+        await post(`/api/jobs/${jobId}/cancel`, {});
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+
+    function renderQuickPaths(paths) {
+      const saveItems = [
+        { label: "Downloads/test", value: paths.downloads_test || "" },
+        { label: "Downloads", value: paths.downloads || "" },
+        { label: "Desktop", value: paths.desktop || "" },
+      ].filter(item => item.value);
+      const existingItems = [
+        { label: "Current Save", value: els.saveDir.value || "" },
+        { label: "Documents", value: paths.documents || "" },
+        { label: "Home", value: paths.home || "" },
+      ].filter(item => item.value);
+
+      const render = (items, target, key) => {
+        target.innerHTML = items.map(item => `<button type="button" class="chip" data-quick-key="${key}" data-quick-value="${escapeHtml(item.value)}">${escapeHtml(item.label)}</button>`).join("");
+      };
+
+      render(saveItems, els.quickSaveDirs, "saveDir");
+      render(existingItems, els.quickExistingFolders, "existingFolder");
+
+      document.querySelectorAll("[data-quick-key]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const key = button.dataset.quickKey;
+          els[key].value = button.dataset.quickValue || "";
+          saveFormState();
+        });
+      });
+    }
+    async function loadSystemStatus() {
+      try {
+        const res = await fetch("/api/system/status");
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
+        const models = (data.cached_models || []).length ? data.cached_models.join(", ") : "none";
+        renderQuickPaths(data.default_paths || {});
+        els.systemStatus.innerHTML = `ffmpeg: ${data.ffmpeg_exists ? "ok" : "missing"}<br>ffprobe: ${data.ffprobe_exists ? "ok" : "missing"}<br>model cache: ${escapeHtml(data.model_dir)}<br>cached models: ${escapeHtml(models)}<br>첫 STT 실행 시 필요한 Whisper 모델은 이 폴더에 자동 다운로드됩니다.`;
+      } catch (err) {
+        els.systemStatus.textContent = `시스템 상태 확인 실패: ${err.message}`;
+      }
+    }
+
+    async function deleteJob(jobId) {
+      try {
+        await fetch(`/api/jobs/${jobId}`, { method: "DELETE" });
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function loadTranscript(jobId) {
+      try {
+        const res = await fetch(`/api/jobs/${jobId}/transcript`);
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
+        els.transcriptMeta.textContent = `${data.title || "Transcript"} | ${data.path || ""}`;
+        els.transcriptText.value = data.text || "";
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function uploadMeetingAudio() {
+      const file = els.meetingAudioFile.files && els.meetingAudioFile.files[0];
+      if (!file) {
+        alert("회의 녹음 파일을 선택해주세요.");
+        return;
+      }
+
+      saveFormState();
+      const form = new FormData();
+      form.append("audio_file", file);
+      form.append("save_dir", els.saveDir.value || "");
+      form.append("language", els.language.value);
+      form.append("chunk_minutes", String(Number(els.chunkMinutes.value)));
+      form.append("whisper_model", els.whisperModel.value);
+      form.append("compute", els.compute.value);
+      form.append("batch_size", String(Number(els.batchSize.value)));
+      form.append("stt_profile", els.sttProfile.value);
+
+      try {
+        const res = await fetch("/api/jobs/upload-meeting-audio", {
+          method: "POST",
+          body: form,
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
+        pushRecent("saveDirs", els.saveDir.value);
+        els.transcriptMeta.textContent = "업로드 완료. 전사 작업이 시작됐습니다.";
+        els.transcriptText.value = "";
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function clearFinishedJobs() {
+      try {
+        await fetch("/api/jobs", { method: "DELETE" });
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+    async function post(url, body) {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.detail || JSON.stringify(data));
+      return data;
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function statusClass(status) {
+      if (status === "completed") return "completed";
+      if (status === "failed") return "failed";
+      if (status === "running") return "running";
+      return "queued";
+    }
+
+    function renderJobs(items) {
+      if (!items.length) {
+        els.jobs.innerHTML = `
+          <div class="empty">
+            아직 작업이 없습니다.<br />
+            왼쪽에서 로컬 STT 또는 Gemini 타임라인 생성을 시작해보세요.
+          </div>
+        `;
+        return;
+      }
+
+      els.jobs.innerHTML = items.map(job => {
+        const progress = Math.max(2, Math.round((job.progress || 0) * 100));
+        const recentLogs = (job.logs || []).slice(-24).join("\n");
+        return `
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <div class="job-name">${escapeHtml(job.title || (job.mode === "stt" ? "Local STT Job" : job.mode === "meeting_stt" ? "Meeting STT Job" : "Gemini Summary Job"))}</div>
+                <div class="job-id">${escapeHtml(job.id)}</div>
+              </div>
+              <div class="pill ${statusClass(job.status)}">${escapeHtml(job.status || "queued")}</div>
+            </div>
+
+            <div class="progress-wrap">
+              <div class="bar"><span style="width:${progress}%"></span></div>
+              <div class="progress-caption">
+                <span>${progress}%</span>
+                <span>${escapeHtml(job.mode || "")}</span>
+              </div>
+            </div>
+
+            <div class="detail">${escapeHtml(job.detail || "")}</div>
+            <div class="job-actions">
+              ${job.folder ? `<button type="button" data-open-folder="${escapeHtml(job.folder)}">Open Folder</button>` : ""}
+              ${(job.status === "completed" && (job.mode === "meeting_stt" || job.mode === "stt")) ? `<button type="button" data-open-transcript="${escapeHtml(job.id)}">View Transcript</button>` : ""}
+              ${(job.status === "running" || job.status === "queued") ? `<button type="button" data-cancel-job="${escapeHtml(job.id)}">Cancel</button>` : ""}
+              <button type="button" data-delete-job="${escapeHtml(job.id)}">Delete</button>
+            </div>
+            <div class="folder">${escapeHtml(job.folder || "")}</div>
+            <div class="logs">${escapeHtml(recentLogs)}</div>
+          </article>
+        `;
+      }).join("");
+
+      document.querySelectorAll("[data-open-folder]").forEach((button) => {
+        button.addEventListener("click", () => openFolder(button.dataset.openFolder || ""));
+      });
+      document.querySelectorAll("[data-cancel-job]").forEach((button) => {
+        button.addEventListener("click", () => cancelJob(button.dataset.cancelJob || ""));
+      });
+      document.querySelectorAll("[data-open-transcript]").forEach((button) => {
+        button.addEventListener("click", () => loadTranscript(button.dataset.openTranscript || ""));
+      });
+      document.querySelectorAll("[data-delete-job]").forEach((button) => {
+        button.addEventListener("click", () => deleteJob(button.dataset.deleteJob || ""));
+      });
+    }
+
+    async function pollJobs() {
+      try {
+        const res = await fetch("/api/jobs");
+        const data = await res.json();
+        renderJobs(data);
+      } catch (err) {
+        els.jobs.innerHTML = `<div class="empty">${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    async function startStt() {
+      if (!els.vodUrl.value.trim()) {
+        alert("VOD URL을 입력해주세요.");
+        return;
+      }
+
+      saveFormState();
+      try {
+        await post("/api/jobs/start-stt", {
+          api_key: els.apiKey.value,
+          save_dir: els.saveDir.value,
+          url: els.vodUrl.value,
+          language: els.language.value,
+          chunk_minutes: Number(els.chunkMinutes.value),
+          whisper_model: els.whisperModel.value,
+          compute: els.compute.value,
+          batch_size: Number(els.batchSize.value),
+          stt_profile: els.sttProfile.value,
+          reference_notes: els.referenceNotes.value,
+          auto_summary: els.autoSummary.checked,
+        });
+        pushRecent("saveDirs", els.saveDir.value);
+        if (els.existingFolder.value.trim()) pushRecent("existingFolders", els.existingFolder.value);
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    async function startSummary() {
+      const folder = els.existingFolder.value.trim() || els.saveDir.value.trim();
+      if (!folder) {
+        alert("기존 작업 폴더 또는 transcripts 폴더 경로를 입력해주세요.");
+        return;
+      }
+      if (!els.apiKey.value.trim()) {
+        alert("Gemini API Key를 입력해주세요.");
+        return;
+      }
+
+      saveFormState();
+      try {
+        await post("/api/jobs/start-summary", {
+          api_key: els.apiKey.value,
+          folder,
+          reference_notes: els.referenceNotes.value,
+        });
+        pushRecent("saveDirs", els.saveDir.value);
+        pushRecent("existingFolders", folder);
+        pollJobs();
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+
+    [
+      "apiKey",
+      "saveDir",
+      "vodUrl",
+      "existingFolder",
+      "referenceNotes",
+      "language",
+      "chunkMinutes",
+      "whisperModel",
+      "compute",
+      "batchSize",
+      "sttProfile",
+      "autoSummary",
+    ].forEach((key) => {
+      const eventName = key === "referenceNotes" ? "input" : "change";
+      els[key].addEventListener(eventName, saveFormState);
+      if (key === "apiKey" || key === "saveDir" || key === "vodUrl" || key === "existingFolder") {
+        els[key].addEventListener("input", saveFormState);
+      }
+    });
+
+    els.startStt.addEventListener("click", startStt);
+    els.uploadMeetingAudio.addEventListener("click", uploadMeetingAudio);
+    els.startSummary.addEventListener("click", startSummary);
+    els.refreshJobs.addEventListener("click", pollJobs);
+    els.clearFinishedJobs.addEventListener("click", clearFinishedJobs);
+    els.browseSaveDir.addEventListener("click", () => pickFolder("saveDir"));
+    els.browseExistingFolder.addEventListener("click", () => pickFolder("existingFolder"));
+
+    loadFormState();
+    renderRecentState();
+    pollJobs();
+    setInterval(pollJobs, 2000);
+  </script>
+</body>
+</html>

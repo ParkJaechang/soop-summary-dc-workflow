@@ -1,0 +1,35 @@
+[
+  {
+    "streamer_id": 1,
+    "vod_id": "100001",
+    "title": "Alpha First VOD",
+    "vod_url": "https://vod.sooplive.co.kr/player/100001",
+    "thumbnail_url": "https://img.local/alpha-1.jpg",
+    "published_at": "2026-04-07 12:00",
+    "duration_text": "01:23:45",
+    "collected_at": "2026-04-08T02:31:15+09:00",
+    "last_seen_at": "2026-04-08T02:31:15+09:00"
+  },
+  {
+    "streamer_id": 1,
+    "vod_id": "100002",
+    "title": "Alpha Second VOD",
+    "vod_url": "https://vod.sooplive.co.kr/player/100002",
+    "thumbnail_url": "https://img.local/alpha-2.jpg",
+    "published_at": "2026-04-06 18:30",
+    "duration_text": "00:55:10",
+    "collected_at": "2026-04-08T02:31:15+09:00",
+    "last_seen_at": "2026-04-08T02:31:15+09:00"
+  },
+  {
+    "streamer_id": 2,
+    "vod_id": "200001",
+    "title": "Beta Catch Clip",
+    "vod_url": "https://vod.sooplive.co.kr/player/200001/catch",
+    "thumbnail_url": "https://img.local/beta-1.jpg",
+    "published_at": "2026-04-05 09:15",
+    "duration_text": "00:10:00",
+    "collected_at": "2026-04-08T02:31:15+09:00",
+    "last_seen_at": "2026-04-08T02:31:15+09:00"
+  }
+]

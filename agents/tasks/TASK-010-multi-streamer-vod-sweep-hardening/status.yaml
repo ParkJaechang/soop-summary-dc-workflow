@@ -1,0 +1,55 @@
+task_id: TASK-010
+title: Multi-streamer VOD sweep hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - verified or corrected multi-streamer VOD sweep behavior in app_live_vod.py
+  - evidence artifacts for mixed-result VOD persistence and collector-run visibility
+  - handoff notes for later timeout/backoff and UI/admin slices
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/spec.md
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/status.yaml
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/handoff.md
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/review.md
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/revision_log.md
+  - agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening/done.md
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/README.md
+  - app_live_vod.py
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_fixture_map.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_vod_refresh_result.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/per_streamer_vod_api_results.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/vod_rows_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/collector_runs_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/streamers_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_verification_notes.txt
+tests:
+  - exercised `POST /api/vods/refresh` and `GET /api/streamers/{id}/vods` with FastAPI TestClient against a temp SQLite DB
+  - verified mixed-result multi-streamer sweep behavior with two completed active streamers, one failed active streamer, and one inactive control streamer excluded by the active filter
+  - verified `collector_runs` contains both the sweep-level completed row and per-streamer completed or failed rows for the same sweep
+artifacts:
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/README.md
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_fixture_map.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_vod_refresh_result.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/per_streamer_vod_api_results.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/vod_rows_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/collector_runs_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/streamers_after_multi_sweep.json
+  - agents/artifacts/TASK-010-multi-streamer-vod-sweep-hardening/multi_streamer_verification_notes.txt
+notes:
+  - created immediately after TASK-009 closeout to continue the live/VOD stabilization track without a supervisor wait step
+  - summary_engineer is the first execution owner because app_live_vod.py VOD sweep boundaries live on the summary side in the ownership map
+  - this slice should stay inside multi-streamer VOD sweep behavior and should not reopen summary payload, publisher, approval, queueing, dispatch, or broader product polish work
+  - `collect_vods_for_all()` now writes a sweep-level `collector_runs` row so a multi-streamer run has durable top-level visibility in addition to the existing per-streamer rows
+  - saved evidence proves mixed-result persistence: alpha completed with 2 rows, beta completed with 1 row, gamma failed with no VOD rows, and inactive delta was excluded from the active-only sweep
+  - later timeout or backoff work still depends on explicit retry budgets, timeout classification, and stress evidence under slower or partial upstream responses
+  - later UI or admin work still depends on surfacing sweep summaries and failed-streamer visibility from `collector_runs` and `vods` in the dashboard
+  - reviewer confirmed that the saved evidence is sufficient to prove mixed-result persistence, per-streamer outcomes, and sweep-level plus per-streamer collector_runs visibility for this slice
+  - coordinator reviewed the saved multi-streamer sweep evidence and routed the task to reviewer for an evidence-based VOD sweep check
+  - coordinator accepted the multi-streamer VOD sweep slice and closed TASK-010 after reviewer cleared the evidence

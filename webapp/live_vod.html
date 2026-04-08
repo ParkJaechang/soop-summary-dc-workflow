@@ -1,0 +1,296 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SOOP Live + VOD Dashboard</title>
+  <style>
+    :root {
+      --bg: #0a121a;
+      --panel: #111c27;
+      --panel-2: #162534;
+      --line: #264055;
+      --text: #edf4fb;
+      --muted: #93a7ba;
+      --green: #24b46d;
+      --blue: #327edb;
+      --red: #d55b62;
+      --yellow: #f5d36f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+      background: linear-gradient(180deg, #081018 0%, #0d1620 100%);
+      min-height: 100vh;
+    }
+    .shell { max-width: 1400px; margin: 0 auto; padding: 24px 18px 40px; }
+    .hero, .layout { display: grid; gap: 16px; }
+    .hero { grid-template-columns: 1.1fr .9fr; margin-bottom: 16px; }
+    .layout { grid-template-columns: 400px 1fr; }
+    .card {
+      background: rgba(17, 28, 39, .94);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 22px 50px rgba(0,0,0,.28);
+    }
+    .eyebrow { color: var(--yellow); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { margin: 8px 0 10px; font-size: 40px; line-height: 1.05; }
+    .lead, .muted, .sub { color: var(--muted); line-height: 1.55; }
+    .sub { font-size: 13px; }
+    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat { border: 1px solid var(--line); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.03); }
+    .stat .k { font-size: 12px; color: var(--muted); }
+    .stat .v { font-size: 24px; font-weight: 700; margin-top: 4px; }
+    .banner { display: none; margin-bottom: 16px; padding: 14px; border-radius: 14px; border: 1px solid rgba(245, 211, 111, .3); background: rgba(245, 211, 111, .08); color: #ffe7a0; }
+    .head { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-bottom: 14px; }
+    .title { margin: 0; font-size: 18px; }
+    .stack { display: grid; gap: 10px; }
+    .row2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    label { color: var(--muted); font-size: 13px; display: block; margin-bottom: 6px; }
+    input, button {
+      width: 100%;
+      font: inherit;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--panel-2);
+      padding: 11px 12px;
+    }
+    button { cursor: pointer; font-weight: 700; }
+    .btn-green { background: linear-gradient(180deg, #34c67f, var(--green)); }
+    .btn-blue { background: linear-gradient(180deg, #4f96ea, var(--blue)); }
+    .btn-red { background: linear-gradient(180deg, #e46e75, var(--red)); }
+    .btn-ghost { background: transparent; }
+    .list { display: grid; gap: 10px; max-height: 62vh; overflow: auto; }
+    .item { border: 1px solid var(--line); border-radius: 16px; padding: 12px; background: rgba(255,255,255,.03); cursor: pointer; }
+    .item.active { border-color: rgba(36,180,109,.55); background: rgba(36,180,109,.08); }
+    .item-top { display: flex; justify-content: space-between; gap: 8px; }
+    .name { font-weight: 700; }
+    .sid { color: var(--muted); font-size: 12px; margin-top: 2px; }
+    .badge { padding: 5px 9px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+    .badge.live { background: rgba(213, 91, 98, .18); color: #ffbdc0; }
+    .badge.off { background: rgba(255,255,255,.08); color: var(--muted); }
+    .detail { display: grid; gap: 14px; }
+    .box { border: 1px solid var(--line); border-radius: 16px; padding: 14px; background: rgba(255,255,255,.03); }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .actions a, .actions button { width: auto; text-decoration: none; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid rgba(255,255,255,.08); vertical-align: top; }
+    th { color: var(--muted); font-weight: 600; }
+    .thumb { width: 92px; height: 52px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(255,255,255,.08); }
+    .empty { color: var(--muted); padding: 22px 0; text-align: center; }
+    .jobs { display: grid; gap: 10px; max-height: 220px; overflow: auto; }
+    .job { border: 1px solid var(--line); border-radius: 14px; padding: 10px; background: rgba(255,255,255,.025); font-size: 13px; line-height: 1.5; }
+    .mini-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .mini-stat { border: 1px solid var(--line); border-radius: 14px; padding: 10px; background: rgba(255,255,255,.025); }
+    .mini-stat .k { font-size: 12px; color: var(--muted); }
+    .mini-stat .v { margin-top: 4px; font-size: 18px; font-weight: 700; }
+    .status-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 700; border: 1px solid rgba(255,255,255,.08); }
+    .pill.failed { background: rgba(213, 91, 98, .16); color: #ffc3c7; }
+    .pill.completed { background: rgba(36, 180, 109, .16); color: #b8f4d3; }
+    .pill.skipped { background: rgba(245, 211, 111, .14); color: #ffe7a0; }
+    .pill.info { background: rgba(255,255,255,.08); color: var(--muted); }
+    .backoffs, .state-list { display: grid; gap: 10px; }
+    .run-meta { color: var(--muted); font-size: 12px; }
+    @media (max-width: 1100px) { .hero, .layout { grid-template-columns: 1fr; } .list { max-height: none; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div id="configBanner" class="banner"></div>
+    <section class="hero">
+      <article class="card">
+        <div class="eyebrow">SOOP Monitor</div>
+        <h1>라이브 상태와 다시보기 링크를 한 번에</h1>
+        <p class="lead">등록한 스트리머의 현재 라이브 상태를 조회하고, SOOP 채널 페이지에서 다시보기 링크를 자동 수집해 저장하는 MVP 대시보드입니다.</p>
+      </article>
+      <aside class="card">
+        <div class="stats">
+          <div class="stat"><div class="k">Tracked</div><div id="statTracked" class="v">0</div></div>
+          <div class="stat"><div class="k">Live Now</div><div id="statLive" class="v">0</div></div>
+          <div class="stat"><div class="k">Latest VOD</div><div id="statVod" class="v">0</div></div>
+          <div class="stat"><div class="k">Collector Runs</div><div id="statJobs" class="v">0</div></div>
+        </div>
+        <div id="healthBox" class="box muted" style="margin-top:12px;">상태 확인 중...</div>
+      </aside>
+    </section>
+    <section class="layout">
+      <aside class="card">
+        <div class="head">
+          <div><h2 class="title">스트리머</h2><div class="sub">등록과 선택, 수동 수집</div></div>
+          <button id="refreshAllBtn" class="btn-blue">전체 갱신</button>
+        </div>
+        <div class="stack" style="margin-bottom:16px;">
+          <div><label for="soopId">SOOP 아이디</label><input id="soopId" placeholder="예: nanamoon777" /></div>
+          <div class="row2">
+            <div><label for="nickname">닉네임</label><input id="nickname" placeholder="선택" /></div>
+            <div><label for="categoryNo">카테고리 번호</label><input id="categoryNo" placeholder="선택" /></div>
+          </div>
+          <div><label for="channelUrl">채널 URL</label><input id="channelUrl" placeholder="비워두면 기본 station URL" /></div>
+          <div><label for="replayUrl">다시보기 URL</label><input id="replayUrl" placeholder="선택: VOD 오버라이드 URL" /></div>
+          <button id="addBtn" class="btn-green">스트리머 추가</button>
+        </div>
+        <div id="streamerList" class="list"></div>
+      </aside>
+      <main class="card">
+        <div class="head">
+          <div><h2 class="title">상세 보기</h2><div class="sub">라이브 상태와 저장된 VOD 목록</div></div>
+          <div class="actions">
+            <button id="liveRefreshBtn" class="btn-blue">라이브 갱신</button>
+            <button id="vodRefreshBtn" class="btn-green">VOD 수집</button>
+            <button id="deleteBtn" class="btn-red">비활성화</button>
+          </div>
+        </div>
+        <div id="detailRoot" class="detail"><div class="empty">왼쪽에서 스트리머를 선택해 주세요.</div></div>
+        <div class="box">
+          <div class="head"><div><h3 class="title" style="font-size:16px;">최근 수집 작업</h3></div><button id="jobsRefreshBtn" class="btn-ghost">작업 갱신</button></div>
+          <div id="jobList" class="jobs"></div>
+        </div>
+        <div class="box">
+          <div class="head"><div><h3 class="title" style="font-size:16px;">운영 가시성</h3><div class="sub">최근 실패, backoff, 최신 라이브/VOD 상태</div></div><button id="visibilityRefreshBtn" class="btn-ghost">가시성 갱신</button></div>
+          <div id="visibilitySummary" class="mini-stats" style="margin-bottom:12px;"></div>
+          <div class="row2" style="align-items:start;">
+            <div>
+              <div class="sub" style="margin-bottom:8px;">현재 backoff</div>
+              <div id="backoffList" class="backoffs"></div>
+            </div>
+            <div>
+              <div class="sub" style="margin-bottom:8px;">최근 상태</div>
+              <div id="visibilityStateList" class="state-list"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </div>
+  <script>
+    const state = { streamers: [], jobs: [], selectedId: null, config: null, health: null, vods: [], visibility: null };
+    const el = {
+      configBanner: document.getElementById('configBanner'), healthBox: document.getElementById('healthBox'), streamerList: document.getElementById('streamerList'), detailRoot: document.getElementById('detailRoot'), jobList: document.getElementById('jobList'), visibilitySummary: document.getElementById('visibilitySummary'), backoffList: document.getElementById('backoffList'), visibilityStateList: document.getElementById('visibilityStateList'), statTracked: document.getElementById('statTracked'), statLive: document.getElementById('statLive'), statVod: document.getElementById('statVod'), statJobs: document.getElementById('statJobs'), soopId: document.getElementById('soopId'), nickname: document.getElementById('nickname'), categoryNo: document.getElementById('categoryNo'), channelUrl: document.getElementById('channelUrl'), replayUrl: document.getElementById('replayUrl'), addBtn: document.getElementById('addBtn'), refreshAllBtn: document.getElementById('refreshAllBtn'), liveRefreshBtn: document.getElementById('liveRefreshBtn'), vodRefreshBtn: document.getElementById('vodRefreshBtn'), deleteBtn: document.getElementById('deleteBtn'), jobsRefreshBtn: document.getElementById('jobsRefreshBtn'), visibilityRefreshBtn: document.getElementById('visibilityRefreshBtn')
+    };
+    async function api(url, options = {}) {
+      const response = await fetch(url, { headers: { 'Content-Type': 'application/json' }, ...options });
+      const text = await response.text();
+      const data = text ? JSON.parse(text) : {};
+      if (!response.ok) throw new Error(data.detail || data.message || `Request failed: ${response.status}`);
+      return data;
+    }
+    const formatDate = (value) => value || '-';
+    const escapeHtml = (value) => (value || '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
+    const selectedStreamer = () => state.streamers.find((item) => item.id === state.selectedId) || null;
+    function renderStats() {
+      el.statTracked.textContent = state.streamers.length;
+      el.statLive.textContent = state.streamers.filter((item) => item.live_state && item.live_state.is_live).length;
+      el.statVod.textContent = state.streamers.filter((item) => item.latest_vod).length;
+      el.statJobs.textContent = state.jobs.length;
+      const health = state.health || {};
+      el.healthBox.innerHTML = `<div>DB: ${escapeHtml(health.db_path || '-')}</div><div>Scheduler: ${health.scheduler_started ? 'running' : 'stopped'}</div><div>Live mode: ${escapeHtml(health.live_mode || '-')}</div><div>Live interval: ${health.live_refresh_seconds || '-'} sec</div><div>VOD interval: ${health.vod_refresh_seconds || '-'} sec</div><div>Browser fallback: ${health.browser_fallback_ready ? 'ready' : 'off'}</div>`;
+      if (state.config && !state.config.soop_client_id_configured) {
+        el.configBanner.style.display = 'block';
+        el.configBanner.innerHTML = '현재 라이브 확인은 <strong>HTML 폴백 모드</strong>로 동작합니다. 가능하면 watcher 방식의 브라우저 폴백도 함께 사용하고, 없으면 station 페이지의 라이브 배지/문구를 기준으로 판단합니다.';
+      } else {
+        el.configBanner.style.display = 'none';
+        el.configBanner.textContent = '';
+      }
+    }
+    function renderStreamerList() {
+      if (!state.streamers.length) { el.streamerList.innerHTML = '<div class="empty">아직 등록된 스트리머가 없습니다.</div>'; return; }
+      el.streamerList.innerHTML = state.streamers.map((item) => {
+        const live = item.live_state && item.live_state.is_live;
+        const latestVod = item.latest_vod;
+        return `<article class="item ${item.id === state.selectedId ? 'active' : ''}" data-id="${item.id}"><div class="item-top"><div><div class="name">${escapeHtml(item.nickname || item.soop_user_id)}</div><div class="sid">${escapeHtml(item.soop_user_id)}</div></div><div class="badge ${live ? 'live' : 'off'}">${live ? 'LIVE' : 'OFFLINE'}</div></div><div class="muted">${escapeHtml((item.live_state && item.live_state.live_title) || '현재 방송 없음')}</div><div class="muted" style="margin-top:6px;">최신 VOD: ${escapeHtml((latestVod && latestVod.title) || '-')}</div></article>`;
+      }).join('');
+      [...el.streamerList.querySelectorAll('.item')].forEach((node) => {
+        node.addEventListener('click', () => { state.selectedId = Number(node.dataset.id); renderStreamerList(); loadSelectedVods(); });
+      });
+    }
+    function renderDetail() {
+      const streamer = selectedStreamer();
+      if (!streamer) { el.detailRoot.innerHTML = '<div class="empty">왼쪽에서 스트리머를 선택해 주세요.</div>'; return; }
+      const live = streamer.live_state || {};
+      const channelUrl = streamer.channel_url || `https://www.sooplive.co.kr/station/${streamer.soop_user_id}`;
+      const replayUrl = streamer.replay_url || channelUrl;
+      const vodRows = state.vods.length ? `<table><thead><tr><th>썸네일</th><th>제목</th><th>발견 시각</th><th>길이</th><th>링크</th></tr></thead><tbody>${state.vods.map((vod) => `<tr><td>${vod.thumbnail_url ? `<img class="thumb" src="${escapeHtml(vod.thumbnail_url)}" alt="thumb" />` : '-'}</td><td>${escapeHtml(vod.title || '-')}</td><td>${escapeHtml(formatDate(vod.published_at || vod.collected_at))}</td><td>${escapeHtml(vod.duration_text || '-')}</td><td><a href="${escapeHtml(vod.vod_url)}" target="_blank" rel="noopener noreferrer">열기</a></td></tr>`).join('')}</tbody></table>` : '<div class="empty">수집된 VOD가 없습니다.</div>';
+      el.detailRoot.innerHTML = `<section class="box"><div class="head"><div><h3 class="title" style="font-size:16px;">${escapeHtml(streamer.nickname || streamer.soop_user_id)}</h3><div class="sub">SOOP ID: ${escapeHtml(streamer.soop_user_id)}</div></div><div class="badge ${live.is_live ? 'live' : 'off'}">${live.is_live ? 'LIVE NOW' : 'OFFLINE'}</div></div><div class="muted">현재 제목: ${escapeHtml(live.live_title || '-')}</div><div class="muted">방송 번호: ${escapeHtml(live.broad_no || '-')}</div><div class="muted">시청자 수: ${escapeHtml(String(live.viewer_count || '-'))}</div><div class="muted">마지막 체크: ${escapeHtml(formatDate(live.last_checked_at))}</div><div class="actions" style="margin-top:12px;"><a class="btn-ghost" href="${escapeHtml(channelUrl)}" target="_blank" rel="noopener noreferrer">채널 열기</a><a class="btn-ghost" href="${escapeHtml(replayUrl)}" target="_blank" rel="noopener noreferrer">VOD 페이지 열기</a></div></section><section class="box"><div class="head"><div><h3 class="title" style="font-size:16px;">최근 VOD</h3><div class="sub">저장된 최대 100건</div></div></div>${vodRows}</section>`;
+    }
+    function renderJobs() {
+      if (!state.jobs.length) { el.jobList.innerHTML = '<div class="empty">작업 기록이 없습니다.</div>'; return; }
+      el.jobList.innerHTML = state.jobs.map((job) => {
+        const info = job.message_info || {};
+        const kind = job.status === 'failed' ? 'failed' : job.status === 'skipped' ? 'skipped' : job.status === 'completed' ? 'completed' : 'info';
+        return `<div class="job"><div class="status-row"><strong>${escapeHtml(job.collector_type)}</strong><span class="pill ${kind}">${escapeHtml(job.status)}</span><span class="pill info">${escapeHtml(job.streamer_name || String(job.streamer_id ?? 'global'))}</span></div><div>${escapeHtml(info.headline || job.message || '-')}</div><div class="run-meta">started: ${escapeHtml(job.started_at || '-')} / finished: ${escapeHtml(job.finished_at || '-')}</div><div class="run-meta">message: ${escapeHtml(job.message || '-')}</div></div>`;
+      }).join('');
+    }
+    function renderVisibility() {
+      const visibility = state.visibility;
+      if (!visibility) {
+        el.visibilitySummary.innerHTML = '';
+        el.backoffList.innerHTML = '<div class="empty">가시성 상태를 불러오는 중입니다.</div>';
+        el.visibilityStateList.innerHTML = '';
+        return;
+      }
+      const summary = visibility.summary || {};
+      el.visibilitySummary.innerHTML = [
+        ['Recent Runs', summary.recent_run_count ?? 0],
+        ['Failed', summary.failed_count ?? 0],
+        ['Skipped', summary.skipped_count ?? 0],
+        ['Backoff Active', summary.active_backoff_count ?? 0],
+      ].map(([k, v]) => `<div class="mini-stat"><div class="k">${escapeHtml(String(k))}</div><div class="v">${escapeHtml(String(v))}</div></div>`).join('');
+      if (!visibility.active_backoffs || !visibility.active_backoffs.length) {
+        el.backoffList.innerHTML = '<div class="empty">현재 active backoff가 없습니다.</div>';
+      } else {
+        el.backoffList.innerHTML = visibility.active_backoffs.map((item) => `<div class="job"><div class="status-row"><span class="pill skipped">backoff</span><strong>${escapeHtml(item.collector_type)}</strong><span class="pill info">${escapeHtml(item.streamer_name || 'global')}</span></div><div>${escapeHtml(item.reason || '-')} / retry in ${escapeHtml(String(item.retry_in_seconds ?? '-'))}s</div><div class="run-meta">failures: ${escapeHtml(String(item.failures ?? '-'))} / until: ${escapeHtml(item.retry_after || '-')}</div></div>`).join('');
+      }
+      const stateItems = (visibility.recent_state || []).slice(0, 8);
+      if (!stateItems.length) {
+        el.visibilityStateList.innerHTML = '<div class="empty">표시할 최근 상태가 없습니다.</div>';
+      } else {
+        el.visibilityStateList.innerHTML = stateItems.map((item) => `<div class="job"><div class="status-row"><strong>${escapeHtml(item.streamer_name)}</strong><span class="pill ${item.is_live ? 'completed' : 'info'}">${item.is_live ? 'LIVE' : 'OFFLINE'}</span>${item.active ? '' : '<span class="pill info">inactive</span>'}</div><div class="run-meta">live checked: ${escapeHtml(item.last_live_checked_at || '-')}</div><div class="run-meta">latest vod: ${escapeHtml(item.latest_vod_title || '-')}</div><div class="run-meta">latest vod at: ${escapeHtml(item.latest_vod_at || '-')}</div></div>`).join('');
+      }
+    }
+    async function loadConfig() { state.config = await api('/api/config'); state.health = await api('/api/health'); renderStats(); }
+    async function loadStreamers() { const data = await api('/api/streamers'); state.streamers = data.items; if (!state.selectedId && state.streamers.length) state.selectedId = state.streamers[0].id; renderStreamerList(); renderStats(); renderDetail(); }
+    async function loadJobs() { const data = await api('/api/jobs'); state.jobs = data.items; renderJobs(); renderStats(); }
+    async function loadVisibility() { state.visibility = await api('/api/admin/collector-visibility'); renderVisibility(); }
+    async function loadSelectedVods() { const streamer = selectedStreamer(); if (!streamer) { state.vods = []; renderDetail(); return; } const data = await api(`/api/streamers/${streamer.id}/vods`); state.vods = data.items; renderDetail(); }
+    async function reloadAll() { await loadConfig(); await loadStreamers(); await loadSelectedVods(); await loadJobs(); await loadVisibility(); }
+    async function handleAdd() {
+      const payload = { soop_user_id: el.soopId.value.trim(), nickname: el.nickname.value.trim(), category_no: el.categoryNo.value.trim(), channel_url: el.channelUrl.value.trim(), replay_url: el.replayUrl.value.trim(), active: true };
+      if (!payload.soop_user_id) { alert('SOOP 아이디를 입력해 주세요.'); return; }
+      el.addBtn.disabled = true;
+      try { await api('/api/streamers', { method: 'POST', body: JSON.stringify(payload) }); el.soopId.value = ''; el.nickname.value = ''; el.categoryNo.value = ''; el.channelUrl.value = ''; el.replayUrl.value = ''; await reloadAll(); } catch (error) { alert(error.message); } finally { el.addBtn.disabled = false; }
+    }
+    async function runLiveRefresh() { el.liveRefreshBtn.disabled = true; try { const result = await api('/api/live/refresh', { method: 'POST' }); await reloadAll(); if (result.message) alert(result.message); } catch (error) { alert(error.message); } finally { el.liveRefreshBtn.disabled = false; } }
+    async function runVodRefreshForSelected() {
+      const streamer = selectedStreamer();
+      if (!streamer) { alert('스트리머를 먼저 선택해 주세요.'); return; }
+      el.vodRefreshBtn.disabled = true;
+      try { const result = await api(`/api/streamers/${streamer.id}/vods/refresh`, { method: 'POST' }); await reloadAll(); if (result.message) alert(result.message); } catch (error) { alert(error.message); } finally { el.vodRefreshBtn.disabled = false; }
+    }
+    async function runRefreshAll() { el.refreshAllBtn.disabled = true; try { await api('/api/live/refresh', { method: 'POST' }); await api('/api/vods/refresh', { method: 'POST' }); await reloadAll(); } catch (error) { alert(error.message); } finally { el.refreshAllBtn.disabled = false; } }
+    async function deactivateSelected() {
+      const streamer = selectedStreamer();
+      if (!streamer) { alert('스트리머를 먼저 선택해 주세요.'); return; }
+      if (!confirm(`${streamer.nickname || streamer.soop_user_id} 를 비활성화할까요?`)) return;
+      el.deleteBtn.disabled = true;
+      try { await api(`/api/streamers/${streamer.id}`, { method: 'DELETE' }); state.selectedId = null; await reloadAll(); } catch (error) { alert(error.message); } finally { el.deleteBtn.disabled = false; }
+    }
+    el.addBtn.addEventListener('click', handleAdd);
+    el.refreshAllBtn.addEventListener('click', runRefreshAll);
+    el.liveRefreshBtn.addEventListener('click', runLiveRefresh);
+    el.vodRefreshBtn.addEventListener('click', runVodRefreshForSelected);
+    el.deleteBtn.addEventListener('click', deactivateSelected);
+    el.jobsRefreshBtn.addEventListener('click', loadJobs);
+    el.visibilityRefreshBtn.addEventListener('click', loadVisibility);
+    reloadAll().catch((error) => { console.error(error); alert(error.message); });
+  </script>
+</body>
+</html>
+
+
+
+

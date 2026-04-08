@@ -1,0 +1,55 @@
+{
+  "status": "started",
+  "run_result": "SUCCESS: Attempted to run the scheduled task \"SOOP-LiveVOD-Task018\".",
+  "task": {
+    "TaskName": "SOOP-LiveVOD-Task018",
+    "State": "Ready",
+    "LastTaskResult": "0",
+    "Author": "DESKTOP-PJC\\PJC",
+    "RunAsUser": "PJC",
+    "ScheduleType": "One Time Only",
+    "TaskToRun": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\python\\live_vod_scheduler_task_action.ps1 -RuntimeDir C:\\python\\data\\t018rt -DbPath C:\\python\\data\\t018.db -Port 49728 -HealthTimeout 15",
+    "LogonMode": "Interactive only",
+    "ScheduledTaskState": "Enabled"
+  },
+  "launcher_status": {
+    "status": "running",
+    "state": {
+      "pid": 128512,
+      "runtime_dir": "C:\\python\\data\\t018rt",
+      "host": "127.0.0.1",
+      "port": 49728,
+      "health_url": "http://127.0.0.1:49728/api/health",
+      "db_path": "C:\\python\\data\\t018.db",
+      "started_at": "2026-04-08T08:10:56+09:00",
+      "stop_file": "C:\\python\\data\\t018rt\\stop_requested.json",
+      "host_runtime_summary": "C:\\python\\data\\t018rt\\host_runtime_summary.json",
+      "stdout_log": "C:\\python\\data\\t018rt\\launcher_stdout.log",
+      "stderr_log": "C:\\python\\data\\t018rt\\launcher_stderr.log"
+    },
+    "process_alive": true,
+    "host_runtime_summary": null,
+    "health": {
+      "status": "ok",
+      "db_path": "C:\\python\\data\\t018.db",
+      "scheduler_started": true,
+      "scheduler_thread_alive": true,
+      "scheduler_stop_requested": false,
+      "scheduler_thread_name": "soop-live-vod-scheduler",
+      "scheduler_tick_count": 1,
+      "scheduler_tick_seconds": 1.0,
+      "scheduler_last_tick_started_at": "2026-04-08T08:10:57+09:00",
+      "scheduler_last_tick_finished_at": "2026-04-08T08:10:57+09:00",
+      "scheduler_last_stop_requested_at": null,
+      "scheduler_stopped_at": null,
+      "scheduler_last_loop_error": null,
+      "scheduler_next_live": 1775603460.753912,
+      "scheduler_next_vod": 1775603467.753914,
+      "soop_client_id_configured": false,
+      "live_mode": "html-fallback",
+      "browser_fallback_ready": true,
+      "live_refresh_seconds": 120,
+      "vod_refresh_seconds": 900
+    }
+  }
+}

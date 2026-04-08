@@ -1,0 +1,16 @@
+{
+  "fixture_urls": [
+    "https://fixture.local/alpha",
+    "https://fixture.local/beta",
+    "https://fixture.local/gamma"
+  ],
+  "source_calls": [
+    "https://fixture.local/gamma",
+    "https://www.sooplive.co.kr/station/gamma_user",
+    "https://ch.sooplive.co.kr/gamma_user",
+    "https://ch.sooplive.co.kr/gamma_user/vods/review",
+    "https://fixture.local/beta",
+    "https://fixture.local/alpha"
+  ],
+  "note": "alpha and beta return VOD cards; gamma returns HTML without VOD links; delta is inactive and should be skipped by the sweep"
+}

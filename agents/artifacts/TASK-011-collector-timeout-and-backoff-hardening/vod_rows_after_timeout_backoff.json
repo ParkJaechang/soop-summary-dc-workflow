@@ -1,0 +1,33 @@
+{
+  "api_vods": {
+    "items": [
+      {
+        "id": 1,
+        "streamer_id": 1,
+        "vod_id": "311001",
+        "title": "Alpha Recovery VOD",
+        "vod_url": "https://vod.sooplive.co.kr/player/311001",
+        "thumbnail_url": "https://img.local/alpha-timeout-1.jpg",
+        "published_at": "2026-04-08 01:00",
+        "duration_seconds": null,
+        "duration_text": "00:42:00",
+        "collected_at": "2026-04-08T02:44:49+09:00",
+        "last_seen_at": "2026-04-08T02:44:49+09:00",
+        "raw_json": "{\"source_url\": \"https://fixture.local/vod-alpha\", \"vod_id\": \"311001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/311001\", \"title\": \"Alpha Recovery VOD\", \"thumbnail_url\": \"https://img.local/alpha-timeout-1.jpg\", \"published_at\": \"2026-04-08 01:00\", \"duration_text\": \"00:42:00\"}"
+      }
+    ],
+    "count": 1
+  },
+  "rows": [
+    {
+      "streamer_id": 1,
+      "vod_id": "311001",
+      "title": "Alpha Recovery VOD",
+      "vod_url": "https://vod.sooplive.co.kr/player/311001",
+      "published_at": "2026-04-08 01:00",
+      "duration_text": "00:42:00",
+      "collected_at": "2026-04-08T02:44:49+09:00",
+      "last_seen_at": "2026-04-08T02:44:49+09:00"
+    }
+  ]
+}

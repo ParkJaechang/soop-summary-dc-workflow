@@ -1,0 +1,16 @@
+{
+  "target_id": 1,
+  "title": "[VOD Summary] Dawn ranked match highlights",
+  "body": "1. Opening rotation notes\n2. Mid-game teamfight points\n3. Closing summary",
+  "producer": "soop_summery_local_v3",
+  "source_url": "https://vod.sooplive.co.kr/player/123456",
+  "source_id": "vod-123456",
+  "metadata": {
+    "streamer_id": "nanamoon777",
+    "streamer_name": "nanamoon",
+    "vod_id": "123456",
+    "vod_url": "https://vod.sooplive.co.kr/player/123456",
+    "summary_mode": "timeline_merge",
+    "summary_path": "C:/python/data/example/summaries/final_summary.txt"
+  }
+}

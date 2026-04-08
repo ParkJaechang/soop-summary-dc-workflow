@@ -1,0 +1,10 @@
+TASK-002 sample_draft_post_job refresh
+timestamp: 2026-04-08T00:41:34+09:00
+source_payload: agents/artifacts/TASK-002-summary-payload-to-draft-post-job-pipeline/sample_summary_payload.json
+bridge_entrypoint: POST /api/summary-bridge/draft-job
+temp_db: C:\Users\PJC\AppData\Local\Temp\tmpmi95wrll\task_002_artifact_refresh.db
+target_id: 1
+output_file: C:\python\agents\artifacts\TASK-002-summary-payload-to-draft-post-job-pipeline\sample_draft_post_job.json
+canonical_source_ref: soop_vod:123456
+dedupe_basis_keys: ['canonical_source_ref', 'contract_version', 'producer', 'target_id']
+result: refreshed sample_draft_post_job.json from current bridge output

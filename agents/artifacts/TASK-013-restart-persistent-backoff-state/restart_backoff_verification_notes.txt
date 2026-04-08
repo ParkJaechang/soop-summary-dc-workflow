@@ -1,0 +1,9 @@
+TASK-013 restart-persistent backoff verification
+Persisted backoff rows before restart: 2
+Live calls before restart skip check: 1
+VOD calls before restart skip check: 4
+Live calls after restart skip check: 1
+VOD calls after restart skip check: 4
+Active backoffs after restart: 2
+Persisted backoff rows after recovery: 0
+Expected pattern: timeout failure persists backoff rows, restart reloads remaining window, immediate post-restart attempts are skipped without extra upstream fetch, and later attempts succeed after the window expires.

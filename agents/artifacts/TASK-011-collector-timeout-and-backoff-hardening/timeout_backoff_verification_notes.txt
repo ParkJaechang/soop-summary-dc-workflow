@@ -1,0 +1,9 @@
+TASK-011 collector timeout and backoff verification
+Live result statuses: [500, 200, 200]
+VOD result statuses: [500, 200, 200]
+Live fetch markers: [0, 1, 1, 2]
+VOD fetch markers: [0, 4, 4, 5]
+Collector run count: 6
+Live rows: 1
+VOD rows: 1
+Expected pattern: failed -> skipped(backoff_active) -> completed for both live and VOD collector paths.

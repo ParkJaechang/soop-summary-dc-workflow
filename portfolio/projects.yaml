@@ -1,0 +1,17 @@
+projects:
+  - id: proj-001-soop-summary-dc-workflow
+    name: SOOP summary and DC workflow
+    root_path: C:\python
+    workflow_root: C:\python\agents
+    status: active
+    repo_strategy: standalone_repository
+    recommended_repo_name: soop-summary-dc-workflow
+    recommended_visibility: private
+    notes:
+      - first standalone project in the multi-project portfolio
+      - current working tree remains at C:\python to avoid breaking existing workflow paths
+      - future projects should be created under C:\python\projects\ or in their own repositories
+
+active_project_id: proj-001-soop-summary-dc-workflow
+
+next_project_id_hint: PROJ-002

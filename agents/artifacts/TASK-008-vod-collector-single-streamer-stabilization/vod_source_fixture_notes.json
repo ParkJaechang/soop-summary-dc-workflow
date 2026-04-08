@@ -1,0 +1,10 @@
+{
+  "fetch_calls": [
+    "https://ch.sooplive.co.kr/fixture_streamer/vods/review"
+  ],
+  "fixture_kind": "single_streamer_html_test_double",
+  "expected_vod_ids": [
+    "71021072",
+    "71021073"
+  ]
+}

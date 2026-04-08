@@ -1,0 +1,8 @@
+db_path=C:\python\agents\artifacts\TASK-009-scheduler-and-collector-run-hardening\task009_scheduler_guardrails_test.db
+verified_live_completed_and_skipped_runs=yes
+verified_single_streamer_vod_completed_and_skipped_runs=yes
+verified_global_vod_skipped_run=yes
+verified_collector_run_visibility=completed,skipped statuses persisted in collector_runs
+verified_lock_behavior=non-blocking duplicate-run protection through run locks and per-streamer VOD locks
+timeout_note=this slice proves lock-based guardrails; richer timeout/backoff policy remains a later hardening concern
+remaining_scope=broader multi-streamer scheduler stress and UI/admin visibility remain later slices

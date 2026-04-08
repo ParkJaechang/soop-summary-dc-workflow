@@ -1,0 +1,24 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T01:48:30+09:00",
+    "last_live_seen_at": "2026-04-08T01:48:30+09:00",
+    "raw_json": null
+  },
+  {
+    "streamer_id": 2,
+    "is_live": 0,
+    "broad_no": null,
+    "live_title": null,
+    "viewer_count": null,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T01:48:30+09:00",
+    "last_live_seen_at": null,
+    "raw_json": null
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": null,
+    "live_title": "External Scheduler Stream",
+    "viewer_count": 0,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T03:50:58+09:00",
+    "last_live_seen_at": "2026-04-08T03:50:58+09:00",
+    "raw_json": "{\"user_id\": \"external_scheduler_streamer\", \"broad_no\": null, \"broad_title\": \"External Scheduler Stream\", \"broad_start\": null, \"total_view_cnt\": null, \"source_url\": \"https://fixture.test/station/external_scheduler_streamer\", \"detected_by\": \"html-fallback\"}"
+  }
+]

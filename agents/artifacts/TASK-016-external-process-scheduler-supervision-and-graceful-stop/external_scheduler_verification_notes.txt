@@ -1,0 +1,24 @@
+TASK-016 external-process scheduler supervision verification
+
+child pid: 116200
+port: 53698
+jobs before stop: 5
+collector runs recorded: 6
+live rows recorded: 1
+vod rows recorded: 2
+fetch calls recorded: 3
+
+Graceful stop evidence:
+- stop duration seconds: 0.348
+- process exited cleanly: True
+- process forced terminate used: False
+- scheduler thread alive after exit: False
+- scheduler started after exit: False
+- scheduler stop requested after exit: True
+- scheduler stopped_at after exit: 2026-04-08T03:50:58+09:00
+
+Operational ownership notes:
+- external supervision was exercised by running the FastAPI app in a separate Python process
+- graceful stop was requested with CTRL_BREAK_EVENT against a dedicated process group on Windows
+- the child wrote a shutdown summary after uvicorn returned, which proves the app got a graceful shutdown path rather than a hard kill
+- if a future service manager cannot send a graceful console-break style signal, that manager needs a wrapper or stop command equivalent before hard terminate

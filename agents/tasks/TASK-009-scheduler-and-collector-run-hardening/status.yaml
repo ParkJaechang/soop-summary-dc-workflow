@@ -1,0 +1,50 @@
+task_id: TASK-009
+title: Scheduler and collector-run hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - verified or corrected scheduler and duplicate-run guardrails in app_live_vod.py
+  - evidence artifacts for collector-run visibility and lock or timeout behavior
+  - handoff notes for later multi-streamer and product hardening slices
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/spec.md
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/status.yaml
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/handoff.md
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/review.md
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/revision_log.md
+  - agents/tasks/TASK-009-scheduler-and-collector-run-hardening/done.md
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/README.md
+  - app_live_vod.py
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/scheduler_guardrail_api_results.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/collector_runs_guardrail_snapshot.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/live_state_after_guardrail_runs.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/vod_rows_after_guardrail_runs.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/guardrail_fixture_notes.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/scheduler_guardrail_verification_notes.txt
+tests:
+  - exercised live refresh, single-streamer VOD refresh, and global VOD refresh guardrails with FastAPI TestClient against a temp SQLite DB
+  - verified completed and skipped collector_runs visibility for live and VOD paths under manual lock contention
+artifacts:
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/README.md
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/scheduler_guardrail_api_results.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/collector_runs_guardrail_snapshot.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/live_state_after_guardrail_runs.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/vod_rows_after_guardrail_runs.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/guardrail_fixture_notes.json
+  - agents/artifacts/TASK-009-scheduler-and-collector-run-hardening/scheduler_guardrail_verification_notes.txt
+notes:
+  - created immediately after TASK-008 closeout to continue the live/VOD stabilization track without a supervisor wait step
+  - summary_engineer is the first execution owner because app_live_vod.py scheduler and collector boundaries live on the summary side in the ownership map
+  - this slice should stay inside scheduler and collector-run hardening and should not reopen summary payload, publisher, approval, queueing, dispatch, or broader product polish work
+  - duplicate-run skip events are now persisted into collector_runs for live, one-streamer VOD, and global VOD paths
+  - this slice proves lock-based guarded execution; richer timeout/backoff policy is still a later hardening dependency
+  - coordinator reviewed the saved scheduler guardrail evidence and routed the task to reviewer for an evidence-based scheduler and collector-run check
+  - reviewer confirmed that the saved evidence is sufficient to prove duplicate-run protection, skipped and completed collector_runs visibility, and lock-based guarded execution for live and VOD paths in this slice
+  - coordinator accepted the scheduler and collector-run hardening slice and closed TASK-009 after reviewer cleared the evidence

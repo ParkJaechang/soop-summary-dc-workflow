@@ -1,0 +1,54 @@
+{
+  "contract_version": "summary_payload.v1",
+  "producer": {
+    "name": "soop_summery_local_v3.py",
+    "generated_at": "2026-04-08T01:05:23+09:00"
+  },
+  "title": "Sample SOOP Broadcast",
+  "body": "Sample Broadcast Summary\n\n[ 00:00:12 ] Organizes the opening flow and stream start.\n[ 00:04:55 ] Explains the game objective and stream direction.\n[ 00:18:20 ] Captures the first match highlight.\n[ 00:31:10 ] Summarizes viewer reactions and chat flow.\n[ 00:44:02 ] Closes with the next stream teaser.",
+  "metadata": {
+    "source": {
+      "platform": "soop",
+      "content_type": "vod",
+      "source_url": "https://vod.sooplive.co.kr/player/71021072",
+      "canonical_source_url": "https://vod.sooplive.co.kr/player/71021072",
+      "source_id": "71021072",
+      "source_kind": "vod_player"
+    },
+    "summary": {
+      "summary_mode": "full_transcript",
+      "body_format": "plain_text",
+      "reference_notes": "",
+      "reference_notes_present": false,
+      "generated_at": "2026-04-08T01:05:23+09:00",
+      "job_folder_name": "sample_job",
+      "transcript_part_count": 2
+    },
+    "job_context": {
+      "context_version": "summary_job_context.v1",
+      "downloaded_at": "2026-04-08T01:04:08+09:00",
+      "original_title": "Sample SOOP Broadcast Raw Title",
+      "duration_seconds": 2700,
+      "entry_count": 1,
+      "extractor": "SOOP",
+      "uploader": "sample_streamer"
+    },
+    "artifacts": {
+      "job_folder": "C:\\python\\agents\\artifacts\\TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3\\sample_job",
+      "full_transcript_path": "C:\\python\\agents\\artifacts\\TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3\\sample_job\\transcripts\\full_transcript.txt",
+      "cleaned_full_script_path": "C:\\python\\agents\\artifacts\\TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3\\sample_job\\summaries\\cleaned_full_script.txt",
+      "final_summary_path": "C:\\python\\agents\\artifacts\\TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3\\sample_job\\summaries\\final_summary.txt",
+      "timeline_path": "",
+      "payload_path": "C:\\python\\agents\\artifacts\\TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3\\sample_job\\summaries\\summary_payload.json"
+    }
+  },
+  "dedupe_basis": {
+    "platform": "soop",
+    "content_type": "vod",
+    "canonical_source_url": "https://vod.sooplive.co.kr/player/71021072",
+    "source_id": "71021072",
+    "source_kind": "vod_player",
+    "producer": "soop_summery_local_v3.py",
+    "contract_version": "summary_payload.v1"
+  }
+}

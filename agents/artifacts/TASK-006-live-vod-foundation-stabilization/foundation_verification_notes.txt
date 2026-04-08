@@ -1,0 +1,5 @@
+db_path=C:\python\agents\artifacts\TASK-006-live-vod-foundation-stabilization\task006_live_vod_test.db
+verified_tables=streamers,streamer_live_state,live_snapshots,vods,collector_runs
+verified_endpoints=GET /api/health, POST /api/streamers, GET /api/streamers, PATCH /api/streamers/{id}, DELETE /api/streamers/{id}
+schema_alignment_change=added optional vods.duration_seconds migration-safe baseline column
+remaining_scope=live refresh, VOD parsing, scheduler hardening remain for later slices

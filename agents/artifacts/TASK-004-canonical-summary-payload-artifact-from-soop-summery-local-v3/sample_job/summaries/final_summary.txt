@@ -1,0 +1,7 @@
+Sample Broadcast Summary
+
+[ 00:00:12 ] Organizes the opening flow and stream start.
+[ 00:04:55 ] Explains the game objective and stream direction.
+[ 00:18:20 ] Captures the first match highlight.
+[ 00:31:10 ] Summarizes viewer reactions and chat flow.
+[ 00:44:02 ] Closes with the next stream teaser.

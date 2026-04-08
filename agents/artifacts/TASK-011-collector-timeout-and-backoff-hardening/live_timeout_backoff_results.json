@@ -1,0 +1,24 @@
+[
+  {
+    "status_code": 500,
+    "json": {
+      "detail": "timeout: simulated live timeout | backoff_seconds=1 failures=1"
+    }
+  },
+  {
+    "status_code": 200,
+    "json": {
+      "status": "skipped",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+    }
+  },
+  {
+    "status_code": 200,
+    "json": {
+      "status": "completed",
+      "mode": "api",
+      "message": "tracked=1, live=1, pages=1",
+      "live_count": 1
+    }
+  }
+]

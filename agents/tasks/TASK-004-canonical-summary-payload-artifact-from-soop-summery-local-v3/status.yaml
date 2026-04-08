@@ -1,0 +1,49 @@
+task_id: TASK-004
+title: Canonical summary payload artifact from soop_summery_local_v3
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-07
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - normalized summary payload artifact from soop_summery_local_v3.py
+  - example payload artifact saved under agents/artifacts
+  - handoff notes for downstream bridge and parity follow-up
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/tasks/TASK-003-phased-stabilization-and-integration-plan/status.yaml
+  - agents/tasks/TASK-003-phased-stabilization-and-integration-plan/handoff.md
+  - agents/tasks/TASK-003-phased-stabilization-and-integration-plan/revision_log.md
+  - agents/tasks/TASK-003-phased-stabilization-and-integration-plan/done.md
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/spec.md
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/status.yaml
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/handoff.md
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/review.md
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/revision_log.md
+  - agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/done.md
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/README.md
+  - soop_summery_local_v3.py
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/example_summary_payload.json
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/payload_generation_notes.txt
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/sample_job/summary_job_context.json
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/sample_job/summaries/summary_payload.json
+tests:
+  - imported build_summary_payload_artifact and write_summary_job_context from soop_summery_local_v3.py with python
+  - generated sample_job summary_payload.json under agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3
+artifacts:
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/README.md
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/example_summary_payload.json
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/payload_generation_notes.txt
+  - agents/artifacts/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3/sample_job/summaries/summary_payload.json
+notes:
+  - created from TASK-003 closeout after D-008 confirmed the canonical summary producer
+  - summary_engineer is the first execution owner for this implementation slice
+  - rough coordinator estimate: about 6 to 8 supervisor loops remain for the broader MVP if the goal is to stabilize summary output, finish TASK-002 acceptance, stabilize live/VOD collection, and then connect the tracks without expanding real browser posting scope
+  - workflow audit on 2026-04-08 found the active baton itself is role-safe, but older handoff notes still referenced TASK-002 as if it were unresolved; that stale sequencing note was corrected without changing TASK-004 ownership
+  - TASK-002 remains closed and was not reopened in this slice
+  - legacy folders created before summary_job_context.json existed can still export a payload, but source metadata may remain blank unless the source URL is supplied during rerun
+  - coordinator verified that the example payload, generation notes, and sample job payload artifact are enough to move TASK-004 to reviewer without reopening publisher scope
+  - reviewer confirmed that `soop_summery_local_v3.py` now writes stable machine-readable payload artifacts for this slice and that the saved evidence is sufficient for acceptance
+  - coordinator closed TASK-004 after reviewer confirmation because the canonical payload artifact, sample job output, and generation notes satisfied the slice acceptance criteria

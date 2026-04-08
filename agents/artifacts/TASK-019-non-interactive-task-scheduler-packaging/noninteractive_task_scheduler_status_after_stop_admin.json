@@ -1,0 +1,20 @@
+﻿{
+    "task":  {
+                 "TaskName":  "SOOP-LiveVOD-Task019",
+                 "State":  "Ready",
+                 "LastTaskResult":  "0",
+                 "Author":  "DESKTOP-PJC\\PJC",
+                 "RunAsUser":  "PJC",
+                 "ScheduleType":  "One Time Only",
+                 "TaskToRun":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                 "LogonMode":  "Interactive/Background",
+                 "ScheduledTaskState":  "Enabled"
+             },
+    "launcher":  {
+                     "status":  "not_started",
+                     "runtime_dir":  "C:\\python\\data\\t019rt"
+                 },
+    "launcher_exit_code":  1,
+    "runtime_dir":  "C:\\python\\data\\t019rt",
+    "db_path":  "C:\\python\\data\\t019.db"
+}

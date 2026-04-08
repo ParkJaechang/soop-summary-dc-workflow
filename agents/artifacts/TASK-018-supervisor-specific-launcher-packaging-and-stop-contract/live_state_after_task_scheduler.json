@@ -1,0 +1,13 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": null,
+    "live_title": "Task Scheduler Stream",
+    "viewer_count": 0,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T08:11:00+09:00",
+    "last_live_seen_at": "2026-04-08T08:11:00+09:00",
+    "raw_json": "{\"user_id\": \"task_scheduler_streamer\", \"broad_no\": null, \"broad_title\": \"Task Scheduler Stream\", \"broad_start\": null, \"total_view_cnt\": null, \"source_url\": \"http://127.0.0.1:49729/station/task_scheduler_streamer\", \"detected_by\": \"html-fallback\"}"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/external_scheduler_streamer",
+    "called_at": 1775587858.3673222,
+    "station_calls": 1,
+    "replay_calls": 0,
+    "offset_seconds": 0.0
+  },
+  {
+    "kind": "replay",
+    "url": "https://fixture.test/replay/external_scheduler_streamer",
+    "called_at": 1775587858.4604497,
+    "station_calls": 1,
+    "replay_calls": 1,
+    "offset_seconds": 0.093
+  },
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/external_scheduler_streamer",
+    "called_at": 1775587858.7782223,
+    "station_calls": 2,
+    "replay_calls": 1,
+    "offset_seconds": 0.411
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "command": [
+    "powershell",
+    "-NoProfile",
+    "-ExecutionPolicy",
+    "Bypass",
+    "-File",
+    "C:\\python\\install_live_vod_scheduler_task_noninteractive.ps1",
+    "-TaskName",
+    "SOOP-LiveVOD-Task019",
+    "-TaskUser",
+    "DESKTOP-PJC\\PJC",
+    "-RuntimeDir",
+    "C:\\python\\data\\t019rt",
+    "-DbPath",
+    "C:\\python\\data\\t019.db",
+    "-Port",
+    "65208",
+    "-HealthTimeout",
+    "15",
+    "-TaskXmlPath",
+    "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml"
+  ],
+  "returncode": 1,
+  "stdout": "{\n    \"status\":  \"registration_failed\",\n    \"manifest_path\":  \"C:\\\\python\\\\data\\\\t019rt\\\\task_scheduler_registration.json\",\n    \"task_xml_path\":  \"C:\\\\python\\\\agents\\\\artifacts\\\\TASK-019-non-interactive-task-scheduler-packaging\\\\noninteractive_task_scheduler_task_definition.xml\",\n    \"create_exit_code\":  1,\n    \"create_result\":  \"schtasks.exe : ERROR: Access is denied.\\r\\nAt C:\\\\python\\\\live_vod_scheduler_task_common.ps1:124 char:19\\r\\n+         $output = \\u0026 schtasks.exe @Arguments 2\\u003e\\u00261\\r\\n+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\r\\n    + CategoryInfo          : NotSpecified: (ERROR: Access is denied.:String) [], RemoteException\\r\\n    + FullyQualifiedErrorId : NativeCommandError\",\n    \"task\":  null,\n    \"registration\":  {\n                         \"health_timeout\":  15,\n                         \"action\":  {\n                                        \"execute\":  \"powershell.exe\",\n                                        \"command_line\":  \"powershell.exe -NoProfile -ExecutionPolicy Bypass -File \\\"C:\\\\python\\\\live_vod_scheduler_task_action.ps1\\\" -RuntimeDir \\\"C:\\\\python\\\\data\\\\t019rt\\\" -DbPath \\\"C:\\\\python\\\\data\\\\t019.db\\\" -Port 65208 -HealthTimeout 15\",\n                                        \"arguments\":  \"-NoProfile -ExecutionPolicy Bypass -File \\\"C:\\\\python\\\\live_vod_scheduler_task_action.ps1\\\" -RuntimeDir \\\"C:\\\\python\\\\data\\\\t019rt\\\" -DbPath \\\"C:\\\\python\\\\data\\\\t019.db\\\" -Port 65208 -HealthTimeout 15\",\n                                        \"working_directory\":  \"C:\\\\python\"\n                                    },\n                         \"stop_contract\":  {\n                                               \"command\":  \"C:\\\\python\\\\stop_live_vod_scheduler_task.ps1\",\n                                               \"notes\":  \"Use the task stop wrapper so the repo-owned launcher writes stop_requested.json and the host wrapper exits cleanly.\"\n                                           },\n                         \"db_path\":  \"C:\\\\python\\\\data\\\\t019.db\",\n                         \"scheduler_type\":  \"windows_task_scheduler\",\n                         \"deployment_notes\":  [\n                                                  \"This path targets a non-interactive S4U-style Task Scheduler registration.\",\n                                                  \"Local proof may require permission to register S4U tasks or a deployment context with explicit supervisor credentials.\"\n                                              ],\n                         \"registered_at\":  \"2026-04-08T08:23:24.9574406+09:00\",\n                         \"registration_mode\":  \"xml_s4u_current_user_noninteractive\",\n                         \"task_name\":  \"SOOP-LiveVOD-Task019\",\n                         \"runtime_dir\":  \"C:\\\\python\\\\data\\\\t019rt\",\n                         \"port\":  65208,\n                         \"task_xml_path\":  \"C:\\\\python\\\\agents\\\\artifacts\\\\TASK-019-non-interactive-task-scheduler-packaging\\\\noninteractive_task_scheduler_task_definition.xml\",\n                         \"task_user\":  \"DESKTOP-PJC\\\\PJC\"\n                     }\n}\n",
+  "stderr": "",
+  "payload": {
+    "status": "registration_failed",
+    "manifest_path": "C:\\python\\data\\t019rt\\task_scheduler_registration.json",
+    "task_xml_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+    "create_exit_code": 1,
+    "create_result": "schtasks.exe : ERROR: Access is denied.\r\nAt C:\\python\\live_vod_scheduler_task_common.ps1:124 char:19\r\n+         $output = & schtasks.exe @Arguments 2>&1\r\n+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (ERROR: Access is denied.:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError",
+    "task": null,
+    "registration": {
+      "health_timeout": 15,
+      "action": {
+        "execute": "powershell.exe",
+        "command_line": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+        "arguments": "-NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+        "working_directory": "C:\\python"
+      },
+      "stop_contract": {
+        "command": "C:\\python\\stop_live_vod_scheduler_task.ps1",
+        "notes": "Use the task stop wrapper so the repo-owned launcher writes stop_requested.json and the host wrapper exits cleanly."
+      },
+      "db_path": "C:\\python\\data\\t019.db",
+      "scheduler_type": "windows_task_scheduler",
+      "deployment_notes": [
+        "This path targets a non-interactive S4U-style Task Scheduler registration.",
+        "Local proof may require permission to register S4U tasks or a deployment context with explicit supervisor credentials."
+      ],
+      "registered_at": "2026-04-08T08:23:24.9574406+09:00",
+      "registration_mode": "xml_s4u_current_user_noninteractive",
+      "task_name": "SOOP-LiveVOD-Task019",
+      "runtime_dir": "C:\\python\\data\\t019rt",
+      "port": 65208,
+      "task_xml_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+      "task_user": "DESKTOP-PJC\\PJC"
+    }
+  }
+}

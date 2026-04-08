@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 1,
+    "vod_id": "88001",
+    "title": "Lifecycle VOD One",
+    "vod_url": "https://vod.sooplive.co.kr/player/88001",
+    "thumbnail_url": "https://img.test/88001.jpg",
+    "published_at": "2026-04-08T10:00:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "12:34",
+    "collected_at": "2026-04-08T03:38:03+09:00",
+    "last_seen_at": "2026-04-08T03:38:04+09:00",
+    "raw_json": "{\"source_url\": \"https://fixture.test/replay/lifecycle_streamer\", \"vod_id\": \"88001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/88001\", \"title\": \"Lifecycle VOD One\", \"thumbnail_url\": \"https://img.test/88001.jpg\", \"published_at\": \"2026-04-08T10:00:00+09:00\", \"duration_text\": \"12:34\"}"
+  },
+  {
+    "id": 2,
+    "streamer_id": 1,
+    "vod_id": "88002",
+    "title": "Lifecycle VOD Two",
+    "vod_url": "https://vod.sooplive.co.kr/player/88002",
+    "thumbnail_url": "https://img.test/88002.jpg",
+    "published_at": "2026-04-08T09:30:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "03:21",
+    "collected_at": "2026-04-08T03:38:03+09:00",
+    "last_seen_at": "2026-04-08T03:38:04+09:00",
+    "raw_json": "{\"source_url\": \"https://fixture.test/replay/lifecycle_streamer\", \"vod_id\": \"88002\", \"vod_url\": \"https://vod.sooplive.co.kr/player/88002\", \"title\": \"Lifecycle VOD Two\", \"thumbnail_url\": \"https://img.test/88002.jpg\", \"published_at\": \"2026-04-08T09:30:00+09:00\", \"duration_text\": \"03:21\"}"
+  }
+]

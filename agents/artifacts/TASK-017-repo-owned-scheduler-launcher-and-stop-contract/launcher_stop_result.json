@@ -1,0 +1,45 @@
+{
+  "status": "stopped",
+  "pid": 119776,
+  "stop_payload": {
+    "requested_at": "2026-04-08T04:15:25+09:00",
+    "requested_by": "live_vod_scheduler_launcher.py",
+    "pid": 119776
+  },
+  "host_runtime_summary": {
+    "started_at": "2026-04-08T04:15:22+09:00",
+    "finished_at": "2026-04-08T04:15:25+09:00",
+    "runtime_dir": "C:\\python\\agents\\artifacts\\TASK-017-repo-owned-scheduler-launcher-and-stop-contract\\launcher_runtime",
+    "db_path": "C:\\python\\agents\\artifacts\\TASK-017-repo-owned-scheduler-launcher-and-stop-contract\\task017_launcher_test.db",
+    "host": "127.0.0.1",
+    "port": 62391,
+    "exit_kind": "clean_return",
+    "runtime_error": null,
+    "stop_request_seen": {
+      "requested": true,
+      "requested_at": "2026-04-08T04:15:25+09:00",
+      "payload": {
+        "requested_at": "2026-04-08T04:15:25+09:00",
+        "requested_by": "live_vod_scheduler_launcher.py",
+        "pid": 119776
+      }
+    },
+    "scheduler_state_after_exit": {
+      "started": false,
+      "stop": true,
+      "thread_alive": false,
+      "thread_name": null,
+      "next_live": 1775589326.1906657,
+      "next_vod": 1775589326.2186644,
+      "started_at": "2026-04-08T04:15:22+09:00",
+      "last_tick_started_at": "2026-04-08T04:15:25+09:00",
+      "last_tick_finished_at": "2026-04-08T04:15:25+09:00",
+      "last_stop_requested_at": "2026-04-08T04:15:25+09:00",
+      "stopped_at": "2026-04-08T04:15:25+09:00",
+      "last_loop_error": null,
+      "tick_count": 39,
+      "tick_seconds": 0.05
+    }
+  },
+  "stop_duration_seconds": 1.068
+}

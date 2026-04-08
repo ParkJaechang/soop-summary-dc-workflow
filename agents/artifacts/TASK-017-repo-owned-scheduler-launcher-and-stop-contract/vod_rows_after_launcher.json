@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 1,
+    "vod_id": "99101",
+    "title": "Launcher VOD One",
+    "vod_url": "https://vod.sooplive.co.kr/player/99101",
+    "thumbnail_url": "https://img.test/99101.jpg",
+    "published_at": "2026-04-08T13:00:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "08:08",
+    "collected_at": "2026-04-08T04:15:24+09:00",
+    "last_seen_at": "2026-04-08T04:15:25+09:00",
+    "raw_json": "{\"source_url\": \"http://127.0.0.1:62392/replay/launcher_streamer\", \"vod_id\": \"99101\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99101\", \"title\": \"Launcher VOD One\", \"thumbnail_url\": \"https://img.test/99101.jpg\", \"published_at\": \"2026-04-08T13:00:00+09:00\", \"duration_text\": \"08:08\"}"
+  },
+  {
+    "id": 2,
+    "streamer_id": 1,
+    "vod_id": "99102",
+    "title": "Launcher VOD Two",
+    "vod_url": "https://vod.sooplive.co.kr/player/99102",
+    "thumbnail_url": "https://img.test/99102.jpg",
+    "published_at": "2026-04-08T12:40:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "04:44",
+    "collected_at": "2026-04-08T04:15:24+09:00",
+    "last_seen_at": "2026-04-08T04:15:25+09:00",
+    "raw_json": "{\"source_url\": \"http://127.0.0.1:62392/replay/launcher_streamer\", \"vod_id\": \"99102\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99102\", \"title\": \"Launcher VOD Two\", \"thumbnail_url\": \"https://img.test/99102.jpg\", \"published_at\": \"2026-04-08T12:40:00+09:00\", \"duration_text\": \"04:44\"}"
+  }
+]

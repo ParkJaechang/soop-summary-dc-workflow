@@ -1,0 +1,13 @@
+python -m unittest tests.test_app_dc_publisher_summary_bridge -v
+
+test_job_patch_rejects_status_changes (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_job_patch_rejects_status_changes) ... ok
+test_job_patch_trims_dedupe_key_without_corrupting_updated_at (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_job_patch_trims_dedupe_key_without_corrupting_updated_at) ... ok
+test_job_patch_updates_title_and_metadata_fields_in_place (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_job_patch_updates_title_and_metadata_fields_in_place) ... ok
+test_summary_bridge_creates_reviewable_draft_job (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_summary_bridge_creates_reviewable_draft_job) ... ok
+test_summary_bridge_dedupes_mixed_source_id_and_source_url_for_same_source (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_summary_bridge_dedupes_mixed_source_id_and_source_url_for_same_source) ... ok
+test_summary_bridge_rejects_duplicate_source_on_same_target (tests.test_app_dc_publisher_summary_bridge.SummaryBridgeTests.test_summary_bridge_rejects_duplicate_source_on_same_target) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.292s
+
+OK

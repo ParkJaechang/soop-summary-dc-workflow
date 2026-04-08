@@ -1,0 +1,59 @@
+﻿
+USER INFORMATION
+----------------
+
+User Name       SID                                           
+=============== ==============================================
+desktop-pjc\pjc S-1-5-21-3197170921-3206713947-2637509415-1001
+
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                   Type             SID                                                                                                          Attributes                                                     
+============================================ ================ ============================================================================================================ ===============================================================
+Mandatory Label\High Mandatory Level         Label            S-1-16-12288                                                                                                                                                                
+Everyone                                     Well-known group S-1-1-0                                                                                                      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\로컬 계정 및 관리자 그룹 구성원 Well-known group S-1-5-114                                                                                                    Mandatory group, Enabled by default, Enabled group             
+BUILTIN\Administrators                       Alias            S-1-5-32-544                                                                                                 Mandatory group, Enabled by default, Enabled group, Group owner
+BUILTIN\Users                                Alias            S-1-5-32-545                                                                                                 Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\INTERACTIVE                     Well-known group S-1-5-4                                                                                                      Mandatory group, Enabled by default, Enabled group             
+CONSOLE LOGON                                Well-known group S-1-2-1                                                                                                      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\Authenticated Users             Well-known group S-1-5-11                                                                                                     Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\This Organization               Well-known group S-1-5-15                                                                                                     Mandatory group, Enabled by default, Enabled group             
+MicrosoftAccount\jaechang100117@gmail.com    User             S-1-11-96-3623454863-58364-18864-2661722203-1597581903-1258335959-2380114085-2126729166-242087282-2279878930 Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\로컬 계정                       Well-known group S-1-5-113                                                                                                    Mandatory group, Enabled by default, Enabled group             
+LOCAL                                        Well-known group S-1-2-0                                                                                                      Mandatory group, Enabled by default, Enabled group             
+NT AUTHORITY\클라우드 계정 인증              Well-known group S-1-5-64-36                                                                                                  Mandatory group, Enabled by default, Enabled group             
+
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                            Description                                                        State   
+========================================= ================================================================== ========
+SeIncreaseQuotaPrivilege                  Adjust memory quotas for a process                                 Disabled
+SeSecurityPrivilege                       Manage auditing and security log                                   Disabled
+SeTakeOwnershipPrivilege                  Take ownership of files or other objects                           Disabled
+SeLoadDriverPrivilege                     Load and unload device drivers                                     Disabled
+SeSystemProfilePrivilege                  Profile system performance                                         Disabled
+SeSystemtimePrivilege                     Change the system time                                             Disabled
+SeProfileSingleProcessPrivilege           Profile single process                                             Disabled
+SeIncreaseBasePriorityPrivilege           Increase scheduling priority                                       Disabled
+SeCreatePagefilePrivilege                 Create a pagefile                                                  Disabled
+SeBackupPrivilege                         Back up files and directories                                      Disabled
+SeRestorePrivilege                        Restore files and directories                                      Disabled
+SeShutdownPrivilege                       Shut down the system                                               Disabled
+SeDebugPrivilege                          Debug programs                                                     Enabled 
+SeSystemEnvironmentPrivilege              Modify firmware environment values                                 Disabled
+SeChangeNotifyPrivilege                   Bypass traverse checking                                           Enabled 
+SeRemoteShutdownPrivilege                 Force shutdown from a remote system                                Disabled
+SeUndockPrivilege                         Remove computer from docking station                               Disabled
+SeManageVolumePrivilege                   Perform volume maintenance tasks                                   Disabled
+SeImpersonatePrivilege                    Impersonate a client after authentication                          Enabled 
+SeCreateGlobalPrivilege                   Create global objects                                              Enabled 
+SeIncreaseWorkingSetPrivilege             Increase a process working set                                     Disabled
+SeTimeZonePrivilege                       Change the time zone                                               Disabled
+SeCreateSymbolicLinkPrivilege             Create symbolic links                                              Disabled
+SeDelegateSessionUserImpersonatePrivilege Obtain an impersonation token for another user in the same session Disabled
+

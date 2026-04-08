@@ -1,0 +1,8 @@
+python -m unittest tests.test_task005_canonical_summary_integration -v
+
+test_canonical_summary_payload_maps_into_draft_job (tests.test_task005_canonical_summary_integration.CanonicalSummaryIntegrationTests.test_canonical_summary_payload_maps_into_draft_job) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.054s
+
+OK

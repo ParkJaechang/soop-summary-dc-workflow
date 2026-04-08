@@ -1,0 +1,59 @@
+{
+  "items": [
+    {
+      "id": 6,
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "status": "completed",
+      "started_at": "2026-04-08T02:57:35+09:00",
+      "finished_at": "2026-04-08T02:57:35+09:00",
+      "message": "source=https://fixture.local/vod-alpha, inserted=1, updated=0, total=1"
+    },
+    {
+      "id": 5,
+      "collector_type": "live",
+      "streamer_id": null,
+      "status": "completed",
+      "started_at": "2026-04-08T02:57:35+09:00",
+      "finished_at": "2026-04-08T02:57:35+09:00",
+      "message": "tracked=1, live=1, pages=1"
+    },
+    {
+      "id": 4,
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "status": "skipped",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+    },
+    {
+      "id": 3,
+      "collector_type": "live",
+      "streamer_id": null,
+      "status": "skipped",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+    },
+    {
+      "id": 2,
+      "collector_type": "vod",
+      "streamer_id": 1,
+      "status": "failed",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "timeout: ui visibility vod timeout | backoff_seconds=1 failures=1"
+    },
+    {
+      "id": 1,
+      "collector_type": "live",
+      "streamer_id": null,
+      "status": "failed",
+      "started_at": "2026-04-08T02:57:33+09:00",
+      "finished_at": "2026-04-08T02:57:33+09:00",
+      "message": "timeout: ui visibility live timeout | backoff_seconds=1 failures=1"
+    }
+  ],
+  "count": 6
+}

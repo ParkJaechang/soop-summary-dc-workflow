@@ -1,0 +1,17 @@
+{
+  "save_dir": "C:/Users/PJC/Downloads/test",
+  "stt_language": "ko",
+  "segment_minutes": "60",
+  "stt_model_size": "medium",
+  "stt_device": "cpu",
+  "stt_compute_type": "int8",
+  "v3_language": "ko",
+  "v3_chunk_minutes": "15",
+  "v3_model": "medium",
+  "v3_compute": "int8",
+  "v3_batch": "8",
+  "v3_summary_mode": "full_transcript",
+  "v3_reference_notes": "1. 이브닛 (EVENIT)\n소속: 아카이브 스튜디오 (AkaiV Studio)\n\n데뷔: 2025년 11월 15일\n\n멤버 구성:\n\n여르미: 리더, 보컬 (생일 12/16, MBTI ENFP, 상징색: 옐로우)\n\n한결: 메인보컬 (생일 7/30, MBTI INFJ, 상징색: 블루)\n\nu32(우사미): 메인댄서, 프로듀서 (생일 3/2, MBTI ISTP, 상징색: 화이트)\n\n비몽: 비주얼, 보컬 (생일 8/17, MBTI INFP, 상징색: 퍼플)\n\n샤르망: 메인래퍼 (생일 8/4, MBTI ENTP, 상징색: 핑크)\n\n주요 음악:\n\n[단체] 데뷔곡 'Even it', 'Dreamer', 'Unicorn'\n\n[솔로/유닛] 비몽 'Light', 비몽X이주인 '이상동몽'\n\n2. 아카이브 스튜디오 (AkaiV Studio) 개인 멤버\n나나문 (Nanamoon): 마녀/고양이 콘셉트, 게임(FC) 및 노래 특화 스트리머. (생일 7/27, ISTP)\n\n쿠우 (Qoo): 이브닛 멤버들과 긴밀하게 협업하는 아카이브 소속 인기 스트리머.\n\n특징: 이브닛을 포함해 기술력 중심의 아바타 제작 및 고퀄리티 음악 프로듀싱에 강점이 있는 크루.\n\n3. 하데스 (HADES)\n소속: 무엔터테인먼트 (BJ 김봉준 기획)\n\n멤버 구성:\n\n솜주먹: 리더, 보컬\n\n키마: 메인보컬 (실력파 보컬리스트)\n\n띵귤: 보컬 (비주얼 및 예능 담당)\n\n연초록: 보컬 (청아한 음색)\n\n챈나: 보컬, 막내\n\n주요 음악: '두 번째 지구 (Planet B)', '메가 피스 하모니'\n\n특징: SOOP 내 압도적인 시청자 수와 음원 차트 1위 기록을 보유한 메가 그룹.\n\n4. 이세계아이돌 (ISEGYE IDOL)\n소속: 패러블 엔터테인먼트 (우왁굳 기획)\n\n멤버 구성: 아이네, 징버거, 릴파, 주르르, 고세구, 비챤 (총 6명)\n\n주요 음악: 'RE:WIND', 'KIDDING', 'LOCKDOWN', 'OVER'\n\n특징: 국내 버추얼 아이돌의 시초이자 상징. SOOP 이적 후에도 독보적인 팬덤(이세파) 화력 유지.\n\n5. 러비타 (LUVITA)\n소속: 두리번 (SOOP 공식 서바이벌 V-REAL 데뷔조)\n\n멤버 구성: 김마르, 이엘리, 이주인, 플리, 힌콕 (총 5명)\n\n주요 음악: 'LUVITA'\n\n특징: 서바이벌을 통해 검증된 탄탄한 보컬 밸런스와 하이틴 콘셉트.\n\n6. 기타 주요 크루 및 유닛\n사바나 (SAVANNA): 유달린, 아드리챔, 포도당, 구슬요, 구나구나, 지야, 김병살, 감자가비, 도란이 (9인조 대형 크루)\n\n포코톤 (POCOTONE): 오아, 하티하티, 암레트, 루에 (자체 제작 및 음악적 역량이 높은 실력파 그룹)\n\n프리아 (PRIA): 구슬요, 구나구나 중심의 유닛 및 개인 활동 병행 그룹.\n\n[음악 관련 추가 팁]\n\n이브닛은 아카이브 내부의 '고단씨'와 'u32'가 직접 곡 작업에 참여하여 음악적 완성도가 매우 높습니다.\n\n하데스는 대중적인 멜로디와 압도적인 팬덤 스밍으로 멜론 등 외부 차트에서도 강세를 보입니다.\n\n이세돌은 가상 현실(VR) 기반의 뮤직비디오와 대규모 메타버스 콘서트가 핵심입니다.",
+  "v3_stt_profile": "balanced",
+  "v3_auto_summary": true
+}

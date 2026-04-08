@@ -1,0 +1,13 @@
+[
+  {
+    "streamer_id": 1,
+    "is_live": 1,
+    "broad_no": null,
+    "live_title": "Launcher Stream",
+    "viewer_count": 0,
+    "started_at": null,
+    "last_checked_at": "2026-04-08T04:15:25+09:00",
+    "last_live_seen_at": "2026-04-08T04:15:25+09:00",
+    "raw_json": "{\"user_id\": \"launcher_streamer\", \"broad_no\": null, \"broad_title\": \"Launcher Stream\", \"broad_start\": null, \"total_view_cnt\": null, \"source_url\": \"http://127.0.0.1:62392/station/launcher_streamer\", \"detected_by\": \"html-fallback\"}"
+  }
+]

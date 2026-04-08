@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 2,
+    "vod_id": "81001001",
+    "title": "Guardrail VOD One",
+    "vod_url": "https://vod.sooplive.co.kr/player/81001001",
+    "thumbnail_url": "https://image.example.com/guardrail1.jpg",
+    "published_at": "2026-04-08T01:00:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "0:12:34",
+    "collected_at": "2026-04-08T02:16:20+09:00",
+    "last_seen_at": "2026-04-08T02:16:20+09:00",
+    "raw_json": "{\"source_url\": \"https://ch.sooplive.co.kr/guardrail_streamer/vods/review\", \"vod_id\": \"81001001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/81001001\", \"title\": \"Guardrail VOD One\", \"thumbnail_url\": \"https://image.example.com/guardrail1.jpg\", \"published_at\": \"2026-04-08T01:00:00+09:00\", \"duration_text\": \"0:12:34\"}"
+  }
+]

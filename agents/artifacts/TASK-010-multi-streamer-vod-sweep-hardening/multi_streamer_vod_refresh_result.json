@@ -1,0 +1,25 @@
+{
+  "status": "completed",
+  "message": "streamers=3, completed=2, failed=1, skipped=0",
+  "results": [
+    {
+      "streamer_id": 3,
+      "status": "failed",
+      "message": "no VOD items found from https://fixture.local/gamma"
+    },
+    {
+      "streamer_id": 2,
+      "status": "completed",
+      "message": "source=https://fixture.local/beta, inserted=1, updated=0, total=1",
+      "source_url": "https://fixture.local/beta",
+      "items": 1
+    },
+    {
+      "streamer_id": 1,
+      "status": "completed",
+      "message": "source=https://fixture.local/alpha, inserted=2, updated=0, total=2",
+      "source_url": "https://fixture.local/alpha",
+      "items": 2
+    }
+  ]
+}

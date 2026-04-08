@@ -1,0 +1,74 @@
+[
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/lifecycle_streamer",
+    "called_at": 1775587083.0486248,
+    "station_calls": 1,
+    "replay_calls": 0,
+    "offset_seconds": 0.0
+  },
+  {
+    "kind": "replay",
+    "url": "https://fixture.test/replay/lifecycle_streamer",
+    "called_at": 1775587083.0903885,
+    "station_calls": 1,
+    "replay_calls": 1,
+    "offset_seconds": 0.042
+  },
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/lifecycle_streamer",
+    "called_at": 1775587083.3525922,
+    "station_calls": 2,
+    "replay_calls": 1,
+    "offset_seconds": 0.304
+  },
+  {
+    "kind": "replay",
+    "url": "https://fixture.test/replay/lifecycle_streamer",
+    "called_at": 1775587083.5794294,
+    "station_calls": 2,
+    "replay_calls": 2,
+    "offset_seconds": 0.531
+  },
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/lifecycle_streamer",
+    "called_at": 1775587083.701772,
+    "station_calls": 3,
+    "replay_calls": 2,
+    "offset_seconds": 0.653
+  },
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/lifecycle_streamer",
+    "called_at": 1775587084.2399218,
+    "station_calls": 4,
+    "replay_calls": 2,
+    "offset_seconds": 1.191
+  },
+  {
+    "kind": "replay",
+    "url": "https://fixture.test/replay/lifecycle_streamer",
+    "called_at": 1775587084.279232,
+    "station_calls": 4,
+    "replay_calls": 3,
+    "offset_seconds": 1.231
+  },
+  {
+    "kind": "station",
+    "url": "https://fixture.test/station/lifecycle_streamer",
+    "called_at": 1775587084.5898476,
+    "station_calls": 5,
+    "replay_calls": 3,
+    "offset_seconds": 1.541
+  },
+  {
+    "kind": "replay",
+    "url": "https://fixture.test/replay/lifecycle_streamer",
+    "called_at": 1775587084.6917229,
+    "station_calls": 5,
+    "replay_calls": 4,
+    "offset_seconds": 1.643
+  }
+]

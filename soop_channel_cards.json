@@ -1,0 +1,70 @@
+[
+  {
+    "id": "kaksjak0730",
+    "channel_url": "https://www.sooplive.co.kr/station/kaksjak0730",
+    "nickname": "한결___",
+    "profile_image_url": "",
+    "is_live": true,
+    "live_title": "[이브닛] 성태님 이벤트매치 빙신구 우승합니다",
+    "vod_previews": [
+      {
+        "title": "[이브닛] 한결배 음주 벽킬내기CK",
+        "url": "https://vod.sooplive.co.kr/player/190514139",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260322_4C21D2FB_292601799_2_r",
+        "duration_text": "9:17:34"
+      },
+      {
+        "title": "[이브닛] 갑자기 인생게임 중독자들과",
+        "url": "https://vod.sooplive.co.kr/player/190277749",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260320_B69E2B24_292544557_1_r",
+        "duration_text": "4:38:22"
+      },
+      {
+        "title": "[이브닛] 병약미소녀와 코난 같이보기 '^'",
+        "url": "https://vod.sooplive.co.kr/player/190170913",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260319_2CE4C391_292515253_1_r",
+        "duration_text": "2:23:21"
+      },
+      {
+        "title": "[이브닛] '^'",
+        "url": "https://vod.sooplive.co.kr/player/190037245",
+        "thumbnail_url": "",
+        "duration_text": "3:24:11"
+      }
+    ]
+  },
+  {
+    "id": "beemong",
+    "channel_url": "https://www.sooplive.co.kr/station/beemong",
+    "nickname": "beemong",
+    "profile_image_url": "",
+    "is_live": false,
+    "live_title": "",
+    "vod_previews": [
+      {
+        "title": "[이브닛]세구님 be daydreamer콘서트 같이보기를 다시보기하면서 다시 같이보기",
+        "url": "https://vod.sooplive.co.kr/player/190572747",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260323_8E83ED26_292627161_1_r",
+        "duration_text": "4:33:09"
+      },
+      {
+        "title": "어제 콘서트 끝내고 오늘 자작곡 나온 사람",
+        "url": "https://vod.sooplive.co.kr/player/190512651",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260322_5A1338A8_292609849_1_r",
+        "duration_text": "4:52:57"
+      },
+      {
+        "title": "비몽 단독 콘서트 \"Be Daydreamer\"✨",
+        "url": "https://vod.sooplive.co.kr/player/190358849",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260321_208FFD55_292573893_1_r",
+        "duration_text": "1:38:52"
+      },
+      {
+        "title": "[이브닛]쿠우랑 협곡 데이트❤️",
+        "url": "https://vod.sooplive.co.kr/player/189798727",
+        "thumbnail_url": "https://videoimg.sooplive.co.kr/php/SnapshotLoad.php?rowKey=20260315_40334CB9_292410517_2_r",
+        "duration_text": "2:42:59"
+      }
+    ]
+  }
+]

@@ -1,0 +1,179 @@
+[
+  {
+    "label": "tick_1_initial",
+    "duration_seconds": 1.25,
+    "result": {
+      "live": {
+        "status": "completed",
+        "mode": "api",
+        "message": "tracked=1, live=1, pages=1",
+        "live_count": 1
+      },
+      "vod": {
+        "status": "completed",
+        "message": "streamers=1, completed=0, failed=1, skipped=0",
+        "results": [
+          {
+            "streamer_id": 1,
+            "status": "failed",
+            "message": "timeout: scheduler vod timeout | backoff_seconds=2 failures=1"
+          }
+        ]
+      },
+      "next_live": 1775586355.5181775,
+      "next_vod": 1775586353.5454962
+    },
+    "live_fetches_added": 1,
+    "vod_fetches_added": 4,
+    "collector_runs_count": 3,
+    "collector_backoffs_count": 1,
+    "latest_run_statuses": [
+      "live:completed",
+      "vod:completed",
+      "vod:failed"
+    ]
+  },
+  {
+    "label": "tick_2_immediate",
+    "duration_seconds": 0.0,
+    "result": {
+      "next_live": 1775586355.5181775,
+      "next_vod": 1775586353.5454962
+    },
+    "live_fetches_added": 0,
+    "vod_fetches_added": 0,
+    "collector_runs_count": 3,
+    "collector_backoffs_count": 1,
+    "latest_run_statuses": [
+      "live:completed",
+      "vod:completed",
+      "vod:failed"
+    ]
+  },
+  {
+    "label": "tick_3_due_backoff_skip",
+    "duration_seconds": 0.039,
+    "result": {
+      "vod": {
+        "status": "completed",
+        "message": "streamers=1, completed=0, failed=0, skipped=1",
+        "results": [
+          {
+            "streamer_id": 1,
+            "status": "skipped",
+            "message": "backoff_active: reason=timeout, failures=1, retry_in=1s"
+          }
+        ]
+      },
+      "next_live": 1775586355.5181775,
+      "next_vod": 1775586354.6366668
+    },
+    "live_fetches_added": 0,
+    "vod_fetches_added": 0,
+    "collector_runs_count": 5,
+    "collector_backoffs_count": 1,
+    "latest_run_statuses": [
+      "vod:completed",
+      "vod:failed",
+      "vod:completed",
+      "vod:skipped"
+    ]
+  },
+  {
+    "label": "tick_4_due_repeated_failure",
+    "duration_seconds": 0.042,
+    "result": {
+      "vod": {
+        "status": "completed",
+        "message": "streamers=1, completed=0, failed=1, skipped=0",
+        "results": [
+          {
+            "streamer_id": 1,
+            "status": "failed",
+            "message": "timeout: scheduler vod timeout | backoff_seconds=2 failures=1"
+          }
+        ]
+      },
+      "next_live": 1775586355.5181775,
+      "next_vod": 1775586355.7308042
+    },
+    "live_fetches_added": 0,
+    "vod_fetches_added": 4,
+    "collector_runs_count": 7,
+    "collector_backoffs_count": 1,
+    "latest_run_statuses": [
+      "vod:completed",
+      "vod:skipped",
+      "vod:completed",
+      "vod:failed"
+    ]
+  },
+  {
+    "label": "tick_5_due_backoff_skip",
+    "duration_seconds": 1.264,
+    "result": {
+      "live": {
+        "status": "completed",
+        "mode": "api",
+        "message": "tracked=1, live=1, pages=1",
+        "live_count": 1
+      },
+      "vod": {
+        "status": "completed",
+        "message": "streamers=1, completed=1, failed=0, skipped=0",
+        "results": [
+          {
+            "streamer_id": 1,
+            "status": "completed",
+            "message": "source=https://fixture.local/vod-alpha, inserted=1, updated=0, total=1",
+            "source_url": "https://fixture.local/vod-alpha",
+            "items": 1
+          }
+        ]
+      },
+      "next_live": 1775586360.0140162,
+      "next_vod": 1775586358.0465386
+    },
+    "live_fetches_added": 1,
+    "vod_fetches_added": 1,
+    "collector_runs_count": 10,
+    "collector_backoffs_count": 0,
+    "latest_run_statuses": [
+      "vod:failed",
+      "live:completed",
+      "vod:completed",
+      "vod:completed"
+    ]
+  },
+  {
+    "label": "tick_6_due_recovery",
+    "duration_seconds": 0.036,
+    "result": {
+      "vod": {
+        "status": "completed",
+        "message": "streamers=1, completed=1, failed=0, skipped=0",
+        "results": [
+          {
+            "streamer_id": 1,
+            "status": "completed",
+            "message": "source=https://fixture.local/vod-alpha, inserted=0, updated=1, total=1",
+            "source_url": "https://fixture.local/vod-alpha",
+            "items": 1
+          }
+        ]
+      },
+      "next_live": 1775586360.0140162,
+      "next_vod": 1775586359.1361952
+    },
+    "live_fetches_added": 0,
+    "vod_fetches_added": 1,
+    "collector_runs_count": 12,
+    "collector_backoffs_count": 0,
+    "latest_run_statuses": [
+      "vod:completed",
+      "vod:completed",
+      "vod:completed",
+      "vod:completed"
+    ]
+  }
+]

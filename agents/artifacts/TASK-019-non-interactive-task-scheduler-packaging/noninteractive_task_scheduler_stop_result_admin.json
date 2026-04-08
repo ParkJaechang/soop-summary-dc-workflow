@@ -1,0 +1,59 @@
+﻿{
+    "task":  {
+                 "TaskName":  "SOOP-LiveVOD-Task019",
+                 "State":  "Ready",
+                 "LastTaskResult":  "0",
+                 "Author":  "DESKTOP-PJC\\PJC",
+                 "RunAsUser":  "PJC",
+                 "ScheduleType":  "One Time Only",
+                 "TaskToRun":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                 "LogonMode":  "Interactive/Background",
+                 "ScheduledTaskState":  "Enabled"
+             },
+    "stop":  {
+                 "status":  "stopped",
+                 "pid":  134412,
+                 "stop_payload":  {
+                                      "requested_at":  "2026-04-08T10:15:08+09:00",
+                                      "requested_by":  "live_vod_scheduler_launcher.py",
+                                      "pid":  134412
+                                  },
+                 "host_runtime_summary":  {
+                                              "started_at":  "2026-04-08T10:15:07+09:00",
+                                              "finished_at":  "2026-04-08T10:15:08+09:00",
+                                              "runtime_dir":  "C:\\python\\data\\t019rt",
+                                              "db_path":  "C:\\python\\data\\t019.db",
+                                              "host":  "127.0.0.1",
+                                              "port":  65208,
+                                              "exit_kind":  "clean_return",
+                                              "runtime_error":  null,
+                                              "stop_request_seen":  {
+                                                                        "requested":  true,
+                                                                        "requested_at":  "2026-04-08T10:15:08+09:00",
+                                                                        "payload":  {
+                                                                                        "requested_at":  "2026-04-08T10:15:08+09:00",
+                                                                                        "requested_by":  "live_vod_scheduler_launcher.py",
+                                                                                        "pid":  134412
+                                                                                    }
+                                                                    },
+                                              "scheduler_state_after_exit":  {
+                                                                                 "started":  false,
+                                                                                 "stop":  true,
+                                                                                 "thread_alive":  false,
+                                                                                 "thread_name":  null,
+                                                                                 "next_live":  1775610910.7590957,
+                                                                                 "next_vod":  1775610917.7591016,
+                                                                                 "started_at":  "2026-04-08T10:15:07+09:00",
+                                                                                 "last_tick_started_at":  "2026-04-08T10:15:07+09:00",
+                                                                                 "last_tick_finished_at":  "2026-04-08T10:15:07+09:00",
+                                                                                 "last_stop_requested_at":  "2026-04-08T10:15:08+09:00",
+                                                                                 "stopped_at":  "2026-04-08T10:15:08+09:00",
+                                                                                 "last_loop_error":  null,
+                                                                                 "tick_count":  1,
+                                                                                 "tick_seconds":  1.0
+                                                                             }
+                                          }
+             },
+    "runtime_dir":  "C:\\python\\data\\t019rt",
+    "db_path":  "C:\\python\\data\\t019.db"
+}

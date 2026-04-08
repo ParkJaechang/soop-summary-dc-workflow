@@ -1,0 +1,19 @@
+﻿{
+    "status":  "success",
+    "resumed_in_admin_context":  true,
+    "task_name":  "SOOP-LiveVOD-Task019",
+    "registration_succeeded":  true,
+    "start_succeeded":  true,
+    "health_verified":  true,
+    "graceful_stop_verified":  true,
+    "remaining_blocker":  null,
+    "next_expected_role":  "reviewer",
+    "generated_at":  "2026-04-08T10:15:09.8412856+09:00",
+    "evidence":  [
+                     "noninteractive_task_scheduler_permission_probe_admin.txt",
+                     "noninteractive_task_scheduler_install_result_admin.json",
+                     "noninteractive_task_scheduler_start_result_admin.json",
+                     "noninteractive_task_scheduler_stop_result_admin.json",
+                     "noninteractive_task_scheduler_status_after_stop_admin.json"
+                 ]
+}

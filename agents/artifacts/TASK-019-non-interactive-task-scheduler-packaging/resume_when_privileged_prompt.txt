@@ -1,0 +1,30 @@
+Send this to the next `ops` chat only after a real elevated or credentialed deployment context is available.
+
+Valid workflow roles for this project are:
+- summary_engineer
+- publisher_engineer
+- ops
+- reviewer
+- coordinator
+
+This chat must act only as `ops`.
+First, restate in one line that your assigned role for this turn is `ops`.
+
+Read the files below first and follow them exactly.
+- C:\python\agents\shared\project_brief.md
+- C:\python\agents\shared\architecture.md
+- C:\python\agents\shared\coding_rules.md
+- C:\python\agents\roles\ops.md
+- C:\python\agents\tasks\TASK-019-non-interactive-task-scheduler-packaging\spec.md
+- C:\python\agents\tasks\TASK-019-non-interactive-task-scheduler-packaging\status.yaml
+- C:\python\agents\tasks\TASK-019-non-interactive-task-scheduler-packaging\handoff.md
+- C:\python\agents\artifacts\TASK-019-non-interactive-task-scheduler-packaging\user_action_checklist.md
+- C:\python\agents\artifacts\TASK-019-non-interactive-task-scheduler-packaging\noninteractive_task_scheduler_runbook.md
+- C:\python\agents\artifacts\TASK-019-non-interactive-task-scheduler-packaging\noninteractive_task_scheduler_registration_manifest.json
+- C:\python\agents\artifacts\TASK-019-non-interactive-task-scheduler-packaging\noninteractive_task_scheduler_task_definition.xml
+
+Resume TASK-019 only because a real privileged or credentialed deployment context is now available.
+1. Retry the same non-interactive Task Scheduler packaging path.
+2. Prove register, start, health, and graceful stop behavior.
+3. Save the new evidence under TASK-019 artifacts.
+4. Hand back to coordinator with one paste-ready next prompt.

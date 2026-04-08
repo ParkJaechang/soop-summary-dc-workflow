@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "collector_type": "live",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:23+09:00",
+    "finished_at": "2026-04-08T04:15:23+09:00",
+    "message": "no active streamers"
+  },
+  {
+    "id": 2,
+    "collector_type": "vod",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:23+09:00",
+    "finished_at": "2026-04-08T04:15:23+09:00",
+    "message": "no active streamers"
+  },
+  {
+    "id": 3,
+    "collector_type": "live",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:24+09:00",
+    "finished_at": "2026-04-08T04:15:24+09:00",
+    "message": "tracked=1, live=1, checked_via=station_html"
+  },
+  {
+    "id": 4,
+    "collector_type": "vod",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:24+09:00",
+    "finished_at": "2026-04-08T04:15:24+09:00",
+    "message": "streamers=1, completed=1, failed=0, skipped=0"
+  },
+  {
+    "id": 5,
+    "collector_type": "vod",
+    "streamer_id": 1,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:24+09:00",
+    "finished_at": "2026-04-08T04:15:24+09:00",
+    "message": "source=http://127.0.0.1:62392/replay/launcher_streamer, inserted=2, updated=0, total=2"
+  },
+  {
+    "id": 6,
+    "collector_type": "live",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:25+09:00",
+    "finished_at": "2026-04-08T04:15:25+09:00",
+    "message": "tracked=1, live=1, checked_via=station_html"
+  },
+  {
+    "id": 7,
+    "collector_type": "vod",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:25+09:00",
+    "finished_at": "2026-04-08T04:15:25+09:00",
+    "message": "streamers=1, completed=1, failed=0, skipped=0"
+  },
+  {
+    "id": 8,
+    "collector_type": "vod",
+    "streamer_id": 1,
+    "status": "completed",
+    "started_at": "2026-04-08T04:15:25+09:00",
+    "finished_at": "2026-04-08T04:15:25+09:00",
+    "message": "source=http://127.0.0.1:62392/replay/launcher_streamer, inserted=0, updated=2, total=2"
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "step": "health",
+    "status_code": 200,
+    "body": {
+      "status": "ok",
+      "db_path": "C:\\python\\agents\\artifacts\\TASK-006-live-vod-foundation-stabilization\\task006_live_vod_test.db",
+      "scheduler_started": true,
+      "soop_client_id_configured": false,
+      "live_mode": "html-fallback",
+      "browser_fallback_ready": true,
+      "live_refresh_seconds": 120,
+      "vod_refresh_seconds": 900
+    }
+  },
+  {
+    "step": "create_streamer",
+    "status_code": 200,
+    "body": {
+      "item": {
+        "id": 1,
+        "soop_user_id": "sample_streamer",
+        "nickname": "Sample Streamer",
+        "channel_url": "https://www.sooplive.co.kr/station/sample_streamer",
+        "replay_url": "https://ch.sooplive.co.kr/sample_streamer/vods/review",
+        "category_no": "0001",
+        "active": 1,
+        "created_at": "2026-04-08T01:36:54+09:00",
+        "updated_at": "2026-04-08T01:36:54+09:00"
+      }
+    }
+  },
+  {
+    "step": "list_after_create",
+    "status_code": 200,
+    "body": {
+      "items": [
+        {
+          "id": 1,
+          "soop_user_id": "sample_streamer",
+          "nickname": "Sample Streamer",
+          "channel_url": "https://www.sooplive.co.kr/station/sample_streamer",
+          "replay_url": "https://ch.sooplive.co.kr/sample_streamer/vods/review",
+          "category_no": "0001",
+          "active": 1,
+          "created_at": "2026-04-08T01:36:54+09:00",
+          "updated_at": "2026-04-08T01:36:54+09:00",
+          "live_state": {
+            "streamer_id": 1,
+            "is_live": 0,
+            "broad_no": null,
+            "live_title": null,
+            "viewer_count": null,
+            "started_at": null,
+            "last_checked_at": "2026-04-08T01:36:54+09:00",
+            "last_live_seen_at": null,
+            "raw_json": null
+          },
+          "latest_vod": null
+        }
+      ],
+      "count": 1
+    }
+  },
+  {
+    "step": "update_streamer",
+    "status_code": 200,
+    "body": {
+      "item": {
+        "id": 1,
+        "soop_user_id": "sample_streamer",
+        "nickname": "Sample Streamer Updated",
+        "channel_url": "https://www.sooplive.co.kr/station/sample_streamer",
+        "replay_url": "https://ch.sooplive.co.kr/sample_streamer/vods/review",
+        "category_no": "0001",
+        "active": 0,
+        "created_at": "2026-04-08T01:36:54+09:00",
+        "updated_at": "2026-04-08T01:36:54+09:00"
+      }
+    }
+  },
+  {
+    "step": "delete_streamer",
+    "status_code": 200,
+    "body": {
+      "ok": true
+    }
+  },
+  {
+    "step": "list_after_delete",
+    "status_code": 200,
+    "body": {
+      "items": [
+        {
+          "id": 1,
+          "soop_user_id": "sample_streamer",
+          "nickname": "Sample Streamer Updated",
+          "channel_url": "https://www.sooplive.co.kr/station/sample_streamer",
+          "replay_url": "https://ch.sooplive.co.kr/sample_streamer/vods/review",
+          "category_no": "0001",
+          "active": 0,
+          "created_at": "2026-04-08T01:36:54+09:00",
+          "updated_at": "2026-04-08T01:36:54+09:00",
+          "live_state": {
+            "streamer_id": 1,
+            "is_live": 0,
+            "broad_no": null,
+            "live_title": null,
+            "viewer_count": null,
+            "started_at": null,
+            "last_checked_at": "2026-04-08T01:36:54+09:00",
+            "last_live_seen_at": null,
+            "raw_json": null
+          },
+          "latest_vod": null
+        }
+      ],
+      "count": 1
+    }
+  }
+]

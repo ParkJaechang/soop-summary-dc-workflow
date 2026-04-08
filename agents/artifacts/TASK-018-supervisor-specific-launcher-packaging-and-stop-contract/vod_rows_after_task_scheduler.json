@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 1,
+    "vod_id": "99201",
+    "title": "Task Scheduler VOD One",
+    "vod_url": "https://vod.sooplive.co.kr/player/99201",
+    "thumbnail_url": "https://img.test/99201.jpg",
+    "published_at": "2026-04-08T14:00:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "07:07",
+    "collected_at": "2026-04-08T08:11:07+09:00",
+    "last_seen_at": "2026-04-08T08:11:07+09:00",
+    "raw_json": "{\"source_url\": \"http://127.0.0.1:49729/replay/task_scheduler_streamer\", \"vod_id\": \"99201\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99201\", \"title\": \"Task Scheduler VOD One\", \"thumbnail_url\": \"https://img.test/99201.jpg\", \"published_at\": \"2026-04-08T14:00:00+09:00\", \"duration_text\": \"07:07\"}"
+  },
+  {
+    "id": 2,
+    "streamer_id": 1,
+    "vod_id": "99202",
+    "title": "Task Scheduler VOD Two",
+    "vod_url": "https://vod.sooplive.co.kr/player/99202",
+    "thumbnail_url": "https://img.test/99202.jpg",
+    "published_at": "2026-04-08T13:40:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "03:33",
+    "collected_at": "2026-04-08T08:11:07+09:00",
+    "last_seen_at": "2026-04-08T08:11:07+09:00",
+    "raw_json": "{\"source_url\": \"http://127.0.0.1:49729/replay/task_scheduler_streamer\", \"vod_id\": \"99202\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99202\", \"title\": \"Task Scheduler VOD Two\", \"thumbnail_url\": \"https://img.test/99202.jpg\", \"published_at\": \"2026-04-08T13:40:00+09:00\", \"duration_text\": \"03:33\"}"
+  }
+]

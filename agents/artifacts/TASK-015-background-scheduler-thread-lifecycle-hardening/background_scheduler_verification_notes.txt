@@ -1,0 +1,25 @@
+TASK-015 background scheduler lifecycle verifier
+
+Collector runs saved: 13
+Live rows saved: 1
+VOD rows saved: 2
+Total station fetch calls: 5
+Total replay fetch calls: 4
+
+Session 1 clean-stop evidence:
+- thread alive before shutdown: True
+- thread alive after shutdown wait: False
+- scheduler started after shutdown wait: False
+- station calls added after shutdown: 0
+- replay calls added after shutdown: 0
+
+Session 2 restart evidence:
+- thread alive before shutdown: True
+- thread alive after shutdown wait: False
+- scheduler started after shutdown wait: False
+- session 2 tick count at end: 10
+
+Bounded execution:
+- both shutdown waits added zero new upstream fetch calls
+- the restarted scheduler produced new collector_runs in the same SQLite DB
+- the real background thread path persisted live state, VOD rows, and collector_runs

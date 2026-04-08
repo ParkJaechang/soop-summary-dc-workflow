@@ -1,0 +1,24 @@
+{
+  "client_id": "task007-test-client",
+  "calls": [
+    "https://openapi.sooplive.co.kr/broad/list?client_id=task007-test-client&order_type=broad_start&page_no=1&callback=callback",
+    "https://openapi.sooplive.co.kr/broad/list?client_id=task007-test-client&order_type=broad_start&page_no=2&callback=callback",
+    "https://openapi.sooplive.co.kr/broad/list?client_id=task007-test-client&order_type=broad_start&page_no=1&callback=callback"
+  ],
+  "responses": [
+    {
+      "broad": [
+        {
+          "user_id": "streamer_live",
+          "broad_no": "12345678",
+          "broad_title": "Live Title From Official API",
+          "broad_start": "2026-04-08 01:50:00",
+          "total_view_cnt": "321"
+        }
+      ]
+    },
+    {
+      "broad": []
+    }
+  ]
+}

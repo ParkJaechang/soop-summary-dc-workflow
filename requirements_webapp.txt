@@ -1,0 +1,8 @@
+fastapi
+python-multipart
+uvicorn
+yt-dlp
+faster-whisper
+google-generativeai
+selenium
+webdriver-manager

@@ -1,0 +1,73 @@
+task_id: TASK-017
+title: Repo-owned scheduler launcher and stop-contract hardening
+status: done
+owner: coordinator
+next_owner: none
+created_at: 2026-04-08
+updated_at: 2026-04-08
+blocked_by: []
+deliverables:
+  - repo-owned launcher or wrapper assets
+  - launcher-shaped graceful-stop evidence
+  - runbook notes for deployment-facing stop ownership
+files_touched:
+  - agents/board/tasks.yaml
+  - agents/board/decisions.md
+  - agents/board/progress.md
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/spec.md
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/status.yaml
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/handoff.md
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/review.md
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/revision_log.md
+  - agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/done.md
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/README.md
+  - live_vod_scheduler_launcher.py
+  - live_vod_scheduler_host.py
+  - start_live_vod_scheduler.bat
+  - status_live_vod_scheduler.bat
+  - stop_live_vod_scheduler.bat
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/verify_repo_owned_scheduler_launcher.py
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_process_evidence.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_health_trace.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_status_before_stop.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_stop_result.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/collector_runs_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/live_state_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/vod_rows_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/repo_owned_scheduler_launcher_runbook.md
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/repo_owned_scheduler_launcher_notes.txt
+tests:
+  - python agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/verify_repo_owned_scheduler_launcher.py
+artifacts:
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/README.md
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/verify_repo_owned_scheduler_launcher.py
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_process_evidence.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_health_trace.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_status_before_stop.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_stop_result.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/collector_runs_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/live_state_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/vod_rows_after_launcher.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/repo_owned_scheduler_launcher_runbook.md
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/repo_owned_scheduler_launcher_notes.txt
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_runtime/host_runtime_summary.json
+  - agents/artifacts/TASK-017-repo-owned-scheduler-launcher-and-stop-contract/launcher_runtime/stop_requested.json
+notes:
+  - created immediately after TASK-016 closeout to continue operational hardening with repo-owned launch and stop assets
+  - needed role now is ops because the remaining gap is operational ownership, not app-level feature work
+  - summary_engineer, publisher_engineer, and reviewer are intentionally idle because this slice does not yet require app refactoring, publisher changes, or review
+  - ops added repo-owned launcher assets and verified the launcher path can start, observe, and gracefully stop the live/VOD scheduler process
+  - the launcher stop contract now uses a runtime-directory stop-request file that the repo-owned host wrapper converts into graceful `uvicorn` shutdown
+  - local verifier evidence shows bounded stop, final `thread_alive=false`, final `started=false`, and durable collector, live-state, and VOD persistence through the launcher path
+  - coordinator checkpoint confirmed the saved launcher and stop-contract evidence is sufficient for reviewer handoff
+  - needed role now is reviewer because the slice has crossed from ops-owned operational evidence gathering into formal review
+  - summary_engineer, publisher_engineer, and ops are intentionally idle because no publisher change is needed, no new app-level implementation work is needed, and the current gate is review rather than operations
+  - call summary_engineer only if the slice uncovers an app-level implementation gap in `app_live_vod.py`
+  - call publisher_engineer only if the scope later crosses into publisher contracts or draft-job flow
+  - later deployment-specific packaging such as Windows service or alternate supervisor integration remains a later slice and should not block review of this launcher contract
+  - reviewer confirmed that the saved evidence is sufficient to prove repo-owned launcher ownership, runtime-directory stop-request-file shutdown, bounded stop, and durable collector/live/VOD persistence for TASK-017
+  - needed role now is coordinator because the slice has crossed from formal review into acceptance checkpoint and closeout routing
+  - summary_engineer, publisher_engineer, and ops remain intentionally idle unless a later deployment-specific launcher gap reopens this slice
+  - coordinator closed TASK-017 after reviewer found no blocking issues in scope
+  - needed role now is ops for the next slice because the remaining gap is supervisor-specific packaging or deployment-facing stop proof, not app-level implementation
+  - summary_engineer, publisher_engineer, and reviewer returned to normal idle state after closeout

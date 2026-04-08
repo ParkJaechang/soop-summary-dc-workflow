@@ -1,0 +1,9 @@
+TASK-012 collector visibility verification
+During-backoff active_backoff_count: 2
+During-backoff failed/skipped/completed: 2 / 2 / 0
+After-recovery active_backoff_count: 0
+After-recovery completed_count: 2
+Collector run rows: 6
+Live rows: 1 / VOD rows: 1
+UI markup checks: {'contains_visibility_refresh_button': True, 'contains_backoff_list_id': True, 'contains_visibility_state_id': True, 'contains_admin_endpoint': True, 'contains_jobs_refresh_button': True}
+Expected visibility path: admin snapshot shows active backoff during the timeout window for live and VOD, then recent completed recovery with live/VOD state after retry succeeds.

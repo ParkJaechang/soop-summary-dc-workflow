@@ -1,0 +1,44 @@
+﻿{
+    "status":  "registered",
+    "manifest_path":  "C:\\python\\data\\t019rt\\task_scheduler_registration.json",
+    "task_xml_path":  "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+    "create_exit_code":  0,
+    "create_result":  "SUCCESS: The scheduled task \"SOOP-LiveVOD-Task019\" has successfully been created.",
+    "task":  {
+                 "TaskName":  "SOOP-LiveVOD-Task019",
+                 "State":  "Ready",
+                 "LastTaskResult":  "0",
+                 "Author":  "DESKTOP-PJC\\PJC",
+                 "RunAsUser":  "PJC",
+                 "ScheduleType":  "One Time Only",
+                 "TaskToRun":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                 "LogonMode":  "Interactive/Background",
+                 "ScheduledTaskState":  "Enabled"
+             },
+    "registration":  {
+                         "health_timeout":  15,
+                         "action":  {
+                                        "execute":  "powershell.exe",
+                                        "command_line":  "powershell.exe -NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                                        "arguments":  "-NoProfile -ExecutionPolicy Bypass -File \"C:\\python\\live_vod_scheduler_task_action.ps1\" -RuntimeDir \"C:\\python\\data\\t019rt\" -DbPath \"C:\\python\\data\\t019.db\" -Port 65208 -HealthTimeout 15",
+                                        "working_directory":  "C:\\python"
+                                    },
+                         "stop_contract":  {
+                                               "command":  "C:\\python\\stop_live_vod_scheduler_task.ps1",
+                                               "notes":  "Use the task stop wrapper so the repo-owned launcher writes stop_requested.json and the host wrapper exits cleanly."
+                                           },
+                         "db_path":  "C:\\python\\data\\t019.db",
+                         "scheduler_type":  "windows_task_scheduler",
+                         "deployment_notes":  [
+                                                  "This path targets a non-interactive S4U-style Task Scheduler registration.",
+                                                  "Local proof may require permission to register S4U tasks or a deployment context with explicit supervisor credentials."
+                                              ],
+                         "registered_at":  "2026-04-08T10:15:05.8479194+09:00",
+                         "registration_mode":  "xml_s4u_current_user_noninteractive",
+                         "task_name":  "SOOP-LiveVOD-Task019",
+                         "runtime_dir":  "C:\\python\\data\\t019rt",
+                         "port":  65208,
+                         "task_xml_path":  "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+                         "task_user":  "DESKTOP-PJC\\PJC"
+                     }
+}

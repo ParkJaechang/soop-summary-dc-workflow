@@ -1,0 +1,29 @@
+{
+  "db_path": "C:\\python\\agents\\artifacts\\TASK-011-collector-timeout-and-backoff-hardening\\task011_timeout_backoff.db",
+  "backoff_seconds": 1,
+  "backoff_max_seconds": 2,
+  "live_fetch_calls": [
+    "https://openapi.sooplive.co.kr/broad/list?client_id=fixture-client&order_type=broad_start&page_no=1&callback=callback",
+    "https://openapi.sooplive.co.kr/broad/list?client_id=fixture-client&order_type=broad_start&page_no=1&callback=callback"
+  ],
+  "vod_fetch_calls": [
+    "https://fixture.local/vod-alpha",
+    "https://www.sooplive.co.kr/station/alpha_user",
+    "https://ch.sooplive.co.kr/alpha_user",
+    "https://ch.sooplive.co.kr/alpha_user/vods/review",
+    "https://fixture.local/vod-alpha"
+  ],
+  "live_fetch_markers": [
+    0,
+    1,
+    1,
+    2
+  ],
+  "vod_fetch_markers": [
+    0,
+    4,
+    4,
+    5
+  ],
+  "note": "Each path is exercised as fail once -> immediate backoff skip -> delayed success."
+}

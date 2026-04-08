@@ -1,0 +1,76 @@
+{
+  "summary": {
+    "session_1_clean_stop": {
+      "thread_alive_before_shutdown": true,
+      "thread_alive_after_shutdown_wait": false,
+      "started_after_shutdown_wait": false,
+      "station_calls_added_after_shutdown": 0,
+      "replay_calls_added_after_shutdown": 0
+    },
+    "session_2_restart": {
+      "thread_alive_before_shutdown": true,
+      "thread_alive_after_shutdown_wait": false,
+      "started_after_shutdown_wait": false,
+      "session_2_tick_count_end": 10
+    },
+    "bounded_execution": {
+      "total_station_calls": 5,
+      "total_replay_calls": 4,
+      "collector_runs": 13,
+      "vod_rows": 2,
+      "live_state_rows": 1
+    }
+  },
+  "session_1_jobs_count": 7,
+  "session_2_jobs_count": 13,
+  "session_1_visibility_summary": {
+    "recent_run_count": 7,
+    "failed_count": 0,
+    "skipped_count": 0,
+    "completed_count": 7,
+    "active_backoff_count": 0,
+    "last_failed_at": null,
+    "last_completed_at": "2026-04-08T03:38:03+09:00"
+  },
+  "session_2_visibility_summary": {
+    "recent_run_count": 13,
+    "failed_count": 0,
+    "skipped_count": 0,
+    "completed_count": 13,
+    "active_backoff_count": 0,
+    "last_failed_at": null,
+    "last_completed_at": "2026-04-08T03:38:04+09:00"
+  },
+  "state_after_shutdown_1": {
+    "started": false,
+    "stop": true,
+    "thread_alive": false,
+    "thread_name": null,
+    "next_live": 1775587083.9834898,
+    "next_vod": 1775587083.9783802,
+    "started_at": "2026-04-08T03:38:02+09:00",
+    "last_tick_started_at": "2026-04-08T03:38:03+09:00",
+    "last_tick_finished_at": "2026-04-08T03:38:03+09:00",
+    "last_stop_requested_at": "2026-04-08T03:38:03+09:00",
+    "stopped_at": "2026-04-08T03:38:03+09:00",
+    "last_loop_error": null,
+    "tick_count": 12,
+    "tick_seconds": 0.05
+  },
+  "state_after_shutdown_2": {
+    "started": false,
+    "stop": true,
+    "thread_alive": false,
+    "thread_name": null,
+    "next_live": 1775587084.8688223,
+    "next_vod": 1775587085.0873022,
+    "started_at": "2026-04-08T03:38:04+09:00",
+    "last_tick_started_at": "2026-04-08T03:38:04+09:00",
+    "last_tick_finished_at": "2026-04-08T03:38:04+09:00",
+    "last_stop_requested_at": "2026-04-08T03:38:04+09:00",
+    "stopped_at": "2026-04-08T03:38:04+09:00",
+    "last_loop_error": null,
+    "tick_count": 11,
+    "tick_seconds": 0.05
+  }
+}

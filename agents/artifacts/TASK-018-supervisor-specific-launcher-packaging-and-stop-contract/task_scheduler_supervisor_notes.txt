@@ -1,0 +1,21 @@
+TASK-018 Windows Task Scheduler packaging verification
+
+task name: SOOP-LiveVOD-Task018
+app port: 49728
+fixture port: 49729
+collector runs recorded: 3
+live state rows recorded: 1
+vod rows recorded: 2
+
+Bounded stop evidence:
+- stop status: stopped
+- stop duration seconds: 1.325
+- exit kind: clean_return
+- scheduler thread alive after exit: False
+- scheduler started after exit: False
+- stop request seen by host: True
+
+Stop contract notes:
+- use the task stop wrapper, not End-ScheduledTask, for normal shutdown
+- the supervisor owns task registration and on-demand start
+- the repo-owned stop file remains the graceful stop boundary for the host wrapper

@@ -1,0 +1,15 @@
+{
+  "status": "blocked",
+  "supervisor_pattern": "windows_task_scheduler_s4u_noninteractive",
+  "blocking_stage": "registration",
+  "registration_returncode": 1,
+  "registration_output": "schtasks.exe : ERROR: Access is denied.\r\nAt C:\\python\\live_vod_scheduler_task_common.ps1:124 char:19\r\n+         $output = & schtasks.exe @Arguments 2>&1\r\n+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (ERROR: Access is denied.:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError",
+  "task_xml_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+  "required_dependency": "elevated Task Scheduler registration rights or an approved credentialed deployment context for S4U/non-interactive registration",
+  "observed_user": "DESKTOP-PJC\\PJC",
+  "observed_privilege_summary": "whoami /all shows medium-integrity interactive session without enabled administrative privileges",
+  "stop_contract": {
+    "wrapper": "C:\\python\\stop_live_vod_scheduler_task.ps1",
+    "notes": "If registration succeeds in deployment, graceful stop should still use the repo-owned stop wrapper rather than End-ScheduledTask."
+  }
+}

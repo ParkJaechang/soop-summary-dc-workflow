@@ -1,0 +1,60 @@
+{
+  "task": {
+    "TaskName": "SOOP-LiveVOD-Task018",
+    "State": "Ready",
+    "LastTaskResult": "0",
+    "Author": "DESKTOP-PJC\\PJC",
+    "RunAsUser": "PJC",
+    "ScheduleType": "One Time Only",
+    "TaskToRun": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\\python\\live_vod_scheduler_task_action.ps1 -RuntimeDir C:\\python\\data\\t018rt -DbPath C:\\python\\data\\t018.db -Port 49728 -HealthTimeout 15",
+    "LogonMode": "Interactive only",
+    "ScheduledTaskState": "Enabled"
+  },
+  "stop": {
+    "status": "stopped",
+    "pid": 128512,
+    "stop_payload": {
+      "requested_at": "2026-04-08T08:11:09+09:00",
+      "requested_by": "live_vod_scheduler_launcher.py",
+      "pid": 128512
+    },
+    "host_runtime_summary": {
+      "started_at": "2026-04-08T08:10:57+09:00",
+      "finished_at": "2026-04-08T08:11:09+09:00",
+      "runtime_dir": "C:\\python\\data\\t018rt",
+      "db_path": "C:\\python\\data\\t018.db",
+      "host": "127.0.0.1",
+      "port": 49728,
+      "exit_kind": "clean_return",
+      "runtime_error": null,
+      "stop_request_seen": {
+        "requested": true,
+        "requested_at": "2026-04-08T08:11:09+09:00",
+        "payload": {
+          "requested_at": "2026-04-08T08:11:09+09:00",
+          "requested_by": "live_vod_scheduler_launcher.py",
+          "pid": 128512
+        }
+      },
+      "scheduler_state_after_exit": {
+        "started": false,
+        "stop": true,
+        "thread_alive": false,
+        "thread_name": null,
+        "next_live": 1775603580.8171406,
+        "next_vod": 1775604367.9039726,
+        "started_at": "2026-04-08T08:10:57+09:00",
+        "last_tick_started_at": "2026-04-08T08:11:08+09:00",
+        "last_tick_finished_at": "2026-04-08T08:11:08+09:00",
+        "last_stop_requested_at": "2026-04-08T08:11:09+09:00",
+        "stopped_at": "2026-04-08T08:11:09+09:00",
+        "last_loop_error": null,
+        "tick_count": 12,
+        "tick_seconds": 1.0
+      }
+    }
+  },
+  "runtime_dir": "C:\\python\\data\\t018rt",
+  "db_path": "C:\\python\\data\\t018.db",
+  "stop_duration_seconds": 1.325
+}

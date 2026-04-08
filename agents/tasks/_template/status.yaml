@@ -1,0 +1,13 @@
+task_id: TASK-XXX
+title: TASK_TITLE
+status: draft
+owner: OWNER_ROLE
+next_owner: coordinator
+created_at: DATE_YYYY-MM-DD
+updated_at: DATE_YYYY-MM-DD
+blocked_by: []
+deliverables: []
+files_touched: []
+tests: []
+artifacts: []
+notes: []

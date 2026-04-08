@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "streamer_id": 1,
+    "vod_id": "99001",
+    "title": "External Process VOD One",
+    "vod_url": "https://vod.sooplive.co.kr/player/99001",
+    "thumbnail_url": "https://img.test/99001.jpg",
+    "published_at": "2026-04-08T12:00:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "10:10",
+    "collected_at": "2026-04-08T03:50:58+09:00",
+    "last_seen_at": "2026-04-08T03:50:58+09:00",
+    "raw_json": "{\"source_url\": \"https://fixture.test/replay/external_scheduler_streamer\", \"vod_id\": \"99001\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99001\", \"title\": \"External Process VOD One\", \"thumbnail_url\": \"https://img.test/99001.jpg\", \"published_at\": \"2026-04-08T12:00:00+09:00\", \"duration_text\": \"10:10\"}"
+  },
+  {
+    "id": 2,
+    "streamer_id": 1,
+    "vod_id": "99002",
+    "title": "External Process VOD Two",
+    "vod_url": "https://vod.sooplive.co.kr/player/99002",
+    "thumbnail_url": "https://img.test/99002.jpg",
+    "published_at": "2026-04-08T11:40:00+09:00",
+    "duration_seconds": null,
+    "duration_text": "05:05",
+    "collected_at": "2026-04-08T03:50:58+09:00",
+    "last_seen_at": "2026-04-08T03:50:58+09:00",
+    "raw_json": "{\"source_url\": \"https://fixture.test/replay/external_scheduler_streamer\", \"vod_id\": \"99002\", \"vod_url\": \"https://vod.sooplive.co.kr/player/99002\", \"title\": \"External Process VOD Two\", \"thumbnail_url\": \"https://img.test/99002.jpg\", \"published_at\": \"2026-04-08T11:40:00+09:00\", \"duration_text\": \"05:05\"}"
+  }
+]

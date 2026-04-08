@@ -1,0 +1,34 @@
+{
+  "started_at": "2026-04-08T03:50:57+09:00",
+  "finished_at": "2026-04-08T03:50:58+09:00",
+  "port": 53698,
+  "db_path": "C:\\python\\agents\\artifacts\\TASK-016-external-process-scheduler-supervision-and-graceful-stop\\task016_external_scheduler_test.db",
+  "exit_kind": "clean_return",
+  "runtime_error": null,
+  "fetch_counts": {
+    "station": 2,
+    "replay": 1
+  },
+  "shutdown_signals": [
+    {
+      "signal": 21,
+      "received_at": "2026-04-08T03:50:58+09:00"
+    }
+  ],
+  "scheduler_state_after_exit": {
+    "started": false,
+    "stop": true,
+    "thread_alive": false,
+    "thread_name": null,
+    "next_live": 1775587859.1562212,
+    "next_vod": 1775587858.9590218,
+    "started_at": "2026-04-08T03:50:57+09:00",
+    "last_tick_started_at": "2026-04-08T03:50:58+09:00",
+    "last_tick_finished_at": "2026-04-08T03:50:58+09:00",
+    "last_stop_requested_at": "2026-04-08T03:50:58+09:00",
+    "stopped_at": "2026-04-08T03:50:58+09:00",
+    "last_loop_error": null,
+    "tick_count": 17,
+    "tick_seconds": 0.05
+  }
+}

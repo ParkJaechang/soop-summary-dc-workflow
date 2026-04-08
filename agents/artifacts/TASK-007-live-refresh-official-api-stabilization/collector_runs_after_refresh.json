@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "collector_type": "live",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T01:48:30+09:00",
+    "finished_at": "2026-04-08T01:48:30+09:00",
+    "message": "tracked=2, live=1, pages=1"
+  },
+  {
+    "id": 2,
+    "collector_type": "live",
+    "streamer_id": null,
+    "status": "completed",
+    "started_at": "2026-04-08T01:48:30+09:00",
+    "finished_at": "2026-04-08T01:48:30+09:00",
+    "message": "tracked=2, live=0, pages=1"
+  }
+]

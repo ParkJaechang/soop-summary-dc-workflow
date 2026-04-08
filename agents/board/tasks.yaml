@@ -1,0 +1,140 @@
+backlog: []
+
+active: []
+
+blocked: []
+
+done:
+  - id: TASK-019
+    slug: non-interactive-task-scheduler-packaging
+    title: Non-interactive Task Scheduler packaging hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-019-non-interactive-task-scheduler-packaging
+  - id: TASK-018
+    slug: supervisor-specific-launcher-packaging-and-stop-contract
+    title: Supervisor-specific launcher packaging and stop-contract hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-018-supervisor-specific-launcher-packaging-and-stop-contract
+  - id: TASK-017
+    slug: repo-owned-scheduler-launcher-and-stop-contract
+    title: Repo-owned scheduler launcher and stop-contract hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-017-repo-owned-scheduler-launcher-and-stop-contract
+  - id: TASK-016
+    slug: external-process-scheduler-supervision-and-graceful-stop
+    title: External-process scheduler supervision and graceful stop hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-016-external-process-scheduler-supervision-and-graceful-stop
+  - id: TASK-015
+    slug: background-scheduler-thread-lifecycle-hardening
+    title: Background scheduler thread lifecycle hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-015-background-scheduler-thread-lifecycle-hardening
+  - id: TASK-014
+    slug: scheduler-mixed-latency-and-repeated-failure-hardening
+    title: Scheduler mixed-latency and repeated-failure hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-014-scheduler-mixed-latency-and-repeated-failure-hardening
+  - id: TASK-013
+    slug: restart-persistent-backoff-state
+    title: Restart-persistent backoff state for live and VOD collectors
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-013-restart-persistent-backoff-state
+  - id: TASK-012
+    slug: collector-run-and-failure-visibility-ui-admin
+    title: Collector-run and failure visibility in UI and admin views
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-012-collector-run-and-failure-visibility-ui-admin
+  - id: TASK-011
+    slug: collector-timeout-and-backoff-hardening
+    title: Collector timeout and backoff hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-011-collector-timeout-and-backoff-hardening
+  - id: TASK-010
+    slug: multi-streamer-vod-sweep-hardening
+    title: Multi-streamer VOD sweep hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-010-multi-streamer-vod-sweep-hardening
+  - id: TASK-009
+    slug: scheduler-and-collector-run-hardening
+    title: Scheduler and collector-run hardening
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-009-scheduler-and-collector-run-hardening
+  - id: TASK-008
+    slug: vod-collector-single-streamer-stabilization
+    title: VOD collector stabilization for a tracked streamer
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-008-vod-collector-single-streamer-stabilization
+  - id: TASK-007
+    slug: live-refresh-official-api-stabilization
+    title: Live refresh stabilization with official SOOP API
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-007-live-refresh-official-api-stabilization
+  - id: TASK-006
+    slug: live-vod-foundation-stabilization
+    title: Live and VOD app foundation stabilization
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-006-live-vod-foundation-stabilization
+  - id: TASK-001
+    slug: collaboration-bootstrap
+    title: Bootstrap file-based multi-chat collaboration workspace
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-001-collaboration-bootstrap
+  - id: TASK-002
+    slug: summary-payload-to-draft-post-job-pipeline
+    title: Summary payload to draft post job pipeline
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-002-summary-payload-to-draft-post-job-pipeline
+  - id: TASK-003
+    slug: phased-stabilization-and-integration-plan
+    title: Phased stabilization plan for SOOP summary, live/VOD, and DC publisher apps
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-003-phased-stabilization-and-integration-plan
+  - id: TASK-004
+    slug: canonical-summary-payload-artifact-from-soop-summery-local-v3
+    title: Canonical summary payload artifact from soop_summery_local_v3
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-004-canonical-summary-payload-artifact-from-soop-summery-local-v3
+  - id: TASK-005
+    slug: canonical-summary-payload-to-draft-job-integration
+    title: Canonical summary payload to draft post job integration
+    owner: coordinator
+    next_owner: none
+    status: done
+    task_path: agents/tasks/TASK-005-canonical-summary-payload-to-draft-job-integration

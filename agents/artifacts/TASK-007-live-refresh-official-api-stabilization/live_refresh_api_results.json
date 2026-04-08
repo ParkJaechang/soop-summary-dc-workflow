@@ -1,0 +1,62 @@
+[
+  {
+    "step": "live_refresh_run_1",
+    "status_code": 200,
+    "body": {
+      "status": "completed",
+      "mode": "api",
+      "message": "tracked=2, live=1, pages=1",
+      "live_count": 1
+    }
+  },
+  {
+    "step": "live_list_after_run_1",
+    "status_code": 200,
+    "body": {
+      "items": [
+        {
+          "id": 1,
+          "soop_user_id": "streamer_live",
+          "nickname": "Live Streamer",
+          "channel_url": "https://www.sooplive.co.kr/station/streamer_live",
+          "replay_url": "",
+          "category_no": "",
+          "active": 1,
+          "created_at": "2026-04-08T01:48:30+09:00",
+          "updated_at": "2026-04-08T01:48:30+09:00",
+          "live_state": {
+            "streamer_id": 1,
+            "is_live": 1,
+            "broad_no": "12345678",
+            "live_title": "Live Title From Official API",
+            "viewer_count": 321,
+            "started_at": "2026-04-08 01:50:00",
+            "last_checked_at": "2026-04-08T01:48:30+09:00",
+            "last_live_seen_at": "2026-04-08T01:48:30+09:00",
+            "raw_json": "{\"user_id\": \"streamer_live\", \"broad_no\": \"12345678\", \"broad_title\": \"Live Title From Official API\", \"broad_start\": \"2026-04-08 01:50:00\", \"total_view_cnt\": \"321\"}"
+          },
+          "latest_vod": null
+        }
+      ],
+      "count": 1
+    }
+  },
+  {
+    "step": "live_refresh_run_2",
+    "status_code": 200,
+    "body": {
+      "status": "completed",
+      "mode": "api",
+      "message": "tracked=2, live=0, pages=1",
+      "live_count": 0
+    }
+  },
+  {
+    "step": "live_list_after_run_2",
+    "status_code": 200,
+    "body": {
+      "items": [],
+      "count": 0
+    }
+  }
+]

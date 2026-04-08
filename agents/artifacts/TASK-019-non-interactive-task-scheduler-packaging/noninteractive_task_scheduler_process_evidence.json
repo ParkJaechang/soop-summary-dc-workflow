@@ -1,0 +1,9 @@
+{
+  "status": "blocked",
+  "supervisor_pattern": "windows_task_scheduler_s4u_noninteractive",
+  "install_result_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_install_result.json",
+  "task_xml_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_task_definition.xml",
+  "permission_probe_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_permission_probe.txt",
+  "blocker_summary_path": "C:\\python\\agents\\artifacts\\TASK-019-non-interactive-task-scheduler-packaging\\noninteractive_task_scheduler_blocker_summary.json",
+  "notes": "The non-interactive S4U packaging asset was generated, but local registration was denied before start/health/stop proof could run."
+}

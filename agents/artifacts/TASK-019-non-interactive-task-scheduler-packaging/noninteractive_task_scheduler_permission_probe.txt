@@ -1,0 +1,40 @@
+
+USER INFORMATION
+----------------
+
+User Name       SID                                           
+=============== ==============================================
+desktop-pjc\pjc S-1-5-21-3197170921-3206713947-2637509415-1001
+
+
+GROUP INFORMATION
+-----------------
+
+Group Name                                   Type             SID                                                                                                          Attributes                                        
+============================================ ================ ============================================================================================================ ==================================================
+Mandatory Label\Medium Mandatory Level       Label            S-1-16-8192                                                                                                                                                    
+Everyone                                     Well-known group S-1-1-0                                                                                                      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\로컬 계정 및 관리자 그룹 구성원 Well-known group S-1-5-114                                                                                                    Group used for deny only                          
+BUILTIN\Administrators                       Alias            S-1-5-32-544                                                                                                 Group used for deny only                          
+BUILTIN\Users                                Alias            S-1-5-32-545                                                                                                 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\INTERACTIVE                     Well-known group S-1-5-4                                                                                                      Mandatory group, Enabled by default, Enabled group
+CONSOLE LOGON                                Well-known group S-1-2-1                                                                                                      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\Authenticated Users             Well-known group S-1-5-11                                                                                                     Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\This Organization               Well-known group S-1-5-15                                                                                                     Mandatory group, Enabled by default, Enabled group
+MicrosoftAccount\jaechang100117@gmail.com    User             S-1-11-96-3623454863-58364-18864-2661722203-1597581903-1258335959-2380114085-2126729166-242087282-2279878930 Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\로컬 계정                       Well-known group S-1-5-113                                                                                                    Mandatory group, Enabled by default, Enabled group
+LOCAL                                        Well-known group S-1-2-0                                                                                                      Mandatory group, Enabled by default, Enabled group
+NT AUTHORITY\클라우드 계정 인증              Well-known group S-1-5-64-36                                                                                                  Mandatory group, Enabled by default, Enabled group
+
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                          State   
+============================= ==================================== ========
+SeShutdownPrivilege           Shut down the system                 Disabled
+SeChangeNotifyPrivilege       Bypass traverse checking             Enabled 
+SeUndockPrivilege             Remove computer from docking station Disabled
+SeIncreaseWorkingSetPrivilege Increase a process working set       Disabled
+SeTimeZonePrivilege           Change the time zone                 Disabled
+
